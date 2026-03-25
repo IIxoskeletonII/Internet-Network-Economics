@@ -9,4 +9,3 @@ __pycache__/
 # Data Guardrail (Prevents pushing massive raw files to GitHub)
 data/01_raw/
 data/02_intermediate/
-data/03_processed/
