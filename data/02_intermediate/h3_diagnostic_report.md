@@ -209,3 +209,77 @@ Early 2020 has sparse coverage (5 stablecoins in Jan 2020). This is real — the
 3. **Non-USD stablecoin filtering** will need to be done. The symbol list includes names like AZND, DJED, PINA, etc. that may not be USD-pegged. This needs a filtering step (see Sub-Step 2 spec).
 4. **USTC caveat:** Pre-collapse USTC supply is understated because Terra Classic chain data only starts 2022-05-12. Post-June 2022, USTC data ends (except a single $0 row). This is a minor limitation for HHI — USTC was one of several mid-tier stablecoins, and its understatement makes the pre-collapse market look slightly more concentrated than it really was. This should be documented but does not block aggregation.
 5. **Early 2020 sparse coverage:** Only 5 stablecoins tracked in Jan 2020. HHI will be very high. This is real market structure, not a data gap.
+
+---
+
+## Verification gate calibration note
+
+The original spec's Check 7 upper bound of 0.75 for `top_stablecoin_share` was widened to 0.90 after observing that USDT genuinely held 77-85% of a ~$4-10B stablecoin market in early 2020, when only 5-7 issuers were tracked. The computation is correct; the gate was too tight for the early-market period. This finding is substantively interesting for the H3 narrative: the market started highly concentrated, fragmented through 2021-early 2022, then re-concentrated post-Terra and post-BUSD.
+
+**Top stablecoin share trajectory:**
+- 2020-01: 0.7712 (USDT)
+- 2021-06: 0.5847 (USDT)
+- 2022-04: 0.5019 (USDT)
+- 2022-12: 0.4811 (USDT)
+- 2023-12: 0.7032 (USDT)
+- 2025-12: 0.6075 (USDT)
+
+---
+
+## Terra collapse — data source limitation and narrative implications
+
+DefiLlama's `stablecoin_supply_by_chain.csv` does not track the Terra Classic chain before 2022-05-12. Pre-collapse USTC appears only via its bridged representations on Ethereum, BSC, Avalanche, and Polygon at ~$1.4B, versus the real ~$18B market cap that existed on native Terra. The Terra Classic chain data appears abruptly on 2022-05-12 at $13.1B, making USTC counterintuitively look larger post-collapse than pre-collapse in this dataset. This means the original spec's Terra spot-check (expecting HHI to rise from April to June 2022) was based on a premise that does not hold in this data source. The check was replaced with a BUSD wind-down spot-check (Jan 2023 vs Dec 2023), which cleanly validates the structural-exit concentration mechanism.
+
+### CHECK 2: USTC pre-collapse magnitude (day-by-day)
+
+| Date | USTC Total | Terra Classic | Non-Terra chains |
+|---|---|---|---|
+| 2022-04-30 | $1.37B | not tracked | $1.37B |
+| 2022-05-01 | $1.39B | not tracked | $1.39B |
+| 2022-05-08 | $2.29B | not tracked | $2.29B (depeg panic bridging) |
+| 2022-05-09 | $2.67B | not tracked | $2.67B |
+| 2022-05-10 | $2.50B | not tracked | $2.50B |
+| 2022-05-11 | $2.05B | not tracked | $2.05B |
+| **2022-05-12** | **$14.71B** | **$13.12B** (appears) | $1.59B |
+| 2022-05-15 | $11.27B | $9.93B | $1.34B |
+| 2022-05-31 | $11.27B | $10.40B | $0.87B |
+| 2022-06-30 | NO DATA | — | — |
+
+### CHECK 3: Flight-to-quality (USDT vs USDC, April-July 2022)
+
+| Month | Total Mkt | USDT Supply | USDT % | USDC Supply | USDC % |
+|---|---|---|---|---|---|
+| 2022-04 | $160.2B | $80.4B | 50.19% | $43.8B | 27.31% |
+| 2022-05 | $169.8B | $72.6B | 42.73% | $53.7B | 31.62% |
+| 2022-06 | $163.9B | $66.5B | 40.57% | $54.8B | 33.44% |
+| 2022-07 | $152.6B | $66.6B | 43.65% | $53.6B | 35.14% |
+
+### CHECK 4: HHI decomposition — April 2022 (HHI = 3419.89) vs June 2022 (HHI = 2943.00)
+
+**April 2022 (HHI = 3419.89), top 4:**
+
+| Stablecoin | Supply | Share | HHI contrib |
+|---|---|---|---|
+| USDT | $80.4B | 50.19% | 2518.78 |
+| USDC | $43.8B | 27.31% | 745.99 |
+| BUSD | $17.7B | 11.04% | 121.90 |
+| DAI | $8.5B | 5.29% | 27.97 |
+
+**June 2022 (HHI = 2943.00), top 4:**
+
+| Stablecoin | Supply | Share | HHI contrib |
+|---|---|---|---|
+| USDT | $66.5B | 40.57% | 1646.20 |
+| USDC | $54.8B | 33.44% | 1117.99 |
+| BUSD | $17.6B | 10.70% | 114.56 |
+| USTC | $11.3B | 6.88% | 47.27 |
+
+**Net HHI change (April to June): -476.89**
+- USDT: -872.58 (share dropped 50.19% to 40.57%)
+- USDC: +372.00 (share rose 27.31% to 33.44%)
+- USTC: +46.54 (appeared at 6.88% due to Terra Classic chain tracking)
+- All others: -22.85
+
+### Narrative implication for Phase 4
+
+The May-June 2022 HHI decline in the cleaned dataset is NOT driven by Terra's disappearance per se — it is driven by the USDT-to-USDC flight-to-quality during the broader crisis (USDT share 50% to 41%, USDC share 27% to 33%). This is a more empirically grounded story than the stylized "Terra vanished and concentrated the market" narrative, and is backed by a clean HHI decomposition. For the H3 discussion we should present both: (i) the overall HHI trajectory 2020-2025, and (ii) the May-June 2022 decomposition as a case study showing that crisis episodes in stablecoins can REDUCE concentration via flight-to-quality, not increase it. The BUSD wind-down (Feb-Dec 2023) is the clean counter-example where a structural exit DOES increase concentration (HHI rose from 3556 to 5307, +1751), because there was no simultaneous substitution crisis — BUSD simply drained and its share redistributed primarily to USDT (share 49.6% to 70.3%).
