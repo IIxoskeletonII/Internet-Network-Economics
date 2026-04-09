@@ -283,3 +283,64 @@ DefiLlama's `stablecoin_supply_by_chain.csv` does not track the Terra Classic ch
 ### Narrative implication for Phase 4
 
 The May-June 2022 HHI decline in the cleaned dataset is NOT driven by Terra's disappearance per se — it is driven by the USDT-to-USDC flight-to-quality during the broader crisis (USDT share 50% to 41%, USDC share 27% to 33%). This is a more empirically grounded story than the stylized "Terra vanished and concentrated the market" narrative, and is backed by a clean HHI decomposition. For the H3 discussion we should present both: (i) the overall HHI trajectory 2020-2025, and (ii) the May-June 2022 decomposition as a case study showing that crisis episodes in stablecoins can REDUCE concentration via flight-to-quality, not increase it. The BUSD wind-down (Feb-Dec 2023) is the clean counter-example where a structural exit DOES increase concentration (HHI rose from 3556 to 5307, +1751), because there was no simultaneous substitution crisis — BUSD simply drained and its share redistributed primarily to USDT (share 49.6% to 70.3%).
+
+---
+
+# Phase 3 and Phase 4 narrative notes (added on Phase 2B.3 closeout)
+
+These notes preserve findings from the 2B.3 verification and diagnostic work that will be needed later. Nothing here changes the dataset or the verification gate — this is narrative scaffolding for when we reach empirical analysis and slide building.
+
+## The H3 U-shape: full trajectory
+
+The `top_stablecoin_share` (USDT) trajectory across the window is not monotonic. It traces a clear U-shape:
+
+| Date       | USDT share | Market context                                                       |
+|------------|------------|----------------------------------------------------------------------|
+| 2020-01    | 0.77       | Early-market thinness; only 5–7 tracked stablecoins; market ~$4–10B |
+| 2021-06    | (min region — see note below) | USDC and BUSD scaling; three-issuer competitive interregnum |
+| 2022-04    | 0.50       | Pre-Terra steady state; BUSD at 11% providing a real third leg       |
+| 2022-06    | 0.41       | Flight-to-quality trough — Tether's lowest observed share            |
+| 2023-01    | ~0.49      | Start of BUSD wind-down (Paxos stopped minting Feb 2023)             |
+| 2023-12    | ~0.70      | BUSD effectively gone; Tether has absorbed most of the runoff        |
+| 2025-12    | 0.61       | Partial normalization as FDUSD, PYUSD, and others scale back in      |
+
+Check 7 in the verification gate observed a minimum of 0.41 and a maximum of 0.85 across the full window. Check 9 confirmed a +0.2075 rise in USDT share across Jan→Dec 2023.
+
+Note on the 2021 minimum: the verification gate did not print the exact 2021-06 value. Phase 3 work should include a full time-series chart of top_stablecoin_share so the precise minimum date is visible.
+
+## Why this matters for the H3 empirical test
+
+The roadmap's Phase 3.3 prescribes an OLS of HHI on a linear time trend with Newey-West SEs to test for winner-takes-all dynamics. Given the observed U-shape, a naive full-window linear trend will likely be flat or only weakly positive, which would understate what is actually going on in the data. The real H3 finding is not the trend — it is the conditional mechanics of when concentration rises and when it does not.
+
+Recommended Phase 3.3 additions (to be implemented when we reach Phase 3):
+
+1. Report the trend coefficient on the full window AND on a post-May-2022 sub-window. The full-window trend will likely be weak; the post-2022 trend should be clearly positive. The contrast is informative.
+
+2. Add a structural-event table listing HHI changes across each identifiable episode in the window. Each row: event name, date range, HHI delta, dominant mechanism, one-line interpretation. Candidate events:
+   - UST/Terra collapse (Apr → Jun 2022): HHI FELL from ~3420 to ~2943, driven by USDT→USDC flight-to-quality (see Terra section of this report for full decomposition)
+   - FTX collapse (Oct → Dec 2022): check direction in data
+   - USDC depeg / SVB episode (Feb → Apr 2023): check direction in data
+   - BUSD wind-down (Jan → Dec 2023): HHI ROSE by approximately +1751 points (Check 8 in gate), driven by BUSD supply draining into USDT and USDC
+   - FDUSD/PYUSD emergence (Jun 2023 → Jun 2024): partial fragmentation as new entrants scale
+
+3. The table above is the artifact that goes on the H3 slide in Phase 4. It turns the H3 finding from "HHI went up over time" into "concentration rises when incumbents exit without a substitution crisis, and falls when crises trigger flight-to-quality across competing issuers." That is a meaningfully more sophisticated empirical claim than a single trend coefficient.
+
+## Why this matters for the H3 narrative in Phase 4
+
+The stylized "winner-takes-all in stablecoins" prediction would show monotonic concentration over 2020–2025. What the data actually shows is:
+
+- A high starting point that reflects early-market thinness rather than sustained dominance
+- A genuine competitive interregnum in 2021–early 2022 with three major issuers
+- A crisis episode (Terra) that REDUCED concentration via flight-to-quality — the opposite of the stylized prediction
+- A regulatory exit event (BUSD, driven by NYDFS action against Paxos) that concentrated the market cleanly, showing the mechanism matters
+- A partial normalization in 2024–2025 as new entrants scale
+
+The Phase 4 answer to "is the stablecoin market winner-takes-all?" should therefore be qualified: the market exhibits conditional concentration dynamics rather than monotonic winner-takes-all. This is a stronger empirical finding than a simple trend claim because it is falsifiable at the event-study level — if any identified episode ran in the opposite direction to the proposed mechanism, the story would break.
+
+## Phase 3.2 (H1) reminder from 2B.2
+
+Separately, a flag raised at the end of Part 2B.2 that should be remembered in Phase 3.2: the USDC max-to-median transfer count ratio was 18.79, close to the sanity threshold of 20. This is not a data error — it is a property of the real data — but it means the ADF stationarity test results in Part 3.2 may be sensitive to the tail of the USDC series. If the ADF results flip between levels and first-differences in a way that seems surprising, the heavier USDC tail is the most likely reason, and the appropriate response is to run the test on both specifications and report both rather than force a single path.
+
+---
+
+End of Phase 3/4 narrative notes section.
