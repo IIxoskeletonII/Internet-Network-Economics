@@ -9,3 +9,16 @@ __pycache__/
 # Data Guardrail (Prevents pushing massive raw files to GitHub)
 data/01_raw/
 data/02_intermediate/
+data/03_processed/*.csv
+!data/03_processed/ARCHIVE/
+
+# Environment & Presentations
+venv/
+presentations/
+
+
+# To be deleted from the repository after the project is complete
+AUDIT_REPORT.md
+CLAUDE.md
+.claude/
+Master_Recovery_Roadmap.md
