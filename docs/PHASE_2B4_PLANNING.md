@@ -6,6 +6,82 @@
 
 ---
 
+## 0. Checkpoint 2 Closeout Addendum (added 2026-04-11)
+
+This section corrects and supplements the original document with information learned during execution of Checkpoints 1 and 2. The body of the document below (§1–§9) is preserved as written for audit-trail purposes; where it conflicts with this addendum, this addendum is authoritative.
+
+### 0.1 Actual extracted row counts (correction to §1)
+
+The §1 inventory table assumed 154 countries for 2020–2023 and 151 for 2024–2025 based on Chainalysis's published methodology descriptions. The actual extracted row counts differ. Manual verification of all six PDFs at Checkpoint 1 confirmed these are real coverage figures, not parser bugs.
+
+| Year | §1 expected | Actual extracted | Sovereign rows after ISO3 standardization |
+|---|---|---|---|
+| 2020 | 154 | 154 | 151 |
+| 2021 | 154 | 157 | 151 |
+| 2022 | 154 | 146 | 143 |
+| 2023 | 154 | 155 | 151 |
+| 2024 | 151 | 151 | 147 |
+| 2025 | 151 | **131** | 130 |
+
+Total panel observations pre-WB-join: ~873 across ~165 unique sovereign countries. The 2025 file's coverage ceiling at rank 130 is Chainalysis's actual published depth, not a parser truncation — confirmed by manual PDF inspection at Checkpoint 1.
+
+**The 2020 file required additional repair:** the initial vision-based extraction silently dropped 10 countries from the "Among lowest" section on page 130 (Cape Verde, Chad, Fiji, Laos, Libya, Mongolia, Tajikistan, Turkmenistan, West Bank and Gaza, Zimbabwe). These were restored at Checkpoint 2 with `rank=NaN`, `overall_score=0`, and a new `rank_note="Among lowest"` column. The 142 ranked countries plus the 12 "Among lowest" countries (the 10 added plus Afghanistan and Algeria, which were already present) give the final 2020 count of 154.
+
+### 0.2 Schema additions (supplement to §3)
+
+Two columns were added to the raw CSVs at Checkpoint 2 beyond the §3 specification:
+
+- **`rank_note`** — populated as `"Among lowest"` for the 12 unranked countries in the 2020 file; empty for all other rows in all other years. Schema-unified across all six raw CSVs at Checkpoint 2 for consistency.
+- **`country_iso3`** — added as a separate column by the standardization module (not overwriting the original `country` column, for audit trail). To be applied to the standardized intermediate CSVs in Task A of the next Claude Code brief.
+
+### 0.3 Raw score availability (correction to §3)
+
+§3 specifies `adoption_score_raw` as a column in the cleaned dataset and as the robustness DV in the Phase 3.4 regression table. Checkpoint 1 manual PDF verification revealed that **Chainalysis published normalized 0–1 scores in 2020 and 2021 only and discontinued them in 2022.** Subsequent reports publish ranks but not normalized scores.
+
+This does not invalidate §3's decision to use percentile rank as the primary DV; if anything it strengthens it (Chainalysis's own discontinuation of the score corroborates the rank-based choice). But the §3 robustness plan needs to be revised:
+
+- The `adoption_score_raw` column will exist in the cleaned dataset but will be NaN for 2022–2025.
+- The §3 robustness analysis ("If the percentile-rank and raw-score results agree on sign and significance...") can only be run on the 2020–2021 sub-sample, not the full panel.
+- This becomes a 2020–2021 appendix in the Phase 3.4 regression table rather than a primary robustness column.
+- The Phase 4 limitations narrative should explicitly note that Chainalysis discontinued normalized scores after 2021, citing this as further justification for the rank-based DV.
+
+### 0.4 Sub-national and territory drops (supplement to §5)
+
+§5 lists ~28 alias mappings for the standardization module. The actual implementation in `scripts/standardize_country_names.py` (not `src/country_codes.py` — see §0.6) contains 60 alias entries plus an explicit `DROP_ENTITIES` set for non-sovereign units.
+
+**Ten entities are dropped from the H2 panel** because they have no standard World Bank sovereign counterpart:
+
+| Entity | ISO3 (if any) | Justification |
+|---|---|---|
+| Hong Kong / Hong Kong SAR, China | HKG | Sub-national (PRC SAR) |
+| Macao | MAC | Sub-national (PRC SAR) |
+| Taiwan | TWN | Not in WB sovereign panel under that name |
+| Puerto Rico | PRI | US territory |
+| French Polynesia | PYF | French overseas collectivity |
+| New Caledonia | NCL | French overseas collectivity |
+| Virgin Islands, U.S. | VIR | US territory |
+| Aruba | ABW | Dutch constituent country |
+| Bermuda | BMU | British Overseas Territory |
+| Cayman Islands | CYM | British Overseas Territory |
+
+Aruba, Bermuda, and Cayman Islands were added to the explicit drop list at Checkpoint 2 review (rather than being silently filtered by the WB join) for audit-trail consistency with the other territory drops.
+
+### 0.5 Region column not extracted (clarification to §1)
+
+The 2023, 2024, and 2025 PDFs include a Region column in the ranking tables. Checkpoint 1 made the deliberate decision NOT to extract this column, on the grounds that World Bank provides a consistent cross-year region classification that will be joined in during 2B.4.b. Chainalysis's region labels remain available in the source PDFs if needed for narrative purposes during Phase 4.
+
+### 0.6 Standardization module location (correction to §5)
+
+§5 specifies the module should live at `src/country_codes.py`. Actual implementation: `scripts/standardize_country_names.py`. The repo does not have a `src/` directory; helper scripts live in `scripts/`. No functional difference; documenting for accuracy.
+
+### 0.7 Checkpoint status
+
+- **Checkpoint 1 (PDF acquisition and extraction):** ✅ Complete. All six PDFs downloaded, all six CSVs extracted, all six manually cross-checked against PDFs. One parser bug found (2020 page-130 "Among lowest"), repaired at Checkpoint 2. See `docs/CHECKPOINT_1_REPORT.md`.
+- **Checkpoint 2 (ISO3 standardization, pre-WB-join):** ✅ Complete. Standardization module built, mapping report generated, all 207 distinct country names resolved (199 to ISO3, 8 dropped — now 11 after the ABW/BMU/CYM addition). See `docs/CHECKPOINT_2_REPORT.md` and `docs/ISO3_MAPPING_REPORT.md`.
+- **Checkpoint 3 (cleaned WB panel and standardized Chainalysis panel, pre-join):** ⏳ Pending. To be executed by the next Claude Code brief.
+
+---
+
 ## 1. Chainalysis Report Inventory
 
 Research conducted in Claude.ai on 2026-04-09 confirmed that six annual editions of the Chainalysis Global Crypto Adoption Index are published and accessible. The full panel window required by H2 (2020–2025) is covered; no year needs to be dropped for non-availability.
