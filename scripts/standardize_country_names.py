@@ -17,8 +17,13 @@ Usage:
 import pycountry
 
 # ── Non-sovereign / sub-national entities to DROP ──────────────────────────
-# These do not appear in the World Bank sovereign country panel.
-# Methodology decision: documented in CLAUDE.md §10 and approved by Claude.ai.
+# Territory drops — 10 distinct entities, 11 distinct name strings.
+# Original 7 (Checkpoint 2): Hong Kong (+ "Hong Kong SAR, China" variant),
+# Macao, Taiwan, Puerto Rico, French Polynesia, New Caledonia,
+# Virgin Islands (U.S.).
+# Added per Checkpoint 2 review (Claude.ai decision, Option a —
+# explicit drops over silent WB-join filtering, for audit-trail
+# consistency): Aruba (ABW), Bermuda (BMU), Cayman Islands (CYM).
 DROP_ENTITIES = {
     "Hong Kong",
     "Hong Kong SAR, China",
@@ -28,6 +33,9 @@ DROP_ENTITIES = {
     "Virgin Islands, U.S.",
     "French Polynesia",
     "New Caledonia",
+    "Aruba",
+    "Bermuda",
+    "Cayman Islands",
 }
 
 # ── Hardcoded alias dictionary ─────────────────────────────────────────────
