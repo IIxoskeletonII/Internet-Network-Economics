@@ -29,6 +29,10 @@ data/03_processed/ARCHIVE/
 venv/
 presentations/
 
+# OS / packaging artifacts
+.DS_Store
+*.egg-info/
+
 
 # To be deleted from the repository after the project is complete
 AUDIT_REPORT.md
