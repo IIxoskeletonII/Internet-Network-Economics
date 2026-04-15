@@ -1,0 +1,132 @@
+# Data Dictionary
+
+Column-level documentation for the four hypothesis-ready master datasets in `data/03_processed/`. Built during Phase 2B audit remediation; see `docs/PHASE_2_FIX_LOG.md` for the full repair record.
+
+---
+
+## H1: Network Effects (`h1_network_effects.csv`)
+
+- **Filepath:** `data/03_processed/h1_network_effects.csv`
+- **Grain:** asset x date (daily)
+- **Row count:** 4,384
+- **Date range:** 2020-01-01 to 2025-12-31
+- **Source pipeline:** CoinMetrics Community API (`data/01_raw/coinmetrics/transfer_count.csv`, `active_addresses.csv`) -> `notebooks/02_data_engineering.ipynb` (cells 1-11)
+- **Raw inputs:** `data/01_raw/coinmetrics/transfer_count.csv`, `data/01_raw/coinmetrics/active_addresses.csv`
+
+| Column | Unit | Type | Source | Notes |
+|--------|------|------|--------|-------|
+| `asset` | -- | string | CoinMetrics | Stablecoin identifier: `USDC`, `USDT` (aggregates `usdt_eth` + `usdt_trx` from CoinMetrics) |
+| `date` | YYYY-MM-DD | date | CoinMetrics | UTC daily granularity |
+| `active_addresses` | count | int | CoinMetrics `AdrActCnt` | Daily unique active addresses; independent variable for Metcalfe test |
+| `transfer_count` | count | int | CoinMetrics `TxTfrCnt` | Daily on-chain transfer count; dependent variable for H1. Replaced `TxTfrValAdjUSD` (Pro-tier only, HTTP 403) |
+
+**Known limitations:**
+- Transfer count (`TxTfrCnt`) was chosen over transfer value (`TxTfrValAdjUSD`) because the value metric is paywalled on CoinMetrics Community tier. Count-based Metcalfe tests have literature precedent (Peterson 2018, Wheatley et al. 2018) but beta is expected below 2.0.
+- Yahoo Finance volume data was the original H1 source but was deprecated after discovering $83T USDC outliers on 2022-01-26 and 2022-01-29. See `PHASE_2_FIX_LOG.md` and `AUDIT_REPORT.md` for details.
+
+---
+
+## H2: Diffusion & Institutional Gaps (`h2_diffusion_dataset.csv`)
+
+- **Filepath:** `data/03_processed/h2_diffusion_dataset.csv`
+- **Grain:** country x year
+- **Row count:** 861 (160 countries, 2020-2025; unbalanced panel)
+- **Date range:** 2020 to 2025
+- **Source pipeline:** Chainalysis adoption index CSVs (`data/01_raw/chainalysis/`) + World Bank indicators (`data/01_raw/worldbank/`) -> `scripts/standardize_country_names.py` + `scripts/apply_chainalysis_standardization.py` + `scripts/clean_worldbank_panel.py` -> `notebooks/02_data_engineering.ipynb` (cells 14-16)
+- **Raw inputs:** `data/01_raw/chainalysis/adoption_index_20[20-25].csv`, `data/01_raw/worldbank/gdp_per_capita_usd.csv`, `data/01_raw/worldbank/inflation_cpi_annual_pct.csv`, `data/01_raw/worldbank/remittances_received_pct_gdp.csv`, `data/01_raw/worldbank/financial_account_ownership_pct.csv`
+
+| Column | Unit | Type | Source | Notes |
+|--------|------|------|--------|-------|
+| `country_iso3` | -- | string (ISO 3166-1 alpha-3) | Derived | Standardized via `scripts/standardize_country_names.py`; join key |
+| `country_name` | -- | string | Chainalysis | Canonical English name from Chainalysis reports |
+| `year` | year | int | -- | Panel time dimension (2020-2025) |
+| `adoption_percentile` | 0.0-1.0 | float | Derived from Chainalysis rank | H2 dependent variable. Formula: `1 - (rank - 1) / (max_rank - 1)`. "Among lowest" countries receive 0.0 |
+| `rank` | ordinal | float (NaN for "Among lowest") | Chainalysis | Original Chainalysis ranking; NaN for 12 unranked rows in 2020 |
+| `rank_note` | -- | string or NaN | Chainalysis | "Among lowest" for 2020 unranked countries; NaN otherwise |
+| `overall_score` | 0-1 | float or NaN | Chainalysis | Non-null for 2020-2021 only (Chainalysis discontinued scores after 2021); robustness use |
+| `centralized_service_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2022-2025 |
+| `defi_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2022-2025 |
+| `institutional_centralized_service_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2025 only |
+| `number_of_onchain_deposits_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2020 only |
+| `onchain_retail_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2020-2021 |
+| `onchain_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2020-2021 |
+| `p2p_exchange_trade_volume_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2020-2023 |
+| `retail_centralized_service_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2022-2025 |
+| `retail_defi_value_received_rank` | ordinal | float or NaN | Chainalysis | Sub-index; non-null for 2022-2024 |
+| `gdp_per_capita_usd` | USD | float or NaN | World Bank WDI (NY.GDP.PCAP.CD) | Current US dollars; NaN where WB has no data |
+| `inflation_cpi_annual_pct` | percent | float or NaN | World Bank WDI (FP.CPI.TOTL.ZG) | Annual CPI inflation rate |
+| `financial_account_baseline` | percent | float or NaN | World Bank Global Findex (FX.OWN.TOTL.ZS) | Time-invariant within country. Sourced from most recent Findex wave (139 countries at 2024, 5 at 2021, 1 at 2022). Absorbed by country FE in two-way specs |
+| `baseline_year` | year | float or NaN | Derived | Year of the Findex observation used for `financial_account_baseline` (2021, 2022, or 2024) |
+| `remittances_received_pct_gdp` | percent of GDP | float or NaN | World Bank WDI (BX.TRF.PWKR.DT.GD.ZS) | Personal remittances received as share of GDP |
+| `post_2022` | 0/1 | int | Derived | Structural break dummy: 1 if year >= 2023, 0 otherwise |
+| `is_forward_filled` | True/False | bool | Derived | True for 2025 observations where WB indicators are forward-filled from 2024 |
+
+**Known limitations:**
+- 2025 World Bank indicators are forward-filled from 2024 (no 2025 WB data published yet). The `is_forward_filled` flag enables robustness exclusion in Phase 3.
+- `financial_account_baseline` is time-invariant and absorbed by country FE; re-introduce via interaction terms if needed.
+- Join attrition: 7 rows (0.8%) from Cuba (0 overlap years), Syria (partial), Yemen (0 overlap years) due to WB data sparsity. No G20 countries affected.
+- 8 single-year countries (ATG, LBR, LCA, MCO, MRT, NER, SDN, TCD) should be excluded from two-way FE specifications.
+- Sub-index columns vary across years because Chainalysis changed its methodology and published sub-index set each year. Sub-indices available per year: 2020 (number_of_onchain_deposits, onchain_retail_value_received, onchain_value_received, p2p_exchange_trade_volume); 2021 (onchain_retail_value_received, onchain_value_received, p2p_exchange_trade_volume); 2022-2023 (centralized_service_value_received, defi_value_received, p2p_exchange_trade_volume, retail_centralized_service_value_received, retail_defi_value_received); 2024 (centralized_service_value_received, defi_value_received, retail_centralized_service_value_received, retail_defi_value_received); 2025 (centralized_service_value_received, defi_value_received, institutional_centralized_service_value_received, retail_centralized_service_value_received). All column names have `_rank` suffix.
+- Google Trends was the original H2 DV but was replaced because global search intensity has no cross-sectional variation. See `AUDIT_REPORT.md`.
+
+---
+
+## H3: Market Concentration (`h3_concentration.csv`)
+
+- **Filepath:** `data/03_processed/h3_concentration.csv`
+- **Grain:** month
+- **Row count:** 72
+- **Date range:** 2020-01-01 to 2025-12-01
+- **Source pipeline:** DefiLlama stablecoin supply data (`data/01_raw/defillama/stablecoin_supply_by_chain.csv`) -> `notebooks/02_data_engineering.ipynb` (cells 20-22)
+- **Raw inputs:** `data/01_raw/defillama/stablecoin_supply_by_chain.csv`
+
+| Column | Unit | Type | Source | Notes |
+|--------|------|------|--------|-------|
+| `date` | YYYY-MM-DD | date | Derived | First of month (monthly frequency) |
+| `hhi_full` | 0-10,000 | float | Derived | Herfindahl-Hirschman Index across all stablecoins. Computed from market share of total supply |
+| `hhi_top5` | 0-10,000 | float | Derived | HHI computed across top-5 stablecoins only; robustness measure |
+| `n_stablecoins` | count | int | DefiLlama | Number of stablecoins with non-zero supply in that month |
+| `total_supply_usd` | USD | float | DefiLlama | Total stablecoin market supply (sum across all coins and chains) |
+| `top_stablecoin` | -- | string | Derived | Symbol of the largest stablecoin by supply that month |
+| `top_stablecoin_share` | 0.0-1.0 | float | Derived | Market share of the top stablecoin |
+
+**Known limitations:**
+- HHI is computed across stablecoins (not across chains), at monthly frequency, per Roadmap spec.
+- DefiLlama supply data uses `circulating` supply (not `total` which includes bridged/locked tokens). Bridge tokens and duplicate stablecoin IDs were filtered during aggregation. See `data/02_intermediate/h3_diagnostic_report.md` for the full diagnostic.
+- Terra/UST collapse (May 2022): DefiLlama marks UST supply as ~0 from June 2022 onward (post-depeg). The HHI dip in May-June 2022 reflects USDT gaining share as UST collapsed, not a genuine competitive rebalancing. See the diagnostic report's Terra decomposition section for Phase 4 narrative guidance.
+- The H3 dataset did not exist in the pre-audit repo; it was built from scratch in Phase 2B.3.
+
+---
+
+## H4: Infrastructure Cost (`h4_infrastructure_cost.csv`)
+
+- **Filepath:** `data/03_processed/h4_infrastructure_cost.csv`
+- **Grain:** month
+- **Row count:** 72
+- **Date range:** 2020-01 to 2025-12
+- **Source pipeline:** Etherscan USDC transfers (`data/01_raw/etherscan/`) + Tronscan USDT transfers (`data/01_raw/tronscan/`) + CoinMetrics prices (`data/01_raw/coinmetrics/eth_trx_price_usd.csv`) + World Bank Remittance Prices Worldwide -> `notebooks/02_data_engineering.ipynb` (cells 9, 18)
+- **Raw inputs:** `data/01_raw/etherscan/usdc_transfers_sample.csv`, `data/01_raw/tronscan/usdt_transfers_sample.csv`, `data/01_raw/coinmetrics/eth_trx_price_usd.csv`
+
+| Column | Unit | Type | Source | Notes |
+|--------|------|------|--------|-------|
+| `month` | YYYY-MM | string | Derived | Monthly aggregation period |
+| `eth_mean_fee_usd` | USD | float | Etherscan + CoinMetrics ETH price | Mean USDC transfer fee on Ethereum, after monthly rolling 95th percentile gas filter |
+| `eth_median_fee_usd` | USD | float | Etherscan + CoinMetrics ETH price | Median USDC transfer fee on Ethereum |
+| `eth_p95_fee_usd` | USD | float | Etherscan + CoinMetrics ETH price | 95th percentile USDC transfer fee on Ethereum |
+| `eth_tx_count` | count | int | Etherscan | Number of sampled Ethereum transactions in that month (post-filter); range ~950-1000 |
+| `tron_mean_fee_usd` | USD | float | Tronscan + CoinMetrics TRX price | Mean USDT transfer fee on Tron, converted from TRX via daily price |
+| `tron_median_fee_usd` | USD | float | Tronscan + CoinMetrics TRX price | Median USDT transfer fee on Tron |
+| `tron_p95_fee_usd` | USD | float | Tronscan + CoinMetrics TRX price | 95th percentile USDT transfer fee on Tron |
+| `tron_tx_count` | count | int | Tronscan | Number of sampled Tron transactions per month; **n=20 (see limitations)** |
+| `post_ftx` | 0/1 | int | Derived | Structural break dummy: 1 if month >= 2022-12, 0 otherwise. Nov 2022 is assigned to pre-crisis since most of the month preceded the Nov 11 FTX collapse, parallel to H2's `post_2022` treatment |
+| `legacy_pct_fee` | proportion (e.g. 0.0508) | float | World Bank RPW | Legacy remittance percentage fee by year. 2020=5.08%, 2021=4.60%, 2022=3.95%, 2023=3.85%; 2024-2025 forward-filled from 2023 |
+| `legacy_flat_fee` | USD | float | Assumption | Set to 0.0 globally. WB RPW reports blended percentages without a separate flat component |
+
+**Known limitations:**
+- **Tron n=20 per month:** Sample expansion to n>=1000 was blocked by TronGrid API rate limits (HTTP 429) and CoinMetrics fee metric paywalling (HTTP 400). The n=20 sample has median within-month CV of 1.29 and 95% CI half-width averaging 62% of the mean. Phase 3 must use medians (not means) as the headline Tron statistic and report CIs explicitly.
+- **`legacy_flat_fee` = 0.0 assumption:** WB RPW reports blended percentage averages without separating flat and percentage components. The dashboard (Phase 5) should treat a corridor-typical $3-5 flat fee as a sensitivity case.
+- **2024-2025 legacy fee forward-fill:** WB RPW last published 2023 global averages; 2024-2025 use the 2023 value (3.85%). Phase 3 should note this assumption.
+- **ETH gas filter:** Monthly rolling 95th percentile (not global). Per-month thresholds logged to `data/02_intermediate/eth_gas_filter_thresholds.csv`.
+- **Pre-audit merge bug:** The original H4 pipeline duplicated Etherscan rows (72K -> 136.8K) by merging on date without filtering the price file by asset. Fixed at CP5. Broken version preserved in `data/03_processed/ARCHIVE/`.
+- **Tron fees originally in TRX:** Pre-audit pipeline never converted to USD. Fixed at CP5 via CoinMetrics TRX daily price.
+- **ETH fee crossover:** In 6 months of 2025 (post-Dencun), ETH mean fees undercut Tron mean fees. H4 should be framed as "congestion-dependent" cost advantage, not universal superiority.

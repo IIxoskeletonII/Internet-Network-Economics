@@ -6,6 +6,36 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Data Guardrail (Prevents pushing massive raw files to GitHub)
-data/01_raw/
-data/02_intermediate/
+# Data Guardrail — tiered policy
+# Raw API/scraper outputs: ignored (large, re-fetchable from source)
+data/01_raw/coinmetrics/
+data/01_raw/etherscan/
+data/01_raw/tronscan/
+data/01_raw/defillama/
+data/01_raw/worldbank/
+data/01_raw/yfinance/
+
+# Raw Chainalysis: track CSVs (manually corrected, irreplaceable), ignore PDFs (53MB+)
+data/01_raw/chainalysis/*.pdf
+
+# Intermediate and processed datasets: TRACKED (work product, audit trail)
+# Exception: archived broken pre-audit masters (kept locally as evidence, not pushed)
+data/03_processed/ARCHIVE/
+
+# PDFs anywhere
+*.pdf
+
+# Environment & Presentations
+venv/
+presentations/
+
+# OS / packaging artifacts
+.DS_Store
+*.egg-info/
+
+
+# To be deleted from the repository after the project is complete
+AUDIT_REPORT.md
+CLAUDE.md
+.claude/
+Master_Recovery_Roadmap.md
