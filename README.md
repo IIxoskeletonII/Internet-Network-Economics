@@ -157,6 +157,13 @@ During Phase 2 closure, a systematic audit (`AUDIT_REPORT.md`) identified five c
 
 **Phase 2B (audit remediation) complete. Phase 3 (empirical analysis) next.**
 
+## Team
+
+Eliya Allam
+Simone Filosofi
+Mattia Cerrvelli
+
+
 ## License
 
 Academic project -- MSc Data Science and Management, Internet and Network Economics module.

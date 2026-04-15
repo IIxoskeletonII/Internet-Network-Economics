@@ -16,6 +16,8 @@ Forward-looking checklist to be **executed after Phase 3 completes but before fi
 
 - [ ] **`scripts/scrape_tronscan_expanded.py`** — Failed Option A for Tron sample expansion (rate-limited at ~100 calls). Preserved through Phase 2B as evidence of the attempt. Can archive after final submission. No runtime dependency.
 
+- [ ] **`data/02_intermediate/wb_cleaned.csv`** — Phase 2.1 atomic export of World Bank data (produced by cell 12 of `02_data_engineering.ipynb`). Zero consumers — nothing reads this file back. Superseded by `data/02_intermediate/wb_panel_cleaned.csv`, which is produced by `scripts/clean_worldbank_panel.py` directly from raw data and consumed by the H2 build cell. Safe to delete; the producer line in cell 12 can be cleaned up in the same pass as the yfinance lines below.
+
 ---
 
 ## Investigate before deleting
@@ -28,7 +30,16 @@ Forward-looking checklist to be **executed after Phase 3 completes but before fi
 
 - [ ] **`data/01_raw/yfinance/USDC_daily_volume.csv` and `USDT_daily_volume.csv`** — Superseded by CoinMetrics in CP2 after the $83T USDC outlier discovery. Keep for audit trail or delete. Referenced by cell 3 of `02_data_engineering.ipynb` at load time, but the loaded DataFrames are only used in the deprecated Phase 2.1 intermediate export (cell 12). Removing these files would require updating cell 3 to skip the yfinance loads.
 
-- [ ] **`yfinance` and `pytrends` in `requirements.txt`** — These pin deprecated data source libraries. `yfinance` is still loaded in notebook 02 cell 3 (benign as long as the yfinance files exist); `pytrends` has no runtime reference. Remove both pins after the yfinance cell-3 load is also removed in Phase 4 cleanup.
+- [ ] **`data/02_intermediate/yf_usdc_volume_cleaned.csv` and `yf_usdt_volume_cleaned.csv`** — Phase 2.1 atomic exports (produced by cell 12 of `02_data_engineering.ipynb`). Zero consumers — nothing reads these files back. H1 DV was switched from Yahoo Finance volume to CoinMetrics `TxTfrCnt` during Phase 2B.2 (see `PHASE_2_FIX_LOG.md` §2B.2). However, cell 3 of `02_data_engineering.ipynb` still loads the raw yfinance files **without** an `os.path.exists` guard, and cell 12 exports the cleaned versions. Deleting intermediates alone is safe but incomplete — the full cleanup is bundled with the raw yfinance removal below. **Concrete cleanup recipe (execute as a single pass in Phase 4):**
+  1. Delete the two `yf_usdc_df` / `yf_usdt_df` load lines from cell 3 of `02_data_engineering.ipynb`
+  2. Delete the `standardize_dates()` calls for `yf_usdc_df` and `yf_usdt_df` in the standardization cell (~line 107)
+  3. Delete the two `.to_csv()` export lines for yf files in cell 12 (~line 210)
+  4. Delete `data/02_intermediate/yf_usdc_volume_cleaned.csv` and `yf_usdt_volume_cleaned.csv`
+  5. Delete `data/01_raw/yfinance/` directory (already flagged below)
+  6. Remove `yfinance` from `requirements.txt` and re-pin via `pip freeze`
+  7. Re-run notebook 02 top-to-bottom to verify no NameError from removed variables
+
+- [ ] **`yfinance` and `pytrends` in `requirements.txt`** — These pin deprecated data source libraries. `yfinance` is still loaded in notebook 02 cell 3 (benign as long as the yfinance files exist); `pytrends` has no runtime reference. Remove both pins after the yfinance cell-3 load is also removed per the recipe above.
 
 ---
 
@@ -71,3 +82,9 @@ These working files serve ongoing purposes and should NOT be cleaned up:
 - `data/02_intermediate/h3_diagnostic_report.md` — Contains Phase 3/4 narrative notes; actively referenced
 - `docs/ISO3_MAPPING_REPORT.md` — Full country mapping audit trail
 - `docs/CP6_ASSERTIONS_AUDIT.md` — Assertions coverage record
+
+---
+
+## Confirmed deletable post-submission
+
+- [ ] **`docs/REPO_CLEANUP_CHECKLIST.md`** — This file. Once every item above has been executed, the checklist has served its purpose. Delete after final submission.
