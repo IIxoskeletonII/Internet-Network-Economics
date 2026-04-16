@@ -1,0 +1,386 @@
+country_code,country_name,year,value,indicator_code,indicator_name,dimension
+AF,Afghanistan,2023,9.0243334,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AF,Afghanistan,2022,10.1825,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AF,Afghanistan,2021,9.4495825,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AF,Afghanistan,2020,9.029006,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AL,Albania,2023,5.60000025,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AL,Albania,2022,6.08500025,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AL,Albania,2021,6.3769025,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AL,Albania,2020,7.1907825,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DZ,Algeria,2023,7.83,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DZ,Algeria,2022,8.8445835,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DZ,Algeria,2021,7.548335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DZ,Algeria,2020,10.918955,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AO,Angola,2023,12.784,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AO,Angola,2022,8.183333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AO,Angola,2021,12.19,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AO,Angola,2020,13.80849,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AM,Armenia,2023,4.363333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AM,Armenia,2022,4.14,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AM,Armenia,2021,3.021665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AM,Armenia,2020,3.67593,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AZ,Azerbaijan,2021,1.33333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+AZ,Azerbaijan,2020,0.99667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BD,Bangladesh,2023,7.65472241666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BD,Bangladesh,2022,3.44265145454546,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BD,Bangladesh,2021,2.79269666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BD,Bangladesh,2020,3.05936166666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BY,Belarus,2021,1.31667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BY,Belarus,2020,1.33,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BJ,Benin,2020,17.35026,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BO,Bolivia,2023,3.4495835,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BO,Bolivia,2022,4.3870835,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BO,Bolivia,2021,4.14375,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BO,Bolivia,2020,3.92218,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BA,Bosnia and Herzegovina,2023,3.863333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BA,Bosnia and Herzegovina,2022,2.225,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BA,Bosnia and Herzegovina,2021,2.73167,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BA,Bosnia and Herzegovina,2020,3.188855,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BW,Botswana,2023,8.412857,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BW,Botswana,2022,6.893333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BW,Botswana,2021,10.06,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BW,Botswana,2020,10.01726,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BR,Brazil,2023,2.422778,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BR,Brazil,2022,2.3006945,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BR,Brazil,2021,2.88389,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BR,Brazil,2020,3.10858833333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BG,Bulgaria,2023,3.45964275,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BG,Bulgaria,2022,5.09916675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BG,Bulgaria,2021,4.313125,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+BG,Bulgaria,2020,3.27856,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CV,Cabo Verde,2023,3.4375,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CV,Cabo Verde,2022,6.735,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CV,Cabo Verde,2021,5.893335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CV,Cabo Verde,2020,5.782475,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KH,Cambodia,2023,2.12,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KH,Cambodia,2022,4.306667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KH,Cambodia,2021,4.38667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KH,Cambodia,2020,3.58702,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CM,Cameroon,2023,3.023333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CM,Cameroon,2022,2.4,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CM,Cameroon,2021,2.89,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CM,Cameroon,2020,2.11905,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CN,China,2023,2.826364625,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CN,China,2022,3.1046875,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CN,China,2021,3.279879375,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CN,China,2020,4.39812375,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CO,Colombia,2023,2.434,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CO,Colombia,2022,2.4858335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CO,Colombia,2021,2.945,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CO,Colombia,2020,1.559065,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KM,Comoros,2023,1.743333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KM,Comoros,2022,2.943333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KM,Comoros,2021,2.92667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KM,Comoros,2020,3.66443,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CD,"Congo, Dem. Rep.",2023,1.98,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CD,"Congo, Dem. Rep.",2022,7.96,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CD,"Congo, Dem. Rep.",2021,7.87333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CD,"Congo, Dem. Rep.",2020,7.86944,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CR,Costa Rica,2023,2.26,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CR,Costa Rica,2022,2.776667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CR,Costa Rica,2021,3.5,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CR,Costa Rica,2020,2.91342,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CI,Cote d'Ivoire,2023,0.743333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CI,Cote d'Ivoire,2022,0.376667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CI,Cote d'Ivoire,2021,2.09,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CI,Cote d'Ivoire,2020,1.19048,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HR,Croatia,2023,0.266,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HR,Croatia,2022,1.0516665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HR,Croatia,2021,3.196665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HR,Croatia,2020,0.46793,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CU,Cuba,2023,19.63,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CU,Cuba,2022,17.039999,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CU,Cuba,2021,10.58,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+CU,Cuba,2020,10.53333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DO,Dominican Republic,2023,2.51977766666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DO,Dominican Republic,2022,1.912222,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DO,Dominican Republic,2021,1.57,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+DO,Dominican Republic,2020,2.24808,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EC,Ecuador,2023,2.29555566666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EC,Ecuador,2022,0.306667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EC,Ecuador,2021,2.48,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EC,Ecuador,2020,2.52204333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EG,"Egypt, Arab Rep.",2023,3.30309514285714,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EG,"Egypt, Arab Rep.",2022,3.93027783333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EG,"Egypt, Arab Rep.",2021,4.77405,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EG,"Egypt, Arab Rep.",2020,4.70560714285714,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SV,El Salvador,2023,2.0,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SV,El Salvador,2022,0.0,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SV,El Salvador,2021,1.91667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SV,El Salvador,2020,0.0,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ER,Eritrea,2023,9.16,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ER,Eritrea,2022,9.39,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ER,Eritrea,2021,4.59,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ER,Eritrea,2020,7.75697,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EE,Estonia,2021,2.75,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+EE,Estonia,2020,5.5,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SZ,Eswatini,2023,1.82,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SZ,Eswatini,2022,1.82,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SZ,Eswatini,2021,0.73,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SZ,Eswatini,2020,1.45912,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ET,Ethiopia,2023,3.41479175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ET,Ethiopia,2022,3.97583325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ET,Ethiopia,2021,6.1008325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ET,Ethiopia,2020,6.5764475,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+FJ,Fiji,2023,3.2245835,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+FJ,Fiji,2022,3.1916665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+FJ,Fiji,2021,4.311665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+FJ,Fiji,2020,3.810785,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GM,"Gambia, The",2023,6.76,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GM,"Gambia, The",2022,5.533333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GM,"Gambia, The",2021,7.26,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GM,"Gambia, The",2020,1.69985,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GE,Georgia,2021,0.8475,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GE,Georgia,2020,0.7475,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GH,Ghana,2023,2.0085,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GH,Ghana,2022,1.4246666,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GH,Ghana,2021,3.326668,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GH,Ghana,2020,3.476578,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GT,Guatemala,2023,2.556667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GT,Guatemala,2022,2.786667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GT,Guatemala,2021,3.41,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GT,Guatemala,2020,3.21713,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GY,Guyana,2023,7.925,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GY,Guyana,2022,7.617917,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GY,Guyana,2021,8.131665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+GY,Guyana,2020,7.425115,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HT,Haiti,2023,4.70020825,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HT,Haiti,2022,5.26833325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HT,Haiti,2021,3.986665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HT,Haiti,2020,6.323135,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HN,Honduras,2023,2.6233335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HN,Honduras,2022,2.8033335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HN,Honduras,2021,2.055,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HN,Honduras,2020,2.167105,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HU,Hungary,2023,1.613889,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HU,Hungary,2022,1.83444466666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HU,Hungary,2021,2.03833333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+HU,Hungary,2020,2.13359,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+IN,India,2023,1.75675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+IN,India,2022,1.7711667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+IN,India,2021,2.077217,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+IN,India,2020,2.322085,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ID,Indonesia,2023,2.43805555555556,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ID,Indonesia,2022,2.90518511111111,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ID,Indonesia,2021,3.37685111111111,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ID,Indonesia,2020,3.91991111111111,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JM,Jamaica,2023,3.59333333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JM,Jamaica,2022,3.86472233333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JM,Jamaica,2021,3.41666666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JM,Jamaica,2020,3.84743666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JO,Jordan,2023,3.35166666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JO,Jordan,2022,3.91333333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JO,Jordan,2021,4.44861,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+JO,Jordan,2020,4.06415166666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KZ,Kazakhstan,2021,1.16667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KZ,Kazakhstan,2020,0.99667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KE,Kenya,2023,3.85997216666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KE,Kenya,2022,2.165,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KE,Kenya,2021,5.04345666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KE,Kenya,2020,5.200115,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+XK,Kosovo,2023,3.42125,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+XK,Kosovo,2022,3.80895825,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+XK,Kosovo,2021,4.1508325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+XK,Kosovo,2020,4.071905,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KG,Kyrgyz Republic,2023,4.22,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KG,Kyrgyz Republic,2022,6.56,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KG,Kyrgyz Republic,2021,3.45667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+KG,Kyrgyz Republic,2020,3.75639,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LA,Lao PDR,2023,4.873333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LA,Lao PDR,2022,4.785,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LA,Lao PDR,2021,3.87,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LA,Lao PDR,2020,3.57248,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LV,Latvia,2021,2.08,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LV,Latvia,2020,3.66667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LB,Lebanon,2023,5.278541625,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LB,Lebanon,2022,6.965,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LB,Lebanon,2021,5.9283325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LB,Lebanon,2020,6.63116875,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LS,Lesotho,2023,1.82,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LS,Lesotho,2022,1.46,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LS,Lesotho,2021,0.73,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LS,Lesotho,2020,5.29161,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LR,Liberia,2023,2.833333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LR,Liberia,2022,2.875,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LR,Liberia,2021,1.25,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LR,Liberia,2020,2.99667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LT,Lithuania,2023,1.4,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LT,Lithuania,2022,1.473333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LT,Lithuania,2021,2.17667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LT,Lithuania,2020,3.235175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MG,Madagascar,2023,2.925,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MG,Madagascar,2022,8.42,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MG,Madagascar,2021,16.595,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MG,Madagascar,2020,14.48583,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MW,Malawi,2023,-49.693334,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MW,Malawi,2022,-10.493334,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MW,Malawi,2021,7.59,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MW,Malawi,2020,9.39578,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MY,Malaysia,2023,0.98375,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MY,Malaysia,2022,0.8116665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MY,Malaysia,2021,0.81667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MY,Malaysia,2020,1.377485,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ML,Mali,2023,1.72666666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ML,Mali,2022,1.77722233333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ML,Mali,2021,2.615,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ML,Mali,2020,5.23867,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MX,Mexico,2023,2.653333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MX,Mexico,2022,1.34,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MX,Mexico,2021,1.78,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MX,Mexico,2020,2.27165,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MD,Moldova,2023,2.0141665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MD,Moldova,2022,3.6,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MD,Moldova,2021,3.37222333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MD,Moldova,2020,3.83956333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MA,Morocco,2023,4.173619,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MA,Morocco,2022,4.96357171428571,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MA,Morocco,2021,5.41519142857143,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MA,Morocco,2020,5.21683428571429,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MZ,Mozambique,2023,3.785,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MZ,Mozambique,2022,6.46,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MZ,Mozambique,2021,10.99333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MZ,Mozambique,2020,10.66221,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MM,Myanmar,2023,4.04,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MM,Myanmar,2022,-9.471111,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MM,Myanmar,2021,1.30889,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MM,Myanmar,2020,5.28229666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NP,Nepal,2023,2.5303125,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NP,Nepal,2022,2.24552075,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NP,Nepal,2021,2.69479125,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NP,Nepal,2020,3.51582,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NI,Nicaragua,2023,2.333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NI,Nicaragua,2022,1.69,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NI,Nicaragua,2021,2.75,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NI,Nicaragua,2020,2.768335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NG,Nigeria,2023,4.63537033333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NG,Nigeria,2022,3.47074077777778,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NG,Nigeria,2021,4.78,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+NG,Nigeria,2020,7.0342,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MK,North Macedonia,2023,2.105,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MK,North Macedonia,2022,2.243333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MK,North Macedonia,2021,3.28333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+MK,North Macedonia,2020,3.75952,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PK,Pakistan,2023,2.13861108333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PK,Pakistan,2022,2.11847208333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PK,Pakistan,2021,2.910555,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PK,Pakistan,2020,2.6960175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PA,Panama,2023,2.49,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PA,Panama,2022,1.875,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PA,Panama,2021,2.5,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PA,Panama,2020,2.49667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PY,Paraguay,2023,4.66,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PY,Paraguay,2022,6.676666,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PY,Paraguay,2021,5.18,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PY,Paraguay,2020,7.34531,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PE,Peru,2023,3.56916675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PE,Peru,2022,3.77000025,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PE,Peru,2021,4.440415,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PE,Peru,2020,5.8991975,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PH,Philippines,2023,1.67202385714286,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PH,Philippines,2022,1.43369042857143,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PH,Philippines,2021,2.34474785714286,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PH,Philippines,2020,2.697995,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PL,Poland,2023,0.8733335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PL,Poland,2022,0.9983335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PL,Poland,2021,1.173335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PL,Poland,2020,0.823555,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RO,Romania,2023,0.87333325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RO,Romania,2022,1.44166675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RO,Romania,2021,1.885,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RO,Romania,2020,0.9856675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RW,Rwanda,2023,5.75833325,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RW,Rwanda,2022,2.87750025,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RW,Rwanda,2021,6.2091675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RW,Rwanda,2020,5.5954175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+WS,Samoa,2023,4.5941665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+WS,Samoa,2022,3.1766665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+WS,Samoa,2021,5.24333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+WS,Samoa,2020,5.41435,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SN,Senegal,2023,0.72,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SN,Senegal,2022,1.3283335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SN,Senegal,2021,3.614165,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SN,Senegal,2020,3.547615,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RS,Serbia,2023,1.937,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RS,Serbia,2022,1.916,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RS,Serbia,2021,2.930666,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+RS,Serbia,2020,3.835942,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SL,Sierra Leone,2023,10.34,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SL,Sierra Leone,2022,9.906667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SL,Sierra Leone,2021,8.20667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SL,Sierra Leone,2020,12.67743,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SO,"Somalia, Fed. Rep.",2023,6.0086666,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SO,"Somalia, Fed. Rep.",2022,7.0143336,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SO,"Somalia, Fed. Rep.",2021,8.203332,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SO,"Somalia, Fed. Rep.",2020,6.476394,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZA,South Africa,2023,4.5541665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZA,South Africa,2022,2.065,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZA,South Africa,2021,3.455,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZA,South Africa,2020,5.23291,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SS,South Sudan,2023,6.47,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SS,South Sudan,2022,2.57,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SS,South Sudan,2021,5.29,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+SS,South Sudan,2020,4.98322,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LK,Sri Lanka,2023,2.1860001,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LK,Sri Lanka,2022,2.1733333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LK,Sri Lanka,2021,1.875624,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+LK,Sri Lanka,2020,2.688962,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TJ,Tajikistan,2023,10.33,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TJ,Tajikistan,2022,12.909999,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TJ,Tajikistan,2021,3.04,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TJ,Tajikistan,2020,2.984315,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TZ,Tanzania,2023,5.29555533333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TZ,Tanzania,2022,1.25555566666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TZ,Tanzania,2021,5.88,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TZ,Tanzania,2020,7.26942,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TH,Thailand,2023,2.024,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TH,Thailand,2022,2.02952385714286,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TH,Thailand,2021,1.91381,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TH,Thailand,2020,2.22575285714286,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TG,Togo,2023,2.06125,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TG,Togo,2022,0.51,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TG,Togo,2021,2.58,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TG,Togo,2020,7.74250666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TO,Tonga,2023,4.096667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TO,Tonga,2022,4.7133335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TO,Tonga,2021,5.233335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TO,Tonga,2020,5.912485,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TN,Tunisia,2023,5.5366665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TN,Tunisia,2022,8.9175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TN,Tunisia,2021,10.284475,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TN,Tunisia,2020,8.99019,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TR,Turkiye,2023,2.34041675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TR,Turkiye,2022,2.43916675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TR,Turkiye,2021,2.3091675,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+TR,Turkiye,2020,2.61558,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UG,Uganda,2023,8.861667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UG,Uganda,2022,5.48444433333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UG,Uganda,2021,7.77444333333333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UG,Uganda,2020,6.87946,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UA,Ukraine,2023,0.7175,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UA,Ukraine,2022,1.7741665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UA,Ukraine,2021,2.84237,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UA,Ukraine,2020,3.099224,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UZ,Uzbekistan,2021,2.08667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+UZ,Uzbekistan,2020,1.75,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VU,Vanuatu,2023,9.4916665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VU,Vanuatu,2022,8.053333,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VU,Vanuatu,2021,9.610835,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VU,Vanuatu,2020,7.03531,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VN,Viet Nam,2023,3.45576391666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VN,Viet Nam,2022,3.28027766666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VN,Viet Nam,2021,3.94166666666667,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+VN,Viet Nam,2020,4.19124,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PS,West Bank and Gaza,2023,1.965,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PS,West Bank and Gaza,2022,1.965,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PS,West Bank and Gaza,2021,1.965,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+PS,West Bank and Gaza,2020,6.45664,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+YE,"Yemen, Rep.",2023,2.805,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+YE,"Yemen, Rep.",2022,3.455,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZM,Zambia,2023,8.1283335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZM,Zambia,2022,5.4633335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZM,Zambia,2021,7.581665,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZM,Zambia,2020,9.179685,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZW,Zimbabwe,2023,5.2595,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZW,Zimbabwe,2022,3.4833335,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZW,Zimbabwe,2021,5.40625,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4
+ZW,Zimbabwe,2020,5.6245525,SI.RMT.COST.IB.ZS,remittance_cost_inbound_pct,D4

@@ -8,6 +8,39 @@ Empirical analysis of stablecoins as a substitute for legacy cross-border paymen
 
 This project examines the question through four testable hypotheses grounded in network economics theory. A structural break at **November 2022** (FTX collapse) is used throughout to test pre/post-crisis resilience.
 
+## Reproducing This Analysis
+
+All raw data is included in the repository. To reproduce from existing data
+(no API keys needed):
+
+1. Clone the repository and create a virtual environment:
+```bash
+   git clone <repo-url>
+   cd Internet-Network-Economics
+   python -m venv venv
+   source venv/bin/activate    # Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+```
+
+2. Run the data engineering notebook:
+```bash
+   jupyter lab
+   # Open and run: notebooks/02_data_engineering.ipynb
+```
+
+3. Run the empirical analysis notebook:
+```bash
+   # Open and run: notebooks/03_empirical_analysis.ipynb
+```
+
+**Important:** Do NOT re-run `notebooks/01_data_validation_and_api.ipynb`.
+It contains historical API calls that may produce different data, hit rate
+limits, or require API keys. The raw data it produced is already committed
+to the repository under `data/01_raw/`.
+
+See `data/01_raw/README.md` for documentation of what each raw data file
+contains and where it was sourced from.
+
 ## Hypotheses
 
 | ID | Hypothesis | Test |
@@ -98,6 +131,9 @@ cp .env.example .env
 ```
 
 **Note:** The `.env` file is gitignored and must never be committed. It is only required if re-running `01_data_validation_and_api.ipynb` to re-fetch raw data from APIs.
+
+**Note:** All raw data CSVs are committed to the repository. A fresh clone
+contains everything needed to run notebooks 02 and 03 without any API keys.
 
 **API keys required:** Only `ETHERSCAN_API_KEY` is required, and only if re-running notebook 01 to re-fetch Ethereum transaction samples. All other data sources are public/keyless:
 

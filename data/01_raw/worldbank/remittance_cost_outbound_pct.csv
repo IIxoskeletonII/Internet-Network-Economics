@@ -1,0 +1,179 @@
+country_code,country_name,year,value,indicator_code,indicator_name,dimension
+AO,Angola,2021,16.86,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AU,Australia,2023,2.878958375,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AU,Australia,2022,3.4228125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AU,Australia,2021,4.12005125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AU,Australia,2020,3.631870625,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AT,Austria,2023,1.82283333333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AT,Austria,2022,2.1225,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AT,Austria,2021,1.88805666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AT,Austria,2020,2.06010333333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BH,Bahrain,2023,3.8383335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BH,Bahrain,2022,2.36833325,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BH,Bahrain,2021,1.9425025,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BH,Bahrain,2020,3.2416725,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BE,Belgium,2023,3.80833325,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BE,Belgium,2022,6.368125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BE,Belgium,2021,5.2975,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BE,Belgium,2020,6.1374325,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BR,Brazil,2023,4.59555566666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BR,Brazil,2022,6.28694433333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BR,Brazil,2021,5.545,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+BR,Brazil,2020,7.98769666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CM,Cameroon,2023,11.655,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CM,Cameroon,2022,9.93,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CM,Cameroon,2021,14.705,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CM,Cameroon,2020,15.97728,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CA,Canada,2023,2.970911,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CA,Canada,2022,3.2757778,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CA,Canada,2021,4.171556,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CA,Canada,2020,3.89488333333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CL,Chile,2023,5.136667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CL,Chile,2022,5.256667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CL,Chile,2021,5.05,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CL,Chile,2020,7.16843,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CR,Costa Rica,2023,2.833333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CR,Costa Rica,2022,1.88,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CR,Costa Rica,2021,2.83333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CR,Costa Rica,2020,2.875,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CI,Cote d'Ivoire,2023,3.053333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CI,Cote d'Ivoire,2022,2.0,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CI,Cote d'Ivoire,2021,2.39667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CI,Cote d'Ivoire,2020,2.51183,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CZ,Czechia,2023,2.8941665,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CZ,Czechia,2022,3.19,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CZ,Czechia,2021,3.36333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CZ,Czechia,2020,5.052005,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DO,Dominican Republic,2023,7.423333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DO,Dominican Republic,2022,10.736667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DO,Dominican Republic,2021,3.55333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DO,Dominican Republic,2020,10.68391,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+FR,France,2023,2.896979125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+FR,France,2022,2.9497916875,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+FR,France,2021,4.40895875,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+FR,France,2020,5.05461,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DE,Germany,2023,3.02109025,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DE,Germany,2022,3.30663195833333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DE,Germany,2021,3.79444375,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+DE,Germany,2020,4.08559041666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IN,India,2023,0.5375,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IN,India,2022,0.41,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IN,India,2021,0.75,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IL,Israel,2023,13.445,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IL,Israel,2022,13.815001,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IL,Israel,2021,15.515,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IL,Israel,2020,12.05394,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IT,Italy,2023,2.18925442105263,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IT,Italy,2022,3.91092594444444,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IT,Italy,2021,5.42986368421053,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+IT,Italy,2020,5.96445157894737,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JP,Japan,2023,2.62178585714286,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JP,Japan,2022,2.76095228571429,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JP,Japan,2021,2.68809428571429,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JP,Japan,2020,3.27544142857143,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JO,Jordan,2023,2.265,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JO,Jordan,2022,2.4475,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JO,Jordan,2021,2.4125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+JO,Jordan,2020,4.762425,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KE,Kenya,2023,5.26083325,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KE,Kenya,2022,4.01500025,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KE,Kenya,2021,4.76,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KE,Kenya,2020,5.6250375,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KR,"Korea, Rep.",2023,4.1858335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KR,"Korea, Rep.",2022,0.4766665,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KR,"Korea, Rep.",2021,3.5475,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KR,"Korea, Rep.",2020,3.30558,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KW,Kuwait,2023,2.41638883333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KW,Kuwait,2022,2.4744445,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KW,Kuwait,2021,2.48222,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+KW,Kuwait,2020,2.63293,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+MY,Malaysia,2023,2.04777788888889,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+MY,Malaysia,2022,1.48342588888889,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+MY,Malaysia,2021,1.66925888888889,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+MY,Malaysia,2020,1.91406777777778,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NL,Netherlands,2023,3.03166671428571,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NL,Netherlands,2022,3.38095242857143,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NL,Netherlands,2021,3.18333285714286,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NL,Netherlands,2020,5.23701571428571,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NZ,New Zealand,2023,3.89635425,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NZ,New Zealand,2022,3.18625,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NZ,New Zealand,2021,4.07916625,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NZ,New Zealand,2020,4.05392625,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NG,Nigeria,2020,16.0960933333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NO,Norway,2023,1.16,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NO,Norway,2022,0.8966665,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NO,Norway,2021,2.703335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+NO,Norway,2020,2.070335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+OM,Oman,2023,4.44166666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+OM,Oman,2022,3.92416666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+OM,Oman,2021,5.06566666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+OM,Oman,2020,3.77607666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PK,Pakistan,2023,7.7675005,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PK,Pakistan,2021,9.2975,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PK,Pakistan,2020,7.886005,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PT,Portugal,2023,2.073889,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PT,Portugal,2022,6.0183335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PT,Portugal,2021,5.521665,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+PT,Portugal,2020,5.791665,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+QA,Qatar,2023,4.30904771428571,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+QA,Qatar,2022,3.61880957142857,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+QA,Qatar,2021,2.6127075,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+QA,Qatar,2020,3.8635325,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RU,Russian Federation,2021,1.73929615384615,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RU,Russian Federation,2020,2.12673153846154,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RW,Rwanda,2023,7.553333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RW,Rwanda,2022,7.643333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RW,Rwanda,2021,7.02667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+RW,Rwanda,2020,8.6321,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SA,Saudi Arabia,2023,4.52,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SA,Saudi Arabia,2022,1.18839278571429,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SA,Saudi Arabia,2021,4.26555583333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SA,Saudi Arabia,2020,4.82366,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SN,Senegal,2023,1.38,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SN,Senegal,2022,3.545,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SN,Senegal,2021,3.445,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SN,Senegal,2020,3.42652,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SG,Singapore,2023,1.96814811111111,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SG,Singapore,2022,1.17999977777778,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SG,Singapore,2021,1.37185333333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SG,Singapore,2020,1.33178777777778,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ZA,South Africa,2023,3.74942484615385,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ZA,South Africa,2022,4.09602553846154,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ZA,South Africa,2021,8.40858846153846,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ZA,South Africa,2020,9.65584153846154,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ES,Spain,2023,2.23513361538462,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ES,Spain,2022,2.27794884615385,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ES,Spain,2021,2.34955153846154,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+ES,Spain,2020,1.77504769230769,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SE,Sweden,2023,4.86666675,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SE,Sweden,2022,4.6958335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SE,Sweden,2021,3.708335,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+SE,Sweden,2020,4.5090275,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CH,Switzerland,2023,4.1125002,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CH,Switzerland,2022,4.3320002,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CH,Switzerland,2021,3.192666,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+CH,Switzerland,2020,4.326178,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TZ,Tanzania,2023,12.8255556666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TZ,Tanzania,2022,8.29888866666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TZ,Tanzania,2021,11.18136,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TZ,Tanzania,2020,7.71314666666667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TH,Thailand,2023,3.6125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TH,Thailand,2022,6.57214285714286,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TH,Thailand,2021,4.75785857142857,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TH,Thailand,2020,5.07171285714286,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TR,Turkiye,2023,9.956667,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TR,Turkiye,2022,14.713334,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TR,Turkiye,2021,13.44,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+TR,Turkiye,2020,8.23776,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AE,United Arab Emirates,2023,3.07768533333333,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AE,United Arab Emirates,2022,2.35425922222222,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AE,United Arab Emirates,2021,3.81666444444445,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+AE,United Arab Emirates,2020,3.39138,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+GB,United Kingdom,2023,3.60692703125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+GB,United Kingdom,2022,2.6667708125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+GB,United Kingdom,2021,2.92351625,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+GB,United Kingdom,2020,4.0422878125,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+US,United States,2023,3.50980769230769,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+US,United States,2022,2.72570515384615,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+US,United States,2021,3.32061394736842,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4
+US,United States,2020,3.40270026315789,SI.RMT.COST.OB.ZS,remittance_cost_outbound_pct,D4

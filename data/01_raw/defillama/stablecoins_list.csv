@@ -1,0 +1,343 @@
+id,name,symbol,peg_type,peg_mechanism
+1,Tether,USDT,peggedUSD,fiat-backed
+2,USD Coin,USDC,peggedUSD,fiat-backed
+209,Sky Dollar,USDS,peggedUSD,crypto-backed
+146,Ethena USDe,USDe,peggedUSD,crypto-backed
+262,World Liberty Financial USD,USD1,peggedUSD,fiat-backed
+5,Dai,DAI,peggedUSD,crypto-backed
+120,PayPal USD,PYUSD,peggedUSD,fiat-backed
+173,BlackRock USD,BUIDL,peggedUSD,fiat-backed
+237,Circle USYC,USYC,peggedUSD,fiat-backed
+286,Global Dollar,USDG,peggedUSD,fiat-backed
+246,Falcon USD,USDf,peggedUSD,crypto-backed
+250,Ripple USD,RLUSD,peggedUSD,fiat-backed
+129,Ondo US Dollar Yield,USDY,peggedUSD,fiat-backed
+14,USDD,USDD,peggedUSD,crypto-backed
+221,Ethena USDtb,USDTB,peggedUSD,fiat-backed
+336,United Stables,U,peggedUSD,crypto-backed
+214,USDX Money USDX,USDX,peggedUSD,crypto-backed
+272,YLDS,YLDS,peggedUSD,fiat-backed
+195,Usual USD,USD0,peggedUSD,fiat-backed
+118,GHO,GHO,peggedUSD,crypto-backed
+7,TrueUSD,TUSD,peggedUSD,fiat-backed
+309,USD.AI,USDai,peggedUSD,crypto-backed
+119,First Digital USD,FDUSD,peggedUSD,fiat-backed
+310,Solstice USX,USX,peggedUSD,crypto-backed
+110,crvUSD,crvUSD,peggedUSD,crypto-backed
+220,Avalon USDa,USDA,peggedUSD,crypto-backed
+153,Binance Peg BUSD,BUSD,peggedUSD,crypto-backed
+346,Neutrl USD,NUSD,peggedUSD,crypto-backed
+6,Frax,FRAX,peggedUSD,algorithmic
+17,HUSD,HUSD,peggedUSD,fiat-backed
+213,M by M0,M,peggedUSD,fiat-backed
+15,Dola,DOLA,peggedUSD,crypto-backed
+298,infiniFi USD,IUSD,peggedUSD,crypto-backed
+21,flexUSD,FLEXUSD,peggedUSD,crypto-backed
+205,Agora Dollar,AUSD,peggedUSD,fiat-backed
+218,River Stablecoin,satUSD,peggedUSD,crypto-backed
+219,Astherus,USDF,peggedUSD,crypto-backed
+306,Gate USD,GUSD,peggedUSD,fiat-backed
+340,rwaUSDi,rwaUSDi,peggedUSD,crypto-backed
+341,Pleasing USD,PUSD,peggedUSD,crypto-backed
+197,Resolv USD,USR,peggedUSD,crypto-backed
+271,Avant USD,avUSD,peggedUSD,fiat-backed
+235,Frax USD,FRXUSD,peggedUSD,fiat-backed
+339,Re Protocol reUSD,reUSD,peggedUSD,crypto-backed
+296,Cap cUSD,CUSD,peggedUSD,crypto-backed
+332,pmUSD,pmUSD,peggedUSD,crypto-backed
+316,CASH,CASH,peggedUSD,fiat-backed
+252,StandX DUSD,DUSD,peggedUSD,crypto-backed
+284,MNEE USD,MNEE,peggedUSD,fiat-backed
+315,US Permissionless Dollar,USPD,peggedUSD,crypto-backed
+202,Anzen USDz,USDz,peggedUSD,fiat-backed
+210,Elixir deUSD,DEUSD,peggedUSD,crypto-backed
+257,OpenEden TBILL,TBILL,peggedUSD,fiat-backed
+321,USDH Stablecoin,USDH,peggedUSD,fiat-backed
+79,Lista USD,LISUSD,peggedUSD,crypto-backed
+166,Cygnus Finance Global USD,cgUSD,peggedUSD,fiat-backed
+283,Unitas,USDU,peggedUSD,crypto-backed
+97,USP Stablecoin,USP,peggedUSD,crypto-backed
+335,JupUSD,JUPUSD,peggedUSD,crypto-backed
+241,OpenDollar USDO,USDO,peggedUSD,fiat-backed
+342,MegaUSD,USDM,peggedUSD,crypto-backed
+344,Yuzu USD,YZUSD,peggedUSD,crypto-backed
+348,Fidelity Digital Dollar,FIDD,peggedUSD,fiat-backed
+275,Quantoz USDQ,USDQ,peggedUSD,fiat-backed
+347,USDGO,USDGO,peggedUSD,fiat-backed
+290,StraitsX XUSD,XUSD,peggedUSD,fiat-backed
+19,Gemini Dollar,GUSD,peggedUSD,fiat-backed
+263,Hex Trust USDX,USDX,peggedUSD,fiat-backed
+22,sUSD,SUSD,peggedUSD,crypto-backed
+11,Pax Dollar,USDP,peggedUSD,fiat-backed
+4,Binance USD,BUSD,peggedUSD,fiat-backed
+255,Aegis YUSD,YUSD,peggedUSD,fiat-backed
+256,Resupply USD,REUSD,peggedUSD,crypto-backed
+67,Bean,BEAN,peggedUSD,algorithmic
+10,Magic Internet Money,MIM,peggedUSD,crypto-backed
+8,Liquity USD,LUSD,peggedUSD,crypto-backed
+269,Liquity BOLD,BOLD,peggedUSD,crypto-backed
+230,Noon USN,USN,peggedUSD,crypto-backed
+225,Zoth ZeUSD,ZeUSD,peggedUSD,fiat-backed
+297,Main Street USD,MSUSD,peggedUSD,crypto-backed
+185,Gyroscope GYD,GYD,peggedUSD,crypto-backed
+172,USDB Blast,USDB,peggedUSD,crypto-backed
+12,Neutrino USD,USDN,peggedUSD,algorithmic
+154,Bucket Protocol BUCK Stablecoin,BUCK,peggedUSD,crypto-backed
+282,Noble Dollar,USDN,peggedUSD,fiat-backed
+231,Honey,HONEY,peggedUSD,crypto-backed
+307,USD CoinVertible,USDCV,peggedUSD,fiat-backed
+313,Metamask USD,MUSD,peggedUSD,crypto-backed
+106,Electronic USD,EUSD,peggedUSD,crypto-backed
+326,Metronome Synth USD,MSUSD,peggedUSD,crypto-backed
+305,XSY UTY,UTY,peggedUSD,crypto-backed
+343,USAT,USAT,peggedUSD,fiat-backed
+63,Fantom USD,FUSD,peggedUSD,crypto-backed
+353,GAIB AID,AID,peggedUSD,fiat-backed
+303,Mezo USD,MUSD,peggedUSD,crypto-backed
+31,SpiceUSD,USDS,peggedUSD,algorithmic
+329,Nectar,NECT,peggedUSD,crypto-backed
+302,Hylo HYUSD,HYUSD,peggedUSD,crypto-backed
+354,apxUSD,apxUSD,peggedUSD,crypto-backed
+251,Felix feUSD,FEUSD,peggedUSD,crypto-backed
+168,fxUSD,fxUSD,peggedUSD,crypto-backed
+215,Moneta,USDM,peggedUSD,fiat-backed
+24,Celo Dollar,CUSD,peggedUSD,algorithmic
+20,Alchemix USD,ALUSD,peggedUSD,algorithmic
+331,USP,USP,peggedUSD,crypto-backed
+312,Hydrated Dollar,HOLLAR,peggedUSD,crypto-backed
+13,YUSD Stablecoin,YUSD,peggedUSD,crypto-backed
+234,Worldwide USD,WUSD,peggedUSD,fiat-backed
+75,Youves uUSD,UUSD,peggedUSD,crypto-backed
+115,R,R,peggedUSD,crypto-backed
+85,Real USD,USDR,peggedUSD,algorithmic
+327,Mu Digital AZND,AZND,peggedUSD,crypto-backed
+242,Hermetica USDh,USDH,peggedUSD,fiat-backed
+244,Lift Dollar,USDL,peggedUSD,fiat-backed
+324,Stable Coin,SBC,peggedUSD,fiat-backed
+245,Anzens USDA,USDA,peggedUSD,fiat-backed
+44,dForce USD,USX,peggedUSD,crypto-backed
+46,USD+,USD+,peggedUSD,crypto-backed
+103,NXUSD,NXUSD,peggedUSD,crypto-backed
+183,Bitcoin USD,BtcUSD,peggedUSD,crypto-backed
+178,Web 3 Dollar,USD3,peggedUSD,crypto-backed
+253,USBD,USBD,peggedUSD,crypto-backed
+23,Origin Dollar,OUSD,peggedUSD,crypto-backed
+266,Plume USD,pUSD,peggedUSD,crypto-backed
+216,Solayer USD,sUSD,peggedUSD,fiat-backed
+60,HomeCoin,HOME,peggedUSD,crypto-backed
+268,YU,YU,peggedUSD,crypto-backed
+304,USDU Finance,USDU,peggedUSD,crypto-backed
+240,StablR USD,USDR,peggedUSD,fiat-backed
+89,XAI,XAI,peggedUSD,crypto-backed
+30,Dollar on Chain,DOC,peggedUSD,crypto-backed
+16,Parrot USD,PAI,peggedUSD,crypto-backed
+328,Mustang Finance,MUST,peggedUSD,crypto-backed
+42,USDX,USDX,peggedUSD,crypto-backed
+349,Pareto USP,USP,peggedUSD,crypto-backed
+9,Fei USD,FEI,peggedUSD,algorithmic
+93,Djed StableCoin,DJED,peggedUSD,algorithmic
+291,Parallel USDp,USDp,peggedUSD,crypto-backed
+26,mStable USD,MUSD,peggedUSD,crypto-backed
+204,Balanced Dollars,BNUSD,peggedUSD,crypto-backed
+261,Solomon USDv,USDV,peggedUSD,crypto-backed
+70,DigitalDollar,DUSD,peggedUSD,fiat-backed
+18,Nexus USD,NUSD,peggedUSD,crypto-backed
+33,USDP Stablecoin,USDP,peggedUSD,crypto-backed
+152,Liquid Loans USDL,USDL,peggedUSD,crypto-backed
+28,Vai,VAI,peggedUSD,crypto-backed
+88,iUSD,IUSD,peggedUSD,crypto-backed
+236,Synnax Stablecoin,syUSD,peggedUSD,crypto-backed
+224,dTRINITY USD,dUSD,peggedUSD,crypto-backed
+188,Orby USC,USC,peggedUSD,crypto-backed
+162,XUSD,XUSD,peggedUSD,crypto-backed
+160,Sovryn Dollar,DLLR,peggedUSD,crypto-backed
+155,Glo Dollar,USDGLO,peggedUSD,fiat-backed
+295,Asymmetry USDaf V2,USDaf,peggedUSD,crypto-backed
+192,USDA,USDA,peggedUSD,crypto-backed
+83,USDW,USDW,peggedUSD,crypto-backed
+277,SMARDEX USDN,USDN,peggedUSD,crypto-backed
+54,USN,USN,peggedUSD,algorithmic
+132,USDM,USDM,peggedUSD,fiat-backed
+285,Good Game US Dollar,GGUSD,peggedUSD,crypto-backed
+322,Last USD,USDXL,peggedUSD,crypto-backed
+159,RIF US Dollar,USDRIF,peggedUSD,crypto-backed
+287,Nerite USND,USND,peggedUSD,crypto-backed
+176,Fathom Dollar,FXD,peggedUSD,crypto-backed
+65,USDH,USDH,peggedUSD,crypto-backed
+78,Note,NOTE,peggedUSD,crypto-backed
+151,zkUSD Dollar,zkUSD,peggedUSD,crypto-backed
+232,Pinto,PINTO,peggedUSD,crypto-backed
+308,Saga Dollar,D,peggedUSD,crypto-backed
+238,Rings scUSD,SCUSD,peggedUSD,crypto-backed
+92,Meme Dollar,PINA,peggedUSD,algorithmic
+107,Czodiac USD,CZUSD,peggedUSD,crypto-backed
+350,Citrea USD,ctUSD,peggedUSD,fiat-backed
+278,WEUSD,WEUSD,peggedUSD,crypto-backed
+81,USK,USK,peggedUSD,crypto-backed
+293,Sigma Money bnbUSD,BNBUSD,peggedUSD,crypto-backed
+32,Sperax USD,USDS,peggedUSD,crypto-backed
+43,ZUSD,ZUSD,peggedUSD,fiat-backed
+100,Digital Standard Unit,DSU,peggedUSD,crypto-backed
+229,Level USD,LVLUSD,peggedUSD,crypto-backed
+175,PXDC Stablecoin,PXDC,peggedUSD,crypto-backed
+171,Lets Get HAI,HAI,peggedUSD,crypto-backed
+125,eUSD (V2),eUSD(v2),peggedUSD,crypto-backed
+211,Threshold USD,THUSD,peggedUSD,crypto-backed
+198,Stable Jack aUSD,aUSD,peggedUSD,crypto-backed
+135,Inter Stable Token,IST,peggedUSD,crypto-backed
+27,USDK,USDK,peggedUSD,fiat-backed
+143,Verified USD,USDV,peggedUSD,fiat-backed
+58,3USD,3USD,peggedUSD,crypto-backed
+72,Kolibri USD,KUSD,peggedUSD,crypto-backed
+333,mantraUSD,mantraUSD,peggedUSD,crypto-backed
+180,Bread,BREAD,peggedUSD,crypto-backed
+116,GRAI,GRAI,peggedUSD,crypto-backed
+174,rUSD,rUSD,peggedUSD,crypto-backed
+227,Legacy BOLD,BOLD,peggedUSD,crypto-backed
+217,Reservoir Stablecoin,rUSD,peggedUSD,fiat-backed
+206,Opus CASH,CASH,peggedUSD,crypto-backed
+201,HEX Dollar Coin,HEXDC,peggedUSD,crypto-backed
+288,EBUSD,EBUSD,peggedUSD,crypto-backed
+64,UXD Stablecoin,UXD,peggedUSD,algorithmic
+181,Zunami USD,zunUSD,peggedUSD,crypto-backed
+29,TOR,TOR,peggedUSD,crypto-backed
+71,Vesta Stable,VST,peggedUSD,crypto-backed
+126,mkUSD,mkUSD,peggedUSD,crypto-backed
+112,USDT+,USDT+,peggedUSD,crypto-backed
+48,BAI Stablecoin,BAI,peggedUSD,crypto-backed
+73,USDtez,USDTZ,peggedUSD,fiat-backed
+164,USDCB,USDCB,peggedUSD,fiat-backed
+59,SigmaUSD,SIGUSD,peggedUSD,algorithmic
+25,Reserve,RSV,peggedUSD,crypto-backed
+38,STBL,STBL,peggedUSD,crypto-backed
+248,USDFC,USDFC,peggedUSD,crypto-backed
+318,litUSD,litUSD,peggedUSD,fiat-backed
+191,bitSmiley USD,bitUSD,peggedUSD,crypto-backed
+68,USDLemma,USDL,peggedUSD,algorithmic
+130,Savvy USD,SVUSD,peggedUSD,fiat-backed
+311,iAUSD,IAUSD,peggedUSD,crypto-backed
+45,aUSD Seed,aSEED,peggedUSD,crypto-backed
+34,USD Balance,USDB,peggedUSD,algorithmic
+228,Quill USD,USDQ,peggedUSD,crypto-backed
+104,Davos Protocol,DUSD,peggedUSD,crypto-backed
+144,High Yield USD,HYUSD,peggedUSD,algorithmic
+337,USE,USE,peggedUSD,algorithmic
+124,peg-eUSD,peUSD,peggedUSD,crypto-backed
+260,VDollar Finance,VUSD,peggedUSD,crypto-backed
+109,eUSD,EUSD,peggedUSD,crypto-backed
+233,TheStandard USD,USDS,peggedUSD,crypto-backed
+149,Sable Coin,USDS,peggedUSD,crypto-backed
+123,STAR,STAR,peggedUSD,crypto-backed
+142,HYDT,HYDT,peggedUSD,algorithmic
+37,USDJ,USDJ,peggedUSD,crypto-backed
+314,Palm USD,PUSD,peggedUSD,fiat-backed
+184,Magma Wen,WEN,peggedUSD,crypto-backed
+82,arUSD,ARUSD,peggedUSD,crypto-backed
+99,Stabl.fi Cash,CASH,peggedUSD,crypto-backed
+148,Mynth MyUSD,MyUSD,peggedUSD,algorithmic
+345,Uncap USD,USDU,peggedUSD,crypto-backed
+294,Autonomint,USDA+,peggedUSD,crypto-backed
+243,Coinshift,csUSDL,peggedUSD,crypto-backed
+117,Ethos Reserve Note,ERN,peggedUSD,crypto-backed
+330,Gaming XP USD,xpUSD,peggedUSD,fiat-backed
+264,XBANKING USDE,USDE,peggedUSD,crypto-backed
+323,KEI Stablecoin,KEI,peggedUSD,crypto-backed
+90,Redeemable USD,RUSD,peggedUSD,fiat-backed
+212,Move Dollar,MOD,peggedUSD,crypto-backed
+57,Hedge USD,USH,peggedUSD,crypto-backed
+276,Hyperstable USD,USH,peggedUSD,crypto-backed
+74,Moremoney USD,MONEY,peggedUSD,crypto-backed
+94,BaoUSD,BAOUSD,peggedUSD,crypto-backed
+222,Parallel USD,PAUSD,peggedUSD,crypto-backed
+114,CLever USD,clevUSD,peggedUSD,crypto-backed
+189,btcUSD,btcUSD,peggedUSD,crypto-backed
+84,BOB,BOB,peggedUSD,crypto-backed
+96,Coin98 Dollar,CUSD,peggedUSD,crypto-backed
+193,Chi USC,USC,peggedUSD,crypto-backed
+76,Interest Protocol,USDI,peggedUSD,crypto-backed
+196,Classic USD,USC,peggedUSD,fiat-backed
+138,ARYZE eUSD,eUSD,peggedUSD,fiat-backed
+190,Revenue Generating USD,rgUSD,peggedUSD,crypto-backed
+111,DAI+,DAI+,peggedUSD,crypto-backed
+177,UNO,UNO,peggedUSD,fiat-backed
+207,Dyad,DYAD,peggedUSD,crypto-backed
+267,Mead,MEAD,peggedUSD,crypto-backed
+169,GAI Stablecoin,GAI,peggedUSD,crypto-backed
+338,Fuse Dollar V3,FUSD,peggedUSD,crypto-backed
+163,PrismaLRT Ultra,ULTRA,peggedUSD,crypto-backed
+208,Dackie USD,DCKUSD,peggedUSD,algorithmic
+259,Arche Protocol MSD,MSD,peggedUSD,crypto-backed
+102,Offshift anonUSD,ANONUSD,peggedUSD,algorithmic
+108,Deuterium,d2O,peggedUSD,crypto-backed
+265,Orki USD,USDK,peggedUSD,crypto-backed
+61,Fixed Income Asset Token,FIAT,peggedUSD,crypto-backed
+62,PUSd,PUSD,peggedUSD,crypto-backed
+301,Jigsaw USD,JUSD,peggedUSD,crypto-backed
+187,KNOX Dollar,KNOX,peggedUSD,crypto-backed
+128,Nexus,NEX,peggedUSD,algorithmic
+223,TREN Debt Token,XY,peggedUSD,crypto-backed
+87,USDi,USDI,peggedUSD,crypto-backed
+273,Asymmetry USDaf,USDaf,peggedUSD,crypto-backed
+279,Parabol USD,paraUSD,peggedUSD,fiat-backed
+150,USD Stable Colb,SCB,peggedUSD,fiat-backed
+121,PSY,sLSD,peggedUSD,crypto-backed
+134,Phase Dollar,CASH,peggedUSD,fiat-backed
+203,Chad USD,cUSD,peggedUSD,crypto-backed
+320,Rocky USDr,USDR,peggedUSD,crypto-backed
+3,TerraClassicUSD,USTC,peggedUSD,algorithmic
+39,VOLT Protocol,VOLT,peggedVAR,algorithmic
+40,Rai Reflex Index,RAI,peggedVAR,crypto-backed
+41,Float Protocol Float,FLOAT,peggedVAR,algorithmic
+49,Euro Tether,EURT,peggedEUR,fiat-backed
+50,EURC,EURC,peggedEUR,fiat-backed
+51,Stasis Euro,EURS,peggedEUR,fiat-backed
+52,Celo Euro,CEUR,peggedEUR,algorithmic
+53,sEUR,SEUR,peggedEUR,crypto-backed
+55,EURA,EURA,peggedEUR,crypto-backed
+56,Parallel,PAR,peggedEUR,crypto-backed
+66,Frax Price Index,FPI,peggedVAR,algorithmic
+91,Iron Bank EURO,IBEUR,peggedEUR,crypto-backed
+98,EUROe Stablecoin,EUROe,peggedEUR,fiat-backed
+101,Monerium EUR emoney,EURE,peggedEUR,fiat-backed
+105,DeFi Franc,DCHF,peggedVAR,crypto-backed
+113,SILK,SILK,peggedVAR,crypto-backed
+122,GYEN,GYEN,peggedJPY,fiat-backed
+127,Alternity CNY,LCNY,peggedCNY,crypto-backed
+131,UAHT,UAHT,peggedUAH,fiat-backed
+133,NARS,NARS,peggedARS,fiat-backed
+137,Collateralized Debt Token,CDT,peggedVAR,crypto-backed
+139,ARYZE eEUR,eEUR,peggedEUR,fiat-backed
+140,ARYZE eGBP,eGBP,peggedGBP,fiat-backed
+145,CAD Coin,CADC,peggedCAD,fiat-backed
+147,Anchored Coins AEUR,AEUR,peggedEUR,fiat-backed
+157,VNX Swiss Franc,VCHF,peggedCHF,fiat-backed
+158,VNX EURO,VEUR,peggedEUR,fiat-backed
+161,Quantoz EURD,EURD,peggedEUR,fiat-backed
+165,AUDD,AUDD,peggedAUD,fiat-backed
+167,Fractional ETH,fETH,peggedVAR,crypto-backed
+170,EURO3,EURO3,peggedEUR,crypto-backed
+179,CJPY,CJPY,peggedJPY,crypto-backed
+182,Zunami ETH,zunETH,peggedVAR,crypto-backed
+186,International Stable Currency,ISC,peggedVAR,fiat-backed
+199,Celo Real,CREAL,peggedREAL,crypto-backed
+200,Hedera Swiss Franc,HCHF,peggedCHF,crypto-backed
+226,Frankencoin,ZCHF,peggedCHF,crypto-backed
+239,StablR Euro,EURR,peggedEUR,fiat-backed
+247,Schuman EUROP,EUROP,peggedEUR,fiat-backed
+249,Brazilian Digital,BRZ,peggedREAL,fiat-backed
+254,EUR CoinVertible,EURCV,peggedEUR,fiat-backed
+258,A7A5,A7A5,peggedRUB,fiat-backed
+274,Quantoz EURQ,EURQ,peggedEUR,fiat-backed
+280,Tether CNH,CNHT,peggedCNY,fiat-backed
+281,Mexican Peso Tether,MXNT,peggedMXN,fiat-backed
+289,XSGD,XSGD,peggedSGD,fiat-backed
+292,VNX British Pound,VGBP,peggedGBP,fiat-backed
+299,PHT Stablecoin,PHT,peggedPHP,crypto-backed
+300,Bilira,TRYB,peggedTRY,fiat-backed
+317,Tokenised GBP,tGBP,peggedGBP,fiat-backed
+319,AllUnity EUR,EURAU,peggedEUR,fiat-backed
+325,Eurite,EURI,peggedEUR,fiat-backed
+334,Macropod,AUDM,peggedAUD,fiat-backed
+351,Tetris Money,RUBT,peggedRUB,fiat-backed
+352,BRTH,BRTH,peggedREAL,fiat-backed
+355,JPY Coin,JPYC,peggedJPY,fiat-backed
