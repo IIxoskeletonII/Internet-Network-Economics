@@ -10,17 +10,18 @@ Column-level documentation for the four hypothesis-ready master datasets in `dat
 - **Grain:** asset x date (daily)
 - **Row count:** 4,384
 - **Date range:** 2020-01-01 to 2025-12-31
-- **Source pipeline:** CoinMetrics Community API (`data/01_raw/coinmetrics/transfer_count.csv`, `active_addresses.csv`) -> `notebooks/02_data_engineering.ipynb` (cells 1-11)
+- **Source pipeline:** CoinMetrics Community API (`data/01_raw/coinmetrics/transfer_count.csv`, `active_addresses.csv`) -> `notebooks/02_data_engineering.ipynb` (cell 15). USDC uses the `usdc` aggregate ticker from both files; USDT sums `usdt_eth + usdt_trx` from both files.
 - **Raw inputs:** `data/01_raw/coinmetrics/transfer_count.csv`, `data/01_raw/coinmetrics/active_addresses.csv`
 
 | Column | Unit | Type | Source | Notes |
 |--------|------|------|--------|-------|
 | `asset` | -- | string | CoinMetrics | Stablecoin identifier: `USDC`, `USDT` (aggregates `usdt_eth` + `usdt_trx` from CoinMetrics) |
 | `date` | YYYY-MM-DD | date | CoinMetrics | UTC daily granularity |
-| `active_addresses` | count | int | CoinMetrics `AdrActCnt` | Daily unique active addresses; independent variable for Metcalfe test |
+| `active_addresses` | count | int | CoinMetrics `AdrActCnt` | Daily unique active addresses; independent variable for Metcalfe test. USDC: multi-chain aggregate (`usdc` ticker). USDT: Ethereum + Tron sum (`usdt_eth + usdt_trx`). |
 | `transfer_count` | count | int | CoinMetrics `TxTfrCnt` | Daily on-chain transfer count; dependent variable for H1. Replaced `TxTfrValAdjUSD` (Pro-tier only, HTTP 403) |
 
 **Known limitations:**
+- **Chain-coverage asymmetry:** USDC `active_addresses` reflects the multi-chain aggregate published by CoinMetrics under asset ticker `usdc` (covering Ethereum, Solana, Polygon, Avalanche, Base, Arbitrum, and other chains as aggregated by CoinMetrics). USDT `active_addresses` reflects Ethereum + Tron only (`usdt_eth + usdt_trx`). This asymmetry reflects CoinMetrics' aggregation conventions — the `usdt` aggregate ticker is not available on the Community tier, so USDT is summed from the two dominant chains manually. This should be acknowledged in the H1 narrative.
 - Transfer count (`TxTfrCnt`) was chosen over transfer value (`TxTfrValAdjUSD`) because the value metric is paywalled on CoinMetrics Community tier. Count-based Metcalfe tests have literature precedent (Peterson 2018, Wheatley et al. 2018) but beta is expected below 2.0.
 - Yahoo Finance volume data was the original H1 source but was deprecated after discovering $83T USDC outliers on 2022-01-26 and 2022-01-29. See `PHASE_2_FIX_LOG.md` and `AUDIT_REPORT.md` for details.
 
@@ -33,7 +34,7 @@ Column-level documentation for the four hypothesis-ready master datasets in `dat
 - **Row count:** 861 (160 countries, 2020-2025; unbalanced panel)
 - **Date range:** 2020 to 2025
 - **Source pipeline:** Chainalysis adoption index CSVs (`data/01_raw/chainalysis/`) + World Bank indicators (`data/01_raw/worldbank/`) -> `scripts/standardize_country_names.py` + `scripts/apply_chainalysis_standardization.py` + `scripts/clean_worldbank_panel.py` -> `notebooks/02_data_engineering.ipynb` (cells 14-16)
-- **Raw inputs:** `data/01_raw/chainalysis/adoption_index_20[20-25].csv`, `data/01_raw/worldbank/gdp_per_capita_usd.csv`, `data/01_raw/worldbank/inflation_cpi_annual_pct.csv`, `data/01_raw/worldbank/remittances_received_pct_gdp.csv`, `data/01_raw/worldbank/financial_account_ownership_pct.csv`
+- **Raw inputs:** `data/01_raw/chainalysis/adoption_index_20[20-25].csv`, `data/01_raw/worldbank/all_indicators.csv` (contains GDP per capita, CPI inflation, remittances % GDP, and financial account ownership; cleaned via `scripts/clean_worldbank_panel.py`)
 
 | Column | Unit | Type | Source | Notes |
 |--------|------|------|--------|-------|
