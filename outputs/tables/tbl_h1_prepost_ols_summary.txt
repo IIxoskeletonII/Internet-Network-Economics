@@ -1,0 +1,110 @@
+=== USDC — pre ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.678
+Model:                            OLS   Adj. R-squared:                  0.678
+Method:                 Least Squares   F-statistic:                     281.9
+Date:                Thu, 16 Apr 2026   Prob (F-statistic):           3.52e-56
+Time:                        23:21:10   Log-Likelihood:                -1499.8
+No. Observations:                1045   AIC:                             3004.
+Df Residuals:                    1043   BIC:                             3014.
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          2.1971      0.607      3.620      0.000       1.008       3.387
+x1             0.9164      0.055     16.790      0.000       0.809       1.023
+==============================================================================
+Omnibus:                      236.462   Durbin-Watson:                   0.023
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              144.811
+Skew:                           0.787   Prob(JB):                     3.59e-32
+Kurtosis:                       2.080   Cond. No.                         72.1
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 12 lags and without small sample correction
+
+=== USDC — post ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.954
+Model:                            OLS   Adj. R-squared:                  0.954
+Method:                 Least Squares   F-statistic:                     2873.
+Date:                Thu, 16 Apr 2026   Prob (F-statistic):               0.00
+Time:                        23:21:10   Log-Likelihood:                 110.20
+No. Observations:                1147   AIC:                            -216.4
+Df Residuals:                    1145   BIC:                            -206.3
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.1110      0.271      0.410      0.682      -0.420       0.642
+x1             1.0882      0.020     53.597      0.000       1.048       1.128
+==============================================================================
+Omnibus:                       10.335   Durbin-Watson:                   0.304
+Prob(Omnibus):                  0.006   Jarque-Bera (JB):               15.195
+Skew:                          -0.004   Prob(JB):                     0.000502
+Kurtosis:                       3.564   Cond. No.                         201.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 12 lags and without small sample correction
+
+=== USDT — pre ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.987
+Model:                            OLS   Adj. R-squared:                  0.987
+Method:                 Least Squares   F-statistic:                 1.449e+04
+Date:                Thu, 16 Apr 2026   Prob (F-statistic):               0.00
+Time:                        23:21:10   Log-Likelihood:                 980.37
+No. Observations:                1045   AIC:                            -1957.
+Df Residuals:                    1043   BIC:                            -1947.
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.3863      0.107      3.616      0.000       0.177       0.596
+x1             1.0249      0.009    120.392      0.000       1.008       1.042
+==============================================================================
+Omnibus:                      700.906   Durbin-Watson:                   0.526
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            33444.634
+Skew:                           2.457   Prob(JB):                         0.00
+Kurtosis:                      30.276   Cond. No.                         202.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 12 lags and without small sample correction
+
+=== USDT — post ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.754
+Model:                            OLS   Adj. R-squared:                  0.754
+Method:                 Least Squares   F-statistic:                     308.4
+Date:                Thu, 16 Apr 2026   Prob (F-statistic):           2.59e-61
+Time:                        23:21:10   Log-Likelihood:                 982.92
+No. Observations:                1147   AIC:                            -1962.
+Df Residuals:                    1145   BIC:                            -1952.
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.6921      0.864     -0.801      0.423      -2.386       1.001
+x1             1.1007      0.063     17.560      0.000       0.978       1.224
+==============================================================================
+Omnibus:                      785.263   Durbin-Watson:                   0.108
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            10765.230
+Skew:                          -3.041   Prob(JB):                         0.00
+Kurtosis:                      16.721   Cond. No.                     1.18e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 12 lags and without small sample correction
+[2] The condition number is large, 1.18e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
