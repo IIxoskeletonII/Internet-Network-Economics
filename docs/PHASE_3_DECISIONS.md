@@ -623,3 +623,125 @@ Phase 4 H1 narrative explicitly addresses which variables are
 stationary and how the headline survives the robustness check.
 
 **Referenced in code:** notebook 03 §1.2, §1.3.
+
+---
+
+## D-13 — Engle-Granger cointegration test for H1
+
+**Date:** 2026-04-16
+**Phase 3 section:** §1.4b
+**Status:** Decided (before results are observed)
+
+**Question:** USDC's `log_active_addresses` and `log_transfer_count`
+both test as non-stationary in levels per §1.2 ADF. Per D-12, we
+report the levels regression alongside first-differenced robustness,
+but this does not resolve whether the levels β is a legitimate
+long-run elasticity or a spurious-regression artifact. How do we
+tell?
+
+**Background in plain language:** When two time series both trend
+upward (non-stationary), regressing one on the other can produce a
+coefficient that looks significant purely because both are trending,
+not because they're genuinely related — this is "spurious
+regression." The formal test is whether the regression's residuals
+are stationary. If residuals are stationary, the two series are
+"cointegrated" — they share a long-run relationship, and the levels
+coefficient is a valid estimate of that relationship. If residuals
+are non-stationary, the levels regression is spurious and we should
+rely on the first-differenced result instead.
+
+**Options considered:**
+- A: Skip the formal test, rely on HAC standard errors and
+  economic intuition.
+- B: Engle-Granger two-step test: run the OLS, then ADF-test the
+  residuals against a null of unit root.
+- C: Johansen multivariate test.
+
+**Decision:** Option B (Engle-Granger).
+
+**Rationale:** Engle-Granger is the standard two-variable
+cointegration test and is the direct follow-up to the ADF results
+already produced in §1.2. Johansen (Option C) is designed for
+systems of 3+ variables and is overkill for a two-variable
+regression. Skipping the test (Option A) leaves a legitimate
+methodological objection unanswered — a careful reader would ask
+"how do you know the USDC levels regression isn't spurious?" and
+we need an answer.
+
+**Dissenting view:** Engle-Granger has known low power in small
+samples and when the two series have structural breaks (which USDC
+does, at every chain expansion). A critic could argue we should
+use Gregory-Hansen or similar structural-break-aware tests. We
+don't because (a) n = 2192 is not small, (b) the Phillips-Ouliaris
+alternative to Engle-Granger gives similar results in practice,
+and (c) we already report the first-differenced regression as a
+robustness against any form of levels misspecification.
+
+**Consequences:** If USDC residuals are stationary (cointegration
+confirmed), the levels β = 0.982 is the headline elasticity. If
+non-stationary (no cointegration), the first-differenced β = 0.703
+becomes the headline and the Phase 4 narrative must acknowledge
+this. USDT is tested symmetrically even though its levels series
+are stationary, so the cointegration result exists on the record
+for both assets.
+
+**Referenced in code:** notebook 03 §1.4b.
+
+---
+
+## D-14 — Cook's distance for outlier influence
+
+**Date:** 2026-04-16
+**Phase 3 section:** §1.4c, §1.4d
+**Status:** Decided (before results are observed)
+
+**Question:** The USDC scatter in the §1 figure shows a visible
+cluster of points around log(active_addresses) ≈ 10.5 that sit well
+above the fitted line. Are these outliers driving the β estimate,
+and should we do anything about them?
+
+**Background in plain language:** In regression, not every
+observation has equal influence on the estimated coefficients. A
+point that is both far from the average x-value AND far from the
+fitted line "pulls" the regression line toward itself more than a
+typical observation. "Cook's distance" is a standard diagnostic
+that measures how much each observation influences the regression.
+The convention (Cook, 1977) is to flag points with Cook's D greater
+than 4/n as "influential." Whether to actually delete them is a
+separate question.
+
+**Options considered:**
+- A: Don't run an influence diagnostic. Trust that HAC SE and R² ≥
+  0.87 are enough.
+- B: Compute Cook's distance, identify points above 4/n, and
+  delete them from the regression.
+- C: Compute Cook's distance, report both the full regression and
+  a robustness regression without the influential points, let the
+  reader compare.
+
+**Decision:** Option C.
+
+**Rationale:** Option B (silent deletion) is methodologically
+indefensible — you can inflate any R² by dropping points that
+don't fit. Option A leaves the outlier cluster unexplained, which
+a reviewer will notice. Option C is the transparent approach:
+show the full regression, show the robustness regression without
+influential points, and let the reader judge materiality. This
+also lets us answer a specific question ("do outliers drive β?")
+with a specific answer (whether β shifts materially when they're
+removed).
+
+**Dissenting view:** The 4/n threshold is a detection heuristic,
+not a statistical test. Some econometricians prefer the DFBETAS
+diagnostic, which measures influence on individual coefficients
+rather than on the fit overall. We use Cook's distance because
+it's more widely known and interpreted, and for a two-variable
+regression Cook's D and DFBETAS tell essentially the same story.
+
+**Consequences:** §1.4c reports β with and without influential
+points for both assets. §1.4d identifies the specific dates of
+the top-10 highest-Cook's-D USDC observations so Phase 4 narrative
+can reference them by date and likely cause (early-2020 DeFi bot
+days, March 2023 SVB depeg episode, etc.).
+
+**Referenced in code:** notebook 03 §1.4c, §1.4d.
