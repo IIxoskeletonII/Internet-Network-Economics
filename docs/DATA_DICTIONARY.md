@@ -131,3 +131,46 @@ Column-level documentation for the four hypothesis-ready master datasets in `dat
 - **Pre-audit merge bug:** The original H4 pipeline duplicated Etherscan rows (72K -> 136.8K) by merging on date without filtering the price file by asset. Fixed at CP5. Broken version preserved in `data/03_processed/ARCHIVE/`.
 - **Tron fees originally in TRX:** Pre-audit pipeline never converted to USD. Fixed at CP5 via CoinMetrics TRX daily price.
 - **ETH fee crossover:** In 6 months of 2025 (post-Dencun), ETH mean fees undercut Tron mean fees. H4 should be framed as "congestion-dependent" cost advantage, not universal superiority.
+
+---
+
+# Phase 3 derived variables
+
+Variables introduced during empirical analysis in notebook 03. Unlike
+the four master datasets above, these are computed on the fly within
+the notebook and not persisted to disk (except where noted). Listed
+here so the data dictionary remains complete.
+
+## H1 (§4) derived variables
+
+- `log_transfer_count` = `np.log(transfer_count)`. Computed per
+  asset. Requires `transfer_count > 0` (verified in §4.1).
+- `log_active_addresses` = `np.log(active_addresses)`. Same
+  constraint.
+
+## H3 (§2) derived variables
+
+- `time_index` = monotonic integer 0 to 71 assigned after sorting by
+  `date` ascending. Used as the regressor in the OLS trend test.
+
+## H4 (§3) derived variables
+
+- `legacy_cost_200` = `200 * legacy_pct_fee + legacy_flat_fee` per
+  month.
+- `legacy_cost_10000` = `10000 * legacy_pct_fee + legacy_flat_fee`
+  per month.
+- `diff_200_eth` = `legacy_cost_200 - eth_mean_fee_usd` per month.
+- `diff_200_tron` = `legacy_cost_200 - tron_median_fee_usd` per
+  month.
+- `diff_10000_eth`, `diff_10000_tron`: same at $10,000.
+- Sensitivity versions of all four computed with
+  `legacy_flat_fee = 3.50`.
+
+## H2 (§5) derived variables
+
+- `log_gdp_per_capita_usd` = `np.log(gdp_per_capita_usd)` per
+  country-year. GDP enters regressions in logs to reduce right-
+  skewness.
+- Interaction terms constructed inside the regression call:
+  `financial_account_baseline:post_2022`,
+  `financial_account_baseline:I(baseline_year==2024)`.
