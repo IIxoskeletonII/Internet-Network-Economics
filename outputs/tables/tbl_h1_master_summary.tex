@@ -1,0 +1,16 @@
+\begin{tabular}{lllrlllllllll}
+\toprule
+asset & specification & window & n & beta & se & ci_low & ci_high & r2 & dw & p_beta_equals_1 & p_beta_equals_2 & notes \\
+\midrule
+USDC & levels OLS & full (2020–2025) & 2192 & 0.982 & 0.029 & 0.925 & 1.039 & 0.874 & 0.037 & 0.5357 & 1.10e-270 & cointegrated, HAC(12) \\
+USDC & levels OLS ex-influentials & full & 2028 & 1.043 & 0.021 & 1.001 & 1.084 & 0.932 & 0.068 & 0.0449 & 0.00e+00 & 164 Cook's D > 4/n removed \\
+USDC & levels OLS & pre-FTX (to 2022-11-10) & 1045 & 0.916 & 0.055 & 0.809 & 1.023 & 0.678 & 0.023 & 0.1255 & 1.03e-87 & slope changed Chow p=0.003 \\
+USDC & levels OLS & post-FTX (from 2022-11-11) & 1147 & 1.088 & 0.020 & 1.048 & 1.128 & 0.954 & 0.304 & 1.39e-05 & 0.00e+00 & slope changed Chow p=0.003 \\
+USDC & first-diff OLS & full (2020–2025) & 2191 & 0.703 & 0.063 & 0.579 & 0.827 & 0.443 & 2.294 & 2.65e-06 & 2.25e-93 & robustness spec \\
+USDT & levels OLS & full (2020–2025) & 2192 & 1.014 & 0.007 & 1.000 & 1.029 & 0.987 & 0.275 & 0.0471 & 0.00e+00 & cointegrated, HAC(12) \\
+USDT & levels OLS ex-influentials & full & 2090 & 1.020 & 0.005 & 1.010 & 1.030 & 0.994 & 0.286 & 4.58e-05 & 0.00e+00 & 102 Cook's D > 4/n removed \\
+USDT & levels OLS & pre-FTX (to 2022-11-10) & 1045 & 1.025 & 0.009 & 1.008 & 1.042 & 0.987 & 0.526 & 0.0035 & 0.00e+00 & slope stable Chow p=0.231 \\
+USDT & levels OLS & post-FTX (from 2022-11-11) & 1147 & 1.101 & 0.063 & 0.978 & 1.224 & 0.754 & 0.108 & 0.1082 & 1.10e-46 & slope stable Chow p=0.231 \\
+USDT & first-diff OLS & full (2020–2025) & 2191 & 0.927 & 0.023 & 0.882 & 0.972 & 0.841 & 2.425 & 0.0015 & 0.00e+00 & robustness spec \\
+\bottomrule
+\end{tabular}
