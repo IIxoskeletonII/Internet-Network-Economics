@@ -500,3 +500,57 @@ constant coefficient; the "p-value" is the two-sided p-value from
 that regression.
 
 **Referenced in code:** notebook 03 §3.3.
+
+---
+
+## D-11 — Notebook 03 scaffold: overwrite prior committed stub
+
+**Date:** 2026-04-16
+**Phase 3 section:** §0 (setup and structure)
+**Status:** Decided
+
+**Question:** The notebook `notebooks/03_empirical_analysis.ipynb`
+already existed as a committed TODO stub from commit f65abb9
+("Phase 3.1: environment setup and notebook scaffold"), created
+before Phase 2C started. Should we overwrite it with the new 14-cell
+scaffold designed in Prompt 2, or merge the new requirements into
+the old structure?
+
+**Options considered:**
+- A: Overwrite the old scaffold entirely with the new 14-cell design.
+- B: Merge — keep the old section order and stub helper functions,
+  layer the new seed/style/assertions/smoke test on top.
+
+**Decision:** Option A — overwrite.
+
+**Rationale:** The old scaffold contained only library imports, four
+one-line data loads, a `run_adf` helper function signature with no
+body, and TODO markdown placeholders. No analytical work existed to
+preserve. Option B would have created a third structure matching
+neither the committed baseline nor the designed scaffold, which
+defeats the purpose of having a designed scaffold and would generate
+debugging ambiguity later ("which version are we looking at?"). The
+decision log itself exists partly to prevent this class of drift.
+
+One element from the old scaffold was preserved: the "Phase 3 Exit
+Checklist" markdown cell at the end, which is a genuinely useful
+pattern inherited from Phase 2B closure. The `run_adf` helper was
+NOT preserved because abstracting ADF logic into a helper before
+the call site is designed is premature.
+
+**Dissenting view:** Option B respects the principle that committed
+work should be extended rather than discarded. A reviewer who didn't
+know the old scaffold was TODO-only would object to silently
+replacing a committed file without explanation — which is exactly
+why this entry exists. The objection is addressed by the recovery
+path (the old scaffold is retrievable via
+`git show f65abb9:notebooks/03_empirical_analysis.ipynb`).
+
+**Consequences:** Notebook 03 now has the designed 14-cell structure
+with seed, style, assertions, smoke test, and D-0X cross-references.
+Fresh-kernel execution verified. The `linearmodels` smoke test
+passed with 859 observations and 160 entities, retiring the H2
+dependency-compatibility risk flagged earlier in Phase 3 planning.
+
+**Referenced in code:** notebooks/03_empirical_analysis.ipynb
+(entirety); recovery via `git show f65abb9:notebooks/03_empirical_analysis.ipynb`.
