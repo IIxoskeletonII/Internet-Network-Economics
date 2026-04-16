@@ -554,3 +554,72 @@ dependency-compatibility risk flagged earlier in Phase 3 planning.
 
 **Referenced in code:** notebooks/03_empirical_analysis.ipynb
 (entirety); recovery via `git show f65abb9:notebooks/03_empirical_analysis.ipynb`.
+
+---
+
+## D-12 — ADF interpretation policy for H1
+
+**Date:** 2026-04-16
+**Phase 3 section:** §1.2 (H1 stationarity pre-check)
+**Status:** Decided (before results are observed)
+
+**Question:** The H1 log-log OLS regresses `log_transfer_count` on
+`log_active_addresses`. Both series are time series and could be
+non-stationary (trending). An ADF test tells us whether each series
+is stationary in levels (I(0)) or only after differencing (I(1)).
+What do we do with that result?
+
+**Background in plain language:** "Stationary" means a time series
+does not have a persistent trend — its mean and variance are roughly
+constant over time. Regressing one trending series on another can
+produce a "spurious regression" where the coefficient looks
+statistically significant purely because both series are trending,
+not because they're actually related. Standard responses when this
+happens: (i) work in first differences instead of levels, (ii) test
+for cointegration (a long-run relationship between the two series)
+and use the levels if cointegration holds, or (iii) proceed with
+levels and rely on HAC standard errors to handle the autocorrelation.
+
+**Options considered:**
+- A: ADF is a gate. If any series is non-stationary, stop and
+  switch the entire specification to first differences.
+- B: ADF is a pre-check. Run the main regression in levels as
+  specified in the Roadmap; if ADF flags non-stationarity, ADD a
+  first-differenced regression as a robustness row and report both.
+- C: Formally test for cointegration (Engle-Granger or Johansen) and
+  only use levels if cointegration is confirmed.
+
+**Decision:** Option B.
+
+**Rationale:** The Roadmap specifies log-log OLS in levels with
+Newey-West HAC SE. The Metcalfe literature (Peterson 2018, Wheatley
+et al. 2018) also works in levels. Switching the headline
+specification to first differences would depart from both sources
+for reasons that ADF alone doesn't force — HAC standard errors are
+designed exactly to handle the autocorrelation that makes non-
+stationary regressions unreliable under homoskedastic SEs. Option A
+over-reacts to ADF. Option C (formal cointegration testing) is
+defensible but adds a full layer of econometric machinery for a
+question the data has ~2,200 daily observations to answer
+empirically — if a first-differenced regression produces a
+similarly-signed and similarly-significant coefficient, the level
+regression is defensible; if the sign flips, that's a substantive
+finding worth discussing in Phase 4 narrative.
+
+**Dissenting view:** A time-series purist would argue that without
+formal cointegration testing, the levels regression is uninterpretable
+if either series is I(1). We accept this criticism and hedge by
+reporting the first-differenced regression alongside the levels
+regression whenever ADF flags non-stationarity in levels. Readers
+who distrust the levels spec can look at the first-differenced row
+instead.
+
+**Consequences:** §1.2 reports ADF test statistics on levels and
+first differences for both variables and both assets. §1.3 runs
+log-log OLS in levels as the headline. If any variable is non-
+stationary in levels at the 5% level, §1.3 also reports a first-
+differenced regression as an additional row in the same table. The
+Phase 4 H1 narrative explicitly addresses which variables are
+stationary and how the headline survives the robustness check.
+
+**Referenced in code:** notebook 03 §1.2, §1.3.
