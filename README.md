@@ -195,9 +195,9 @@ During Phase 2 closure, a systematic audit (`AUDIT_REPORT.md`) identified five c
 
 ## Team
 
-Eliya Allam
-Simone Filosofi
-Mattia Cerrvelli
+- Eliya Allam
+- Simone Filosofi
+- Mattia Cerrvelli
 
 
 ## License
