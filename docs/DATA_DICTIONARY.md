@@ -150,8 +150,49 @@ here so the data dictionary remains complete.
 
 ## H3 (§2) derived variables
 
-- `time_index` = monotonic integer 0 to 71 assigned after sorting by
-  `date` ascending. Used as the regressor in the OLS trend test.
+Variables computed within notebook 03 §2 for the H3 regression
+battery. None are persisted to disk; they exist as in-notebook
+analytical objects. Documented here so the dictionary mirrors the
+analytical surface a Phase 4 reader will encounter.
+
+- `time_index` = monotonic integer 0 to 71 assigned after sorting
+  `h3` by `date` ascending. Used as the time regressor in §2.5
+  (full-window OLS) and §2.7 (Chow interaction test). Units:
+  months from window start (2020-01).
+- `time_index_local` = monotonic integer assigned per sub-window
+  after sorting and resetting index. Used in §2.6 (post-Dec-2022
+  sub-window, range 0 to 35) and §2.8 (post-Jun-2022 sub-window,
+  range 0 to 41). Distinct from `time_index` because each sub-
+  window regression treats its own first month as time zero.
+- `post_dec2022` = binary dummy, 1 if `date >= 2023-01-01`
+  else 0. Used in §2.7 Chow interaction specification.
+  Cutoff per D-01 headline split.
+- `time_x_post` = `time_index * post_dec2022`. Interaction term
+  in §2.7 Chow specification. The coefficient on this term is
+  the slope difference between post- and pre-Dec-2022 periods;
+  its p-value is the test statistic for "does the trend differ
+  across the structural break?"
+- `hhi_full_diff` = first difference of `hhi_full`,
+  `np.diff(h3['hhi_full'].values)`. Length 71 (one shorter than
+  levels series). Used in §2.9b first-differenced robustness
+  regression. Triggered conditionally per D-16 (ADF on levels
+  rejected unit-root at 1%, p=0.0014).
+
+### H3 output artifacts (outputs/ files written by §2)
+
+Files saved to disk by the H3 cells. Listed here so the
+dictionary's coverage matches what's on disk. None are
+hypothesis-ready datasets — they are analysis outputs.
+
+| File | Path | Source cell | Purpose |
+|---|---|---|---|
+| `fig_h3_hhi_timeseries.png` | `outputs/figures/` | §2.1 | Two-panel HHI + leader-share figure with four event annotations |
+| `tbl_h3_structural_events.csv` / `.tex` | `outputs/tables/` | §2.2 | Five-event ΔHHI decomposition with mover-level breakdown (descriptive per D-15) |
+| `tbl_h3_top3_stablecoins.csv` / `.tex` | `outputs/tables/` | §2.3 | Top-3 stablecoins by share at window start (2020-01) and end (2025-12) |
+| `fig_h3_trend_overlays.png` | `outputs/figures/` | §2.10 | HHI series with three fitted OLS lines (full-window, post-Dec-2022, post-Jun-2022) and Chow result in caption |
+| `tbl_h3_master_summary.csv` / `.tex` | `outputs/tables/` | §2.11 | Six-row consolidated regression results across all H3 specifications, with HAC lag annotations per D-17 |
+| `tbl_h3_ols_fullwindow_summary.txt` | `outputs/tables/` | §2.12 | Statsmodels text dumps for full-window specs (§2.5, §2.9, §2.9b) |
+| `tbl_h3_ols_sub_samples_summary.txt` | `outputs/tables/` | §2.12 | Statsmodels text dumps for sub-window and Chow specs (§2.6, §2.7, §2.8) |
 
 ## H4 (§3) derived variables
 
