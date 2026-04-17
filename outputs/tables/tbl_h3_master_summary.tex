@@ -1,0 +1,16 @@
+\begin{table}
+\caption{H3 master summary: HHI trend regressions across specifications.}
+\label{tbl:h3_master_summary}
+\begin{tabular}{lllrrrrrrrrl}
+\toprule
+spec & window & dv & n & beta & se & ci_low & ci_high & p_value & r2 & hac_lags & notes \\
+\midrule
+OLS levels & full (2020-01 to 2025-12) & hhi_full & 72 & -14.2244 & 11.9142 & -37.5759 & 9.1271 & 0.2325 & 0.0774 & 4 & Headline (D-09 maxlags) \\
+OLS levels & post-Dec-2022 (2023-01 onwards) & hhi_full & 36 & -7.0876 & 14.8060 & -36.1069 & 21.9317 & 0.6322 & 0.0244 & 3 & D-01 headline split, D-17 maxlags \\
+Chow interaction (slope diff) & full (2020-01 to 2025-12) & hhi_full & 72 & 119.4193 & 19.4048 & 81.3866 & 157.4520 & 0.0000 & 0.7702 & 4 & Interaction coef = post-period slope - pre-period slope \\
+OLS levels & post-Jun-2022 (2022-07 onwards) & hhi_full & 42 & 20.4089 & 15.5904 & -10.1478 & 50.9656 & 0.1905 & 0.1401 & 3 & D-01 robustness split, D-17 maxlags \\
+OLS levels & full (2020-01 to 2025-12) & hhi_top5 & 72 & -5.8656 & 11.8751 & -29.1403 & 17.4092 & 0.6213 & 0.0139 & 4 & Top-5 robustness on full HHI definition \\
+OLS first-diff & full (2020-02 to 2025-12) & delta_hhi_full & 71 & 1.2369 & 1.9364 & -2.5584 & 5.0322 & 0.5230 & 0.0140 & 4 & D-16 robustness (ADF rejected at 1%) \\
+\bottomrule
+\end{tabular}
+\end{table}

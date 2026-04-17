@@ -4,8 +4,8 @@
 Dep. Variable:                      y   R-squared:                       0.678
 Model:                            OLS   Adj. R-squared:                  0.678
 Method:                 Least Squares   F-statistic:                     281.9
-Date:                Thu, 16 Apr 2026   Prob (F-statistic):           3.52e-56
-Time:                        23:50:58   Log-Likelihood:                -1499.8
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):           3.52e-56
+Time:                        18:44:06   Log-Likelihood:                -1499.8
 No. Observations:                1045   AIC:                             3004.
 Df Residuals:                    1043   BIC:                             3014.
 Df Model:                           1                                         
@@ -31,8 +31,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.954
 Model:                            OLS   Adj. R-squared:                  0.954
 Method:                 Least Squares   F-statistic:                     2873.
-Date:                Thu, 16 Apr 2026   Prob (F-statistic):               0.00
-Time:                        23:50:58   Log-Likelihood:                 110.20
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):               0.00
+Time:                        18:44:06   Log-Likelihood:                 110.20
 No. Observations:                1147   AIC:                            -216.4
 Df Residuals:                    1145   BIC:                            -206.3
 Df Model:                           1                                         
@@ -58,8 +58,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.987
 Model:                            OLS   Adj. R-squared:                  0.987
 Method:                 Least Squares   F-statistic:                 1.449e+04
-Date:                Thu, 16 Apr 2026   Prob (F-statistic):               0.00
-Time:                        23:50:58   Log-Likelihood:                 980.37
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):               0.00
+Time:                        18:44:06   Log-Likelihood:                 980.37
 No. Observations:                1045   AIC:                            -1957.
 Df Residuals:                    1043   BIC:                            -1947.
 Df Model:                           1                                         
@@ -85,8 +85,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.754
 Model:                            OLS   Adj. R-squared:                  0.754
 Method:                 Least Squares   F-statistic:                     308.4
-Date:                Thu, 16 Apr 2026   Prob (F-statistic):           2.59e-61
-Time:                        23:50:58   Log-Likelihood:                 982.92
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):           2.59e-61
+Time:                        18:44:06   Log-Likelihood:                 982.92
 No. Observations:                1147   AIC:                            -1962.
 Df Residuals:                    1145   BIC:                            -1952.
 Df Model:                           1                                         

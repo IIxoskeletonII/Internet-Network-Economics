@@ -1,0 +1,82 @@
+=== H3 §2.6 OLS, hhi_full, post-Dec-2022 (n=36) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.024
+Model:                            OLS   Adj. R-squared:                 -0.004
+Method:                 Least Squares   F-statistic:                    0.2292
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):              0.635
+Time:                        18:44:13   Log-Likelihood:                -272.25
+No. Observations:                  36   AIC:                             548.5
+Df Residuals:                      34   BIC:                             551.7
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       4887.0551    333.086     14.672      0.000    4234.219    5539.892
+x1            -7.0876     14.806     -0.479      0.632     -36.107      21.932
+==============================================================================
+Omnibus:                        4.440   Durbin-Watson:                   0.105
+Prob(Omnibus):                  0.109   Jarque-Bera (JB):                3.375
+Skew:                          -0.739   Prob(JB):                        0.185
+Kurtosis:                       3.252   Cond. No.                         39.9
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 3 lags and without small sample correction
+
+=== H3 §2.7 Chow interaction (full sample, n=72) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.770
+Model:                            OLS   Adj. R-squared:                  0.760
+Method:                 Least Squares   F-statistic:                     20.32
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):           1.65e-09
+Time:                        18:44:13   Log-Likelihood:                -550.95
+No. Observations:                  72   AIC:                             1110.
+Df Residuals:                      68   BIC:                             1119.
+Df Model:                           3                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       6858.5849    333.156     20.587      0.000    6205.610    7511.560
+x1          -126.5069     16.610     -7.616      0.000    -159.062     -93.952
+x2         -1716.3764    904.617     -1.897      0.058   -3489.394      56.641
+x3           119.4193     19.405      6.154      0.000      81.387     157.452
+==============================================================================
+Omnibus:                        1.523   Durbin-Watson:                   0.481
+Prob(Omnibus):                  0.467   Jarque-Bera (JB):                1.177
+Skew:                          -0.052   Prob(JB):                        0.555
+Kurtosis:                       2.382   Cond. No.                         443.
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+=== H3 §2.8 OLS, hhi_full, post-Jun-2022 (n=42) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.140
+Model:                            OLS   Adj. R-squared:                  0.119
+Method:                 Least Squares   F-statistic:                     1.714
+Date:                Fri, 17 Apr 2026   Prob (F-statistic):              0.198
+Time:                        18:44:13   Log-Likelihood:                -329.15
+No. Observations:                  42   AIC:                             662.3
+Df Residuals:                      40   BIC:                             665.8
+Df Model:                           1                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const       4142.4080    394.461     10.501      0.000    3369.278    4915.538
+x1            20.4089     15.590      1.309      0.191     -10.148      50.966
+==============================================================================
+Omnibus:                       42.503   Durbin-Watson:                   0.052
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                4.474
+Skew:                          -0.137   Prob(JB):                        0.107
+Kurtosis:                       1.425   Cond. No.                         46.9
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 3 lags and without small sample correction
