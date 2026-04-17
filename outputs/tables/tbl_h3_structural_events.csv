@@ -1,0 +1,6 @@
+event,window_start,window_end,event_type,hhi_start,hhi_end,delta_hhi,direction,top_sc_start,top_sc_end,top_3_movers,mechanism_expected
+Terra/UST collapse,2022-04,2022-06,event-triggered,3357.9,2971.5,-386.4,DOWN,USDT (49.1%),USDT (42.5%),USDT: 49.1%→42.5% (-6.7pp); USTC: 0.9%→6.6% (+5.6pp); USDC: 28.1%→31.6% (+3.4pp),Flight-to-quality: USDT→USDC
+FTX Ch. 11,2022-10,2022-12,event-triggered,3306.1,3327.9,21.7,UP,USDT (45.8%),USDT (46.3%),BUSD: 14.0%→15.7% (+1.7pp); USDC: 31.4%→30.3% (-1.1pp); DAI: 4.3%→3.7% (-0.6pp),TBD from data (centralised-exchange failure; indirect mechanism)
+SVB / USDC depeg,2023-02,2023-04,event-triggered,3544.7,4335.1,790.4,UP,USDT (49.5%),USDT (60.7%),USDT: 49.5%→60.7% (+11.1pp); USDC: 30.6%→24.6% (-6.0pp); BUSD: 11.7%→5.7% (-6.0pp),TBD from data (USDC-specific shock; direction depends on re-concentration vs flight)
+BUSD wind-down,2023-01,2023-12,event-triggered,3507.3,5216.0,1708.8,UP,USDT (48.2%),USDT (69.6%),USDT: 48.2%→69.6% (+21.5pp); USDC: 32.1%→18.6% (-13.5pp); BUSD: 12.0%→1.3% (-10.7pp),"Structural exit (Paxos NYDFS); supply drain, no substitution crisis"
+FDUSD/PYUSD scale-in,2023-06,2024-06,scale-in window,4681.0,5242.1,561.1,UP,USDT (64.5%),USDT (69.5%),USDT: 64.5%→69.5% (+5.0pp); BUSD: 4.0%→0.0% (-4.0pp); USDC: 22.2%→19.9% (-2.4pp),New-entrant emergence; fragmentation via mid-tier issuers

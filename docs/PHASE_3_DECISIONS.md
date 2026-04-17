@@ -745,3 +745,273 @@ can reference them by date and likely cause (early-2020 DeFi bot
 days, March 2023 SVB depeg episode, etc.).
 
 **Referenced in code:** notebook 03 §1.4c, §1.4d.
+
+---
+
+## D-15 — H3 structural event table: descriptive, not inferential
+
+**Date:** 2026-04-18
+**Phase 3 section:** §2.2
+**Status:** Decided (before results are observed)
+
+**Question:** The H3 analysis includes a structural event table decomposing
+ΔHHI across five identifiable episodes (Terra collapse, FTX collapse,
+SVB/USDC depeg, BUSD wind-down, FDUSD/PYUSD emergence). A critic could
+argue that hand-picking events and their time windows biases the narrative
+toward a preferred story. What is the formal status of this table, and how
+do we defend it methodologically?
+
+**Background in plain language:** An "event study" in econometrics usually
+means a formal test — the analyst hypothesises that an event caused a
+measurable change and computes a test statistic against a null of no
+effect. What we are doing here is different. We are observing HHI movements
+in specific windows and *describing* the compositional mechanics of those
+movements (which stablecoin gained share, which lost, and why). No null
+hypothesis is being tested at the row level.
+
+**Options considered:**
+- A: Frame the table as formal event study with hypothesis tests on each row.
+- B: Frame the table as descriptive decomposition with no per-row inferential
+  claim. Anchor every window on a publicly documented real-world event with
+  a dated trigger. Report ΔHHI as it falls regardless of direction, including
+  null or contrary results.
+- C: Skip the table entirely, rely on the regression battery for all H3 claims.
+
+**Decision:** Option B.
+
+**Rationale:** The table's purpose is to show that HHI movement in the window
+is *mechanistically coherent* — that when we decompose the ΔHHI into
+stablecoin-level share changes, the story is consistent with the proposed
+mechanism (flight-to-quality, structural exit, etc.). This is descriptive
+work. Formal event-study machinery (Option A) would require modelling
+counterfactual HHI paths, which is overkill for a six-year monthly series
+with five identified events. Option C discards the richest part of the H3
+finding and leaves us with a regression battery that the diagnostic report
+already predicts will produce a weak full-window trend.
+
+The table's defence against "hand-picking" has three legs: (1) every window
+is anchored on a published real-world event date that pre-existed the
+analysis, (2) ΔHHI is reported as computed regardless of sign or magnitude
+(including the FTX row where we expect a small ΔHHI and will say so if
+that's what we find), (3) the mechanism description is constrained by
+decomposing the ΔHHI into stablecoin-level contributions which are data,
+not narrative.
+
+**Dissenting view:** A purist methodologist could argue that any table
+labelled "structural events" with hand-picked windows is inherently
+selective and should not appear in an empirical section alongside formal
+regression output, because readers will conflate the two types of
+evidence. The counter is that the table is clearly labelled as descriptive
+decomposition, lives under its own subsection with explanatory markdown,
+and is presented as complement to rather than replacement for the
+regression battery. Empirical papers routinely present descriptive
+decompositions in tables — the issue is clarity of epistemic status, not
+the table itself.
+
+**Consequences:** §2.2 contains one table with five rows (Terra, FTX, SVB,
+BUSD, FDUSD/PYUSD emergence). Columns: event name, window (start → end
+months), ΔHHI, direction, dominant mechanism, top-stablecoin share change,
+notes. A Notes column distinguishes "event-triggered" rows (Terra, FTX,
+SVB, BUSD) from "scale-in window" rows (FDUSD/PYUSD emergence). The §2.2
+markdown cell opens with an explicit statement that the table is descriptive
+decomposition, not hypothesis testing. Null or contrary-to-expected results
+(e.g., if FTX ΔHHI is near-zero) are reported as such in the table and
+discussed honestly in Phase 4 narrative.
+
+**Referenced in code:** notebook 03 §2.2.
+
+---
+
+## D-16 — ADF policy for H3
+
+**Date:** 2026-04-18
+**Phase 3 section:** §2.4
+**Status:** Decided (before results are observed)
+
+**Question:** Should we ADF-test `hhi_full` before running the OLS trend
+regression, and if so, what do we do with the result?
+
+**Background in plain language:** HHI is a bounded index (0–10000) but our
+observed values trend over the window, and a linear regression of HHI on
+time is at risk of the same spurious-regression concern that motivated
+D-12 for H1. D-12 chose an "ADF as pre-check, not gate" policy for H1,
+where levels-OLS is the headline and first-differenced OLS appears as a
+robustness row when levels stationarity is rejected. For H3 the question
+is the same but the sample is much smaller: n=72 monthly observations vs
+n=2192 daily observations for H1. ADF's well-known low power in small
+samples becomes a live concern here — a non-rejection at n=72 may reflect
+lack of power rather than genuine non-stationarity.
+
+**Options considered:**
+- A: Apply D-12's H1 policy unchanged — report ADF, run levels as headline,
+  add first-diff robustness row if ADF rejects stationarity at 5%.
+- B: Skip ADF entirely for H3; run levels OLS as specified by the Roadmap,
+  rely on HAC standard errors to handle autocorrelation.
+- C: Report ADF as descriptive context only; do NOT let the ADF outcome
+  gate or branch the specification; add a first-differenced robustness row
+  only if ADF rejects at the 1% level (strong evidence threshold) rather
+  than 5%.
+
+**Decision:** Option C.
+
+**Rationale:** H1's n=2192 gives ADF ample power to detect non-stationarity,
+so D-12's 5%-threshold gate is well-calibrated there. At n=72 the same
+threshold produces unreliable branching — a spurious non-rejection could
+send us down a "levels-only" path when first-differences would have been
+more appropriate, or a spurious rejection could add a first-differenced
+row that muddies the presentation without analytical payoff. Raising the
+threshold to 1% addresses the small-sample power problem by requiring
+strong evidence before changing specification. Option B (skip ADF) leaves
+a reasonable methodological objection unanswered; Option A over-uses an
+unreliable test at this sample size.
+
+Reporting ADF as "context, not gate" mirrors standard practice in
+time-series papers with short series: the test statistic informs
+interpretation without deterministically selecting the specification.
+
+**Dissenting view:** An econometrics purist could argue that if ADF is
+unreliable at n=72 we should use a different stationarity test (KPSS,
+Phillips-Perron) or rely on theory rather than testing. The counter is
+that KPSS and PP have similar small-sample issues and that relying on
+theory for a bounded index like HHI is itself a judgement call. The
+honest framing is that no stationarity test is fully reliable at n=72
+and we're choosing to report ADF as the most widely-understood diagnostic
+without letting it dominate the specification decision.
+
+**Consequences:** §2.4 reports ADF test statistics and p-values for
+`hhi_full` in levels and first differences, with an explanatory markdown
+cell noting the low-power caveat. §2.5 runs the OLS-on-levels headline
+regression regardless of ADF outcome. A first-differenced robustness row
+appears in the master summary table *only if* ADF rejects the unit-root
+null at 1% in levels. Phase 4 narrative must acknowledge the stationarity
+question explicitly if the ADF result is borderline.
+
+**Referenced in code:** notebook 03 §2.4, §2.5, §2.11.
+
+---
+
+## D-17 — HAC maxlags for H3 sub-window regressions
+
+**Date:** 2026-04-18
+**Phase 3 section:** §2.6, §2.7, §2.8
+**Status:** Decided (before results are observed)
+
+**Question:** D-09 set Newey-West `maxlags=4` for all H3 and H4 monthly
+regressions based on the Newey (1994) rule of thumb applied at n=72. For
+the H3 sub-window regressions (post-Dec-2022 with n=36, post-Jun-2022
+with n=42), should we continue to use `maxlags=4` or recompute the rule
+at the sub-window sample size?
+
+**Background in plain language:** The Newey (1994) bandwidth formula is
+`int(4 * (n/100)^(2/9))`. For n=72 it produces 4 (our H3/H4 default, per
+D-09). For n=36 it produces 3; for n=42 it also produces 3. Applying a
+maxlags value calibrated for n=72 to a sub-window of n=36 would
+over-correct for autocorrelation — the standard errors would be wider
+than the formula's own recommendation suggests they should be. This is a
+small distinction but affects the significance of sub-window coefficients.
+
+**Options considered:**
+- A: Keep maxlags=4 everywhere for consistency with D-09. Simpler to state.
+- B: Recompute the Newey formula at each sub-window's sample size. Use
+  maxlags=3 for post-Dec-2022 (n=36) and post-Jun-2022 (n=42); keep
+  maxlags=4 for the full-window regression (n=72) and for the full-sample
+  Chow interaction (n=72).
+- C: Use maxlags=4 for all sub-windows but report a sensitivity check at
+  maxlags=3.
+
+**Decision:** Option B.
+
+**Rationale:** D-09's rationale was explicitly that the Newey formula
+applies "per regression" — the rule is supposed to scale with the
+regression's sample size, not the project's largest dataset. Using a
+single maxlags value across sample sizes contradicts the formula's own
+logic. Option C (sensitivity) adds output without adding information,
+because the correct value at each n is a deterministic function, not a
+judgement call.
+
+The footnote convention per D-09 ("The lag choice is reported as a
+footnote in each results table") naturally handles the fact that
+different rows in the H3 master summary have different HAC lags — each
+row gets its own footnote value.
+
+**Dissenting view:** A reviewer could argue that consistency is more
+important than precise formula application, and that using maxlags=4
+uniformly is cleaner to explain in a deck ("we use HAC(4) throughout").
+The counter is that the deck footnote can still say "HAC standard errors,
+bandwidth per Newey (1994)" which is both accurate and consistent in
+convention even if the numerical value varies. And examiners will notice
+if a sub-window regression has a mechanically-wider SE than the formula
+recommends.
+
+**Consequences:** §2.5 (full-window hhi_full) uses `maxlags=4`. §2.6
+(post-Dec-2022) uses `maxlags=3`. §2.7 (full-window Chow interaction)
+uses `maxlags=4`. §2.8 (post-Jun-2022) uses `maxlags=3`. §2.9 (hhi_top5
+full-window) uses `maxlags=4`. The master summary table in §2.11 has a
+`hac_lags` column documenting the value per row. The H3 results narrative
+explicitly states that HAC bandwidth scales per Newey (1994).
+
+**Referenced in code:** notebook 03 §2.5 through §2.9, §2.11.
+
+---
+
+## D-18 — HHI enters regressions in levels, not logs or proportions
+
+**Date:** 2026-04-18
+**Phase 3 section:** §2.5 through §2.9
+**Status:** Decided (before results are observed)
+
+**Question:** The H3 trend regressions test whether HHI rises over time.
+HHI is a bounded index in [0, 10000]. Should it enter the regression in
+levels, in logs, or as a proportion (HHI/10000)?
+
+**Background in plain language:** The choice of functional form for the
+dependent variable determines what the time-trend coefficient measures.
+In levels, β is "HHI points per unit of time." In logs, β is "percent
+change in HHI per unit of time." As a proportion (HHI/10000, treating HHI
+like a concentration ratio in [0, 1]), β is "change in proportion per
+unit of time." Each choice implies different assumptions about how HHI
+moves and produces a different interpretation of the coefficient.
+
+**Options considered:**
+- A: Levels. β interprets as "HHI index points per month." Standard choice
+  for bounded indices in the industrial-organisation literature.
+- B: Logs. β interprets as "fractional change in HHI per month." Appropriate
+  when multiplicative dynamics dominate.
+- C: Proportion (HHI/10000). β interprets as "change in concentration
+  proportion per month." Tidier numerical range but non-standard for HHI.
+
+**Decision:** Option A — levels.
+
+**Rationale:** HHI is already a bounded, normalised index on the canonical
+0–10000 scale used across all industrial-organisation applications. The
+coefficient "HHI points per month" translates directly to reader intuition
+— a β of 20 means HHI rises by 20 points per month, which at HHI ≈ 3500
+is roughly 0.6% monthly. No transformation adds analytical content. Logs
+(Option B) introduce scaling that is standard for unbounded series
+(prices, populations) but gratuitous for an index already on a canonical
+scale. Proportions (Option C) divide by a constant, which has no
+analytical effect but breaks convention with the IO literature that
+reports HHI in index points.
+
+A secondary consideration: the structural event table (D-15) reports
+ΔHHI in index points. Keeping the regression in levels means the event
+table and the regression coefficients are in the same units, which
+simplifies Phase 4 narrative and slide construction.
+
+**Dissenting view:** A reader could argue that logs handle the bounded
+nature of HHI more gracefully — an HHI near 10000 cannot rise by another
+500 points, but in log space the ceiling is handled automatically. The
+counter is that our observed HHI range is 2500–5500, nowhere near either
+bound, and the log transformation buys us asymptotic elegance at the cost
+of losing the clean "points per month" interpretation. If we had a series
+pushing against either bound, the calculus would differ.
+
+**Consequences:** All five H3 regressions (§2.5 full-window, §2.6
+post-Dec-2022, §2.7 Chow interaction, §2.8 post-Jun-2022, §2.9 hhi_top5)
+regress HHI in levels on `time_index` in levels. The master summary table
+reports β in HHI-points-per-month units. Phase 4 narrative translates
+these to percent-of-base-HHI terms ("β = 20 corresponds to ~0.6% monthly
+rise at typical HHI levels") for reader intuition without altering the
+underlying regression.
+
+**Referenced in code:** notebook 03 §2.5 through §2.9, §2.11.
