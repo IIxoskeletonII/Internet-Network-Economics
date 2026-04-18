@@ -1,0 +1,3 @@
+transfer_size_usd,eth_median_fee_usd,eth_mean_fee_usd,tron_median_fee_usd,tron_mean_fee_usd,legacy_median_fee_usd,legacy_mean_fee_usd,ratio_legacy_to_eth_median,ratio_legacy_to_tron_mean
+200,4.5908,14.9232,0.0324,0.4511,7.8024,8.3933,1.7,17.29
+10000,4.5908,14.9232,0.0324,0.4511,390.118,419.6663,84.98,864.75

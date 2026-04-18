@@ -1015,3 +1015,82 @@ rise at typical HHI levels") for reader intuition without altering the
 underlying regression.
 
 **Referenced in code:** notebook 03 §2.5 through §2.9, §2.11.
+
+---
+
+## D-19 — H4 ETH-Tron crossover analysis: descriptive subsection with median-vs-median comparison
+
+**Date:** 2026-04-18
+**Phase 3 section:** §3.2 (H4 ETH-Tron crossover)
+**Status:** Superseded by D-21 (2026-04-18)
+
+**Question:** The H4 dataset contains both ETH and Tron monthly fees over 2020-2025. Phase 2B.5 documented that in 6 months of 2025 (post-Dencun), ETH mean fees undercut Tron mean fees, and the H4 framing must be "congestion-dependent cost advantage" rather than universal cost superiority. How should the crossover phenomenon be presented in §3 of notebook 03, and which fee statistics should the comparison use?
+
+**Background in plain language:** The bar charts in §3.1 (cost comparison at $200 and $10,000) use the headline ETH mean and Tron median fee statistics chosen for the paired tests. Those bar charts pool across all 72 months and show stablecoins beating SWIFT by 1-3 orders of magnitude. They do not show the within-stablecoin dynamic where ETH and Tron trade places after the Dencun upgrade. That dynamic is the empirical content behind the "congestion-dependent" framing constraint and needs its own treatment so the framing is supported by the data, not asserted around it.
+
+A second question is which fee statistic to use when comparing ETH and Tron directly. The paired tests use ETH mean (n=950-1000/month, distribution roughly symmetric within months) and Tron median (n=20/month, within-month CV of 1.29 makes the mean unreliable). Mixing mean for ETH and median for Tron in a single overlay or crossover-count is methodologically inconsistent and would confuse a reader.
+
+**Options considered:**
+- A: Skip the crossover treatment entirely. Rely on the paired tests in §3.5 to carry the cost story, and let the post-Dencun nuance live in Phase 4 narrative.
+- B: Add a single overlay figure showing ETH mean and Tron median over time, with the Dencun upgrade annotated. Simple, but mixes statistics.
+- C: Add §3.2 as a dedicated subsection with (i) an overlay figure of ETH median and Tron median over time on log y-axis with Dencun annotated, and (ii) a per-year crossover-count table. Use median-vs-median as the comparison rule for both deliverables. Footnote the table noting that the headline paired tests use ETH mean for separate reasons.
+- D: Run a formal regime-switch test (e.g., Bai-Perron) on the ETH-Tron fee ratio to identify the breakpoint statistically.
+
+**Decision:** Option C.
+
+**Rationale:** Option A leaves the framing constraint unsupported on the data. Option B mixes statistics in a single chart and a reader will rightly object. Option D adds econometric machinery (a regime-switch test) for a question whose answer is already known from prior work — Dencun went live 2024-03-13 and the empirical fee compression dates from that month — so the test would confirm what the timeline already tells us at the cost of additional methodological surface. Option C is the descriptive analogue of H3's structural-event table (D-15): a labelled subsection with a known epistemic status (descriptive decomposition, not hypothesis testing) that supports the framing without overclaiming.
+
+The median-vs-median comparison rule resolves the statistic-mixing problem cleanly. Median is defensible on both rails — for ETH the median is a coherent measure even though we don't use it in the headline test, and for Tron the median is already the headline statistic. The footnote on the §3.2 table makes the asymmetry between §3.2's choice (median-vs-median, comparison logic) and §3.5's choice (mean-for-ETH, average-cost-burden logic) explicit so a reader can see both choices are deliberate.
+
+**Dissenting view:** A reader could argue that Option B is good enough — show the overlay, write a paragraph, move on — and that Option C's per-year crossover-count table over-engineers a narrative point. The counter is that the table converts "we eyeballed the chart and saw crossovers" into "in 2024 ETH undercut Tron in N months out of 9 post-Dencun, in 2025 in M months out of 12" which is the level of specificity Phase 4 will need to defend the framing. The cost of adding the table is small (one cell, one csv, one tex); the cost of not adding it is being unable to cite a number when an examiner asks how often the crossover happens.
+
+**Consequences:** §3.2 contains two artifacts: `fig_h4_eth_tron_overlay.png` (overlay figure of ETH median and Tron median over time, log y-axis, Dencun annotated) and `tbl_h4_crossover_by_year.csv` / `.tex` (per-year crossover counts). Both use median-vs-median. The §3.2 markdown cell opens with an explicit statement that this is descriptive decomposition supporting the "congestion-dependent" framing per Phase 2B.5. The §3.5 paired tests are unaffected — they continue to use ETH mean and Tron median per D-02.
+
+**Referenced in code:** notebook 03 §3.2.
+
+---
+
+## D-20 — Reserved for prompt 3.4b (Dencun cutoff rule for §3.6 sub-window)
+
+**Status:** Reserved 2026-04-18. To be written in prompt 3.4b when the
+post-Dencun paired test sub-window is constructed. Will document the
+Apr 2024 onwards cutoff (n=21) per D-01 precedent ("first full month
+after the event"). This placeholder exists so the decision-log ID
+sequence is dense and a Phase 4 reader does not wonder if D-20 was
+deleted.
+
+---
+
+## D-21 — H4 §3.2 ETH-Tron comparison: mean-vs-mean with transparency overlay (supersedes D-19)
+
+**Date:** 2026-04-18
+**Phase 3 section:** §3.2 (H4 ETH-Tron crossover)
+**Status:** Decided (data observed during prompt 3.4a Pre-Task C)
+**Supersedes:** D-19
+
+**Question:** D-19 specified median-vs-median for the §3.2 ETH-Tron comparison, on the principle that consistent statistics avoid the appearance of cherry-picking. Pre-computation in prompt 3.4a found that median-vs-median produces zero crossovers across the entire 72-month window — even post-Dencun, the ETH median never falls below the Tron median. This contradicts the Phase 2B.5 finding that ETH mean undercut Tron mean in 6 months of 2025. The contradiction is real: which statistic is correct for this particular comparison?
+
+**Background in plain language:** "Same statistic on both sides" sounds like a clean methodological rule, but it only works when both statistics estimate comparable constructs. ETH and Tron have very different within-month sample properties:
+
+- ETH (n=950-1000/month): the median approximates the typical unstaked-user fee on Ethereum. The within-month distribution is roughly continuous; mean and median are both informative.
+- Tron (n=20/month, energy/bandwidth fee model): the median is pulled toward zero by staked-TRX senders who pay near-zero fees. The Tron median therefore approximates the staked-sender experience, not the typical user's fee. The Tron mean is pulled upward by the unstaked-sender minority, approximating the typical-user fee but with wide within-month variance (CV ~1.29).
+
+Median-vs-median compares ETH-typical-user fee to Tron-staked-sender fee. That is apples-to-oranges. Mean-vs-mean compares ETH-typical-user fee to Tron-typical-user fee — both estimating the same construct (what does the unstaked sender pay on each rail?), even though the Tron mean has wide CIs.
+
+**Options considered:**
+- A: Keep D-19 (median-vs-median) and rewrite §3.2 narrative as "ETH never undercuts Tron across the window; the ratio compresses 14× from 388 in 2020 to 28 in 2025." Methodologically defensible but contradicts Phase 2B.5's documented finding and produces an all-zero crossover table.
+- B: Mean-vs-mean for the comparison. Recovers the Phase 2B.5 finding, matches construct, but uses a Tron statistic CP5 flagged as unreliable for inference.
+- C: Mixed statistics (ETH mean vs Tron median). Original D-19 rejected this on consistency grounds; the rejection was correct.
+- D: Mean-vs-mean for the headline comparison plus a transparency overlay figure showing all four series (ETH mean, ETH median, Tron mean, Tron median) on one log-y plot, so the reader sees the construct comparison AND the precision concern simultaneously. The crossover-count table uses mean-vs-mean as the headline rule with a parenthetical row showing what median-vs-median would produce.
+
+**Decision:** Option D.
+
+**Rationale:** Construct comparability is more important than statistic identity. Phase 2B.5 already established mean-vs-mean as the operative comparison for documenting the post-Dencun crossover; D-19's "consistent statistics" reasoning silently contradicted that prior commitment by substituting an apples-to-oranges median comparison. Option D restores construct match while making the precision concern visible on the figure itself — the reader can see that Tron mean is wider/noisier than Tron median and judge for themselves.
+
+CP5's caveat that "Tron mean is unreliable" applied to its use in *inference* against a third construct (legacy fees), where wide CIs eroded the test's power. The §3.2 use is descriptive comparison against another on-chain rail whose mean has the same n=20-driven precision profile, so the precision concern is symmetric and does not bias the comparison's direction.
+
+**Dissenting view:** A reader could argue that the Tron mean's wide CIs mean even mean-vs-mean crossover counts in any individual year are noisy, and that the honest answer to "do the rails cross?" is "yes per the means but only barely and within sampling noise." We address this by (i) showing the median series alongside the mean series on the overlay so the reader sees the within-month distributional difference, and (ii) restricting the analytically informative crossover narrative to the post-Dencun period where the ETH-Tron mean ratio collapsed by an order of magnitude — a finding that's not noise-driven.
+
+**Consequences:** §3.2 figure (`fig_h4_eth_tron_overlay.png`) is a 4-line overlay: ETH mean (bold), Tron mean (bold), ETH median (light), Tron median (light), all on log y-axis with Dencun annotated. §3.2 table (`tbl_h4_crossover_by_year.csv` / `.tex`) reports per-year crossover counts on mean-vs-mean as the headline column, with median-vs-median included as a secondary column and a footnote explaining the construct difference. The §3.2 markdown opens by restating the construct logic from this entry so a Phase 4 reader does not relitigate it. D-19 stays in the decision log marked as superseded; this entry references it explicitly.
+
+**Referenced in code:** notebook 03 §3.2.
