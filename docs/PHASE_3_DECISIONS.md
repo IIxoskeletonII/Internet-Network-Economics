@@ -1263,3 +1263,502 @@ The complication is that a strict D-02 reading produces a Tron median bar of $0.
 
 **Referenced in code:** notebook 03 §3.1 (cell 73), §3.1 narrative (cell 74).
 
+---
+
+## D-24 — H2 dependent variable (headline + robustness)
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** Which of `adoption_percentile`, `rank`, or `overall_score`
+should be the H2 headline DV, and how should the 12 "Among lowest" 2020
+rows (mechanically assigned `adoption_percentile = 0.0`) be handled?
+
+**Options considered:**
+- A: `adoption_percentile` as headline, keep the 12 rows at 0.0.
+- B: `adoption_percentile` as headline, drop the 12 rows.
+- C: `rank` as headline.
+- D: `overall_score` as headline.
+
+**Decision:** Option A — `adoption_percentile` as headline, retain the
+12 "Among lowest" rows at 0.0. A robustness row in the §4.11 master
+summary drops those 12 rows and re-runs spec 3; a second robustness
+row uses `overall_score` as DV on the 2020–2021 subsample (pooled
+spec only; two years cannot identify year FE).
+
+**Rationale:** `adoption_percentile` is continuous on [0, 1], covers
+every row (N = 861), and maps naturally onto OLS with
+bounded-outcome caveats handled by the FE structure. The 0.0
+assignment for "Among lowest" is mechanically defensible — those
+countries were classified by Chainalysis as the lowest-adoption
+tier, so zero is the correct floor, not a data artefact. The
+drop-them robustness exists to separate "the floor assignment is
+right" (maintained assumption) from "the result isn't driven by
+those 12 rows" (empirical question). `rank` loses cardinal
+information and would force an ordinal-probit complication for no
+inferential gain. `overall_score` is cramped to 2 years and cannot
+support the main specification; it serves only as DV-robustness.
+
+**Dissenting view:** A critic could argue that assigning 0.0 to 12
+countries that Chainalysis chose not to rank introduces a non-random
+left-tail distortion that biases the pooled coefficient. The counter
+is exactly why we carry the drop-12 robustness: if the spec-3
+coefficient survives that exclusion, the distortion is immaterial;
+if it doesn't, we report the discrepancy and re-open the DV choice.
+
+**Consequences:** §4.1 plots the full `adoption_percentile`
+distribution. §4.3–§4.7 use the full post-filter panel (861 minus 8
+single-year countries, minus listwise-deletion losses). The raw h2
+panel contains 12 "Among lowest" country-years, but the D-26 cascade
+drops 6 of them on the way to `h2_analysis`: TCD via the single-year
+filter; CPV and FJI on `financial_account_baseline` NaN; LBY on
+`remittances_received_pct_gdp` NaN; TJK and TKM on
+`inflation_cpi_annual_pct` NaN. The 6 survivors (AFG, DZA, LAO, MNG,
+PSE, ZWE) carry through to every downstream spec. Therefore the §4.8
+robustness row drops the 6 surviving "Among lowest" rows (not 12);
+the raw-panel count of 12 is still asserted upstream in §4.2 as an
+invariant against Chainalysis drift, but the §4.8 mirror uses the
+surviving count. §4.9 robustness runs pooled OLS on `overall_score`
+with the 2020–2021 subsample. Expected behaviour: spec-3 coefficient
+on `baseline × post_2022` should be within ~20% of its value on the
+drop-survivors sample; any larger swing must be discussed openly in
+Phase 4.
+
+**Referenced in code:** notebook 03 §4.2 (DV selection), §4.8, §4.9.
+
+---
+
+## D-25 — Controls & transforms
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** What functional forms should the H2 controls take —
+specifically `gdp_per_capita_usd`, `inflation_cpi_annual_pct`,
+`remittances_received_pct_gdp`, and the `baseline_year` column?
+
+**Options considered:**
+- A: log-GDP, raw inflation, raw remittances.
+- B: log-GDP, winsorised inflation (99th pct), log remittances.
+- C: winsorised-levels GDP, log inflation (shifted for negatives),
+  raw remittances.
+- D: raw everything.
+
+**Decision:** Option A with a winsorised-inflation robustness row.
+Specifically: `log_gdp_per_capita_usd = np.log(gdp_per_capita_usd)`;
+`inflation_cpi_annual_pct` enters raw in the headline;
+`remittances_received_pct_gdp` enters raw (already a bounded %);
+`baseline_year` enters only in spec 5 via `I(baseline_year == 2024)`.
+A robustness row in §4.11 runs spec 3 with inflation winsorised
+symmetrically at the 1st/99th percentiles (`inflation_winsorized_pct`,
+derived in §4.2).
+
+**Rationale:** Log-GDP is standard in cross-country panels and handles
+right-skewness with a clean "percent change in GDP" coefficient
+interpretation. Raw inflation preserves the hyperinflation tail
+(Venezuela, Zimbabwe, Argentina, Turkey) which is part of the
+identifying variation, not noise; winsorising as the main spec would
+attenuate the coefficient mechanically. Raw remittances enters
+naturally because the variable is already a bounded ratio (% of GDP);
+logging a bounded ratio is a convention-breach with no analytical
+benefit. `baseline_year` is a nuisance parameter — its pooled
+inclusion would add a near-colinear-with-country control; spec 5's
+interaction is where it earns its seat.
+
+**Dissenting view:** A reader could argue that raw CPI with four-digit
+tails from Venezuela in 2018–2019 will dominate the inflation
+coefficient's identifying variation, and that any robustness against
+this is more meaningful than the drop-12 rows robustness. The counter
+is that inflation is a control, not the variable of interest — the
+`financial_account_baseline` coefficient is what the hypothesis is
+about, and inflation winsorisation should not materially move that
+coefficient. The winsorised-inflation robustness row lets a sceptical
+reader verify this empirically.
+
+**Consequences:** §4.2 creates `log_gdp_per_capita_usd` and
+`inflation_winsorized_pct` columns on `h2_analysis`. Headline specs
+1–5 use log-GDP + raw inflation + raw remittances. §4.11 robustness
+row "winsorised inflation (spec 3)" re-runs spec 3 with
+`inflation_winsorized_pct` substituted in.
+
+**Referenced in code:** notebook 03 §4.2 (derivations), §4.3–§4.7
+(regression calls), §4.11 (robustness row).
+
+---
+
+## D-26 — Sample rules (uniform across specs)
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** Should the 8 single-year countries (ATG, LBR, LCA, MCO,
+MRT, NER, SDN, TCD) be excluded from specs 1–2 as well as 3–5, and
+how should listwise deletion on NaN controls be documented?
+
+**Options considered:**
+- A: Exclude the 8 only from FE specs (linearmodels will silently
+  drop them from country-FE regressions anyway).
+- B: Exclude the 8 from every spec for sample identity across
+  columns.
+- C: Include them everywhere and accept silent drops in specs 2–5.
+
+**Decision:** Option B — drop the 8 single-year countries from every
+spec before any regression runs. Listwise deletion on the four
+controls (`log_gdp_per_capita_usd`, `inflation_cpi_annual_pct`,
+`financial_account_baseline`, `remittances_received_pct_gdp`) then
+applies uniformly. §4.2 must compute and print the attrition (rows
+before → after each filter) and assert that no G20 country loses any
+year to listwise deletion.
+
+**Rationale:** Sample identity across columns of the results table
+is the reader's mental reference point. If spec 1 has N = 861 and
+spec 3 has N = 798, a reader must compute the difference and work
+out which rows were dropped; they will suspect the FE specs
+cherry-pick. Uniform filtering eliminates this concern — every
+coefficient in the table comes from exactly the same row set, and
+the footnote documents the single filtering rule. Option C's silent
+drops in linearmodels are how bugs hide in panel papers; a model
+that "works" on 160 entities but silently regresses on 152 is a
+reproducibility hazard. The G20 assertion guards against a
+plausible failure mode where a specific high-weight country loses a
+year to control NaN without us noticing.
+
+**Dissenting view:** A reader could argue that pooled OLS and country
+FE have no technical reason to exclude single-year countries (their
+contribution to a pooled coefficient is informative even if small)
+and that uniform exclusion is over-engineering. The counter is that
+the loss of information is tiny (8 country-year rows) and the gain
+in sample-identity clarity across the 5-column table is large.
+
+**Consequences:** §4.2 constructs `h2_analysis` by (i) dropping the
+8 single-year countries, (ii) dropping rows with NaN in any of the
+four controls, (iii) asserting a country-count sanity floor (≥100
+countries), (iv) asserting no G20 country loses more than one year.
+The exact post-filter N is not hardcoded — it is computed and
+printed at run-time. At Phase 3.5a close: 702 rows from 123
+countries survive (151 rows lost to listwise deletion on WB
+controls, primarily on `financial_account_baseline` for the ~30
+countries with no Findex wave covering them, plus scattered NaNs on
+inflation and remittances for smaller economies). G20 attrition:
+zero. The 123-country, 702-row realisation is a normal cross-country
+WB panel; the Phase 3.5a prompt's pre-execution estimate of
+"~800–850 rows, ~150 countries" was speculative. Phase 4 narrative
+documents the attrition.
+
+**Referenced in code:** notebook 03 §4.2 (filtering + assertions).
+
+---
+
+## D-27 — `post_2022` main-effect handling in two-way FE specs
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** D-04 specifies that specs 3–5 include
+`baseline × post_2022` as the interaction of interest. In a two-way
+FE model with year fixed effects, the `post_2022` main effect is a
+linear combination of year dummies and will be absorbed. How is this
+absorbed main effect reported?
+
+**Options considered:**
+- A: Include `post_2022` as a regressor in specs 3–5 and let
+  linearmodels drop it (with a warning).
+- B: Omit `post_2022` from specs 3–5, include only the interaction
+  and the other time-varying controls.
+- C: Include `post_2022` in specs 1–2 where year FE don't absorb
+  it, and omit from specs 3–5 with an explicit footnote.
+
+**Decision:** Option C. Specs 1 (pooled) and 2 (country FE) include
+`post_2022` as a regressor — it identifies in both because neither
+has year FE to absorb it. Specs 3, 4, 5 include year fixed effects
+and do not pass `post_2022` as a column at all; the
+`baseline × post_2022` interaction (or
+`baseline × I(baseline_year==2024)` in spec 5) enters alone. The
+results table reports the interaction coefficient as the row-1
+headline for specs 3–5 and the `post_2022` main-effect coefficient
+for specs 1–2.
+
+**Rationale:** Passing `post_2022` into a two-way FE model and
+letting linearmodels silently drop it invites exactly the kind of
+"which regressor did the software keep?" ambiguity we should
+engineer out. Omitting it explicitly is the honest move: the main
+effect is identified by year FE in specs 3–5, and the interaction
+is what the hypothesis is about. Option C produces a clean results
+table where each row's coefficient has an identified meaning in its
+column.
+
+**Dissenting view:** A reader unfamiliar with FE absorption could
+scan the results table and wonder why specs 1–2 have a `post_2022`
+row and specs 3–5 don't. The fix is a clear footnote on the table:
+"post_2022 main effect absorbed by year fixed effects in specs 3–5;
+its identification in those specs is via the baseline × post_2022
+interaction." The footnote is cheap.
+
+**Consequences:** §4.3–§4.4 build design matrices that include
+`post_2022`; §4.5–§4.7 build design matrices that exclude it and
+rely on year FE via `time_effects=True`. The §4.11 master summary
+has a `post_2022` column with values for specs 1–2 and `--` (or
+NaN) for specs 3–5; the `baseline_x_post_2022` column is populated
+for specs 3–4 (and `baseline_x_baseline_2024` for spec 5).
+
+**Referenced in code:** notebook 03 §4.3, §4.4, §4.5, §4.6, §4.7,
+§4.11.
+
+---
+
+## D-28 — Country-only clustering (not two-way)
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** D-04 locks country-clustered SE. Should we also
+consider two-way (country + year) clustering for robustness?
+
+**Options considered:**
+- A: Country-only clustering.
+- B: Two-way clustering (country + year).
+- C: Country-only in headline + two-way as robustness row.
+
+**Decision:** Option A — country-only clustering throughout. Do not
+add a two-way row.
+
+**Rationale:** Cameron-Gelbach-Miller (2011) and the applied-panel
+literature agree that two-way clustering requires enough clusters on
+the less-populous dimension for the asymptotic approximation to
+hold. With T = 6 years, year-clustering has 6 clusters — below the
+conventional rule-of-thumb minimum of 20–30 needed for stable
+inference. Country-clustering with ~150 clusters is well within the
+stable range. Running two-way clustering as a robustness row would
+produce standard errors that are less reliable than the headline,
+inverting the normal purpose of a robustness check.
+
+**Dissenting view:** A methodological hawk could argue that any
+time-series correlation in adoption shocks across countries (e.g.,
+global crypto-market events in 2022) is ignored by country-only
+clustering and could understate SEs. The counter is (i) year fixed
+effects in specs 3–5 absorb common year shocks, removing a large
+share of the cross-country correlation in residuals; (ii) HAC is
+not a substitute here because H2 is a short-T panel, not a time
+series within an entity (HAC is appropriate for H1/H3/H4 where T
+is 70–2200; see D-09, D-17). For H2's short T, country-clustering
+is the published standard.
+
+**Consequences:** All H2 regressions use `.fit(cov_type='clustered',
+cluster_entity=True)` (linearmodels) or `.fit(cov_type='cluster',
+cov_kwds={'groups': country_codes})` (statsmodels for the pooled
+spec 1). The master summary footnote states "standard errors
+clustered on country throughout; two-way clustering not used
+because the 6-year dimension is too short for stable two-way
+inference."
+
+**Referenced in code:** notebook 03 §4.3 through §4.11.
+
+---
+
+## D-29 — Pre-registered signs (before results are observed)
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided before results are observed
+
+**Question:** H2 predicts "adoption accelerates in countries with
+weak banking infrastructure, strengthening post-2022." What
+coefficient signs does this translate to on the five-spec ladder,
+and should those signs be pre-registered before running the
+regressions?
+
+**Options considered:**
+- A: Do not pre-register; report what the data shows.
+- B: Pre-register signs in the decision log; let "we found the
+  expected sign" remain a substantive finding.
+- C: Pre-register plus a full Bayesian prior specification.
+
+**Decision:** Option B. Pre-register the following signs at
+p < 0.05:
+- `financial_account_baseline` main effect (specs 1, 2): **negative**
+  — higher baseline (stronger banking) → lower adoption pressure.
+- `post_2022` main effect (specs 1, 2): **positive** — crypto
+  adoption trended up post-Nov 2022 on average.
+- `baseline × post_2022` interaction (specs 3, 4): **negative and
+  larger in magnitude than the spec-2 main effect** — the
+  relationship strengthens post-2022, i.e. the negative link between
+  banking strength and adoption gets more negative.
+- `baseline × I(baseline_year == 2024)` interaction (spec 5): **no
+  pre-registered sign** — spec 5 is a Findex-vintage sensitivity,
+  not a hypothesis test.
+- `log_gdp_per_capita_usd`: **no pre-registered sign** — crypto-
+  adoption vs income is empirically ambiguous (developed economies:
+  investment demand; developing economies: remittance / inflation
+  hedging; cancel).
+- `inflation_cpi_annual_pct`: **positive** — inflation-hedging
+  demand should drive crypto adoption, though this is an auxiliary
+  prediction not central to H2.
+- `remittances_received_pct_gdp`: **positive** — high-remittance
+  economies have more cross-border payment demand.
+
+**Rationale:** Pre-registration at low methodological cost converts
+"we found the expected sign" into genuine confirmatory evidence
+rather than post-hoc rationalisation. It also commits Phase 4 to
+discussing any sign-flip honestly rather than finessing around it.
+The cost is one paragraph in the decision log; the gain is
+viva-defence.
+
+**Dissenting view:** A reader could argue that pre-registration in a
+decision log written four days before execution is weaker than
+pre-registration on a public registry (OSF, AEA RCT). This is true
+— the decision log is not a third-party timestamp. We accept this
+and mitigate by (i) committing the decision log to git before any
+regression runs in Phase 3.5b, (ii) marking D-29's Status line
+"Decided before results are observed", (iii) noting the sign-match
+or sign-miss in every Phase 4 narrative paragraph that discusses
+the corresponding coefficient.
+
+**Consequences:** The §4.14 narrative markdown in Phase 3.5b
+organises around the five pre-registered signs and explicitly flags
+any mismatch. The coefficient plot (`fig_h2_coefficient_plot.png`)
+shades the "expected sign" half-plane to make sign-conformance
+visually obvious.
+
+**Referenced in code:** notebook 03 §4.14 (narrative — Phase 3.5b),
+`fig_h2_coefficient_plot.png` (Phase 3.5b).
+
+---
+
+## D-30 — Figure choice: coefficient plot + binscatter (not choropleth)
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** The Roadmap (line 228) suggests either a choropleth map
+of adoption scores or a scatter of inflation vs adoption. D-04 is
+silent on figures. Which figure(s) should accompany H2?
+
+**Options considered:**
+- A: Choropleth.
+- B: Coefficient dot-and-whisker plot across the 5 specs.
+- C: Scatter of `log_gdp` × `adoption_percentile` with
+  pre/post-2022 highlighted.
+- D: Binscatter of `financial_account_baseline` ×
+  `adoption_percentile` split by pre/post-2022.
+- E: Two figures: B + D.
+
+**Decision:** Option E. Produce two figures:
+`fig_h2_coefficient_plot.png` (dot-and-whisker for the
+`baseline × post_2022` interaction coefficient with 95% CI whiskers
+across specs 3, 4, 5 plus `baseline` main effect for specs 1, 2 as
+auxiliary rows) and `fig_h2_binscatter.png` (two-panel binscatter of
+adoption_percentile on `financial_account_baseline`, residualised
+against log-GDP, pre-2022 and post-2022 panels side by side with OLS
+fit lines). Additionally, §4.1 produces one descriptive figure
+`fig_h2_descriptive.png` (adoption_percentile distribution by year,
+faceted) which is included in this session's scope. No choropleth.
+
+**Rationale:** A coefficient plot is the single figure that will
+survive to the Phase 4 deck as the H2 headline — it visualises the
+pre-registered sign hypothesis directly and makes spec-to-spec
+stability (or instability) obvious. A binscatter of the headline
+mechanism (banking weakness × post-2022) converts the interaction
+coefficient into a picture that a non-econometrician can read. A
+choropleth is pretty but non-inferential, adds 2–3 hours of
+GeoPandas + shapefile + projection-choice work, introduces a
+toolchain (GeoPandas) not otherwise in the project, and answers a
+different question ("where is adoption?") from the one H2 asks
+("does banking-inclusion-gap predict adoption?"). The cost-benefit
+is unambiguously against the map.
+
+**Dissenting view:** A critic could argue the deck benefits from a
+striking visual opener for H2 and that a choropleth would do that
+job. The counter is that Phase 4 deck re-styling is its own layer
+(per D-05's dissenting view) — the notebook's job is to produce
+defence-ready inferential figures, and a deck artist can build a
+choropleth from the already-produced master dataset if the deck
+narrative calls for it. Keeping the GeoPandas dependency out of the
+notebook is consistent with minimising analysis-code fragility.
+
+**Consequences:** Phase 3.5a produces `fig_h2_descriptive.png` only.
+Phase 3.5b produces `fig_h2_coefficient_plot.png` and
+`fig_h2_binscatter.png`. No `fig_h2_choropleth.png` is built at any
+Phase 3 stage.
+
+**Referenced in code:** notebook 03 §4.1 (descriptive, this session),
+§4.13 (coefficient plot + binscatter, Phase 3.5b).
+
+---
+
+## D-31 — Robustness battery & regional panel
+
+**Date:** 2026-04-19
+**Phase 3 section:** §4 (H2 diffusion)
+**Status:** Decided
+
+**Question:** Beyond the 5-spec ladder, what additional rows and
+slices should appear in the H2 master summary
+(`tbl_h2_master_summary`)?
+
+**Options considered:**
+- A: 5 specs only, no additional rows.
+- B: 5 specs + 2 robustness rows (drop "Among lowest"; winsorised
+  inflation).
+- C: 5 specs + 3 robustness rows + 1 separate regional table.
+- D: 5 specs + 4 robustness rows + 1 regional table.
+
+**Decision:** Option D. The §4.11 master summary has 8 rows:
+
+1. Spec 1 — Pooled OLS (D-04, D-27)
+2. Spec 2 — Country FE (D-04, D-27)
+3. Spec 3 — Two-way FE with `baseline × post_2022` (D-04, headline)
+4. Spec 4 — Spec 3 excluding forward-filled 2025 rows (D-04)
+5. Spec 5 — Two-way FE with
+   `baseline × I(baseline_year==2024)` (D-04)
+6. Robustness — Spec 3 dropping the "Among lowest" rows that survive
+   the D-26 cascade (6 of the 12 raw-panel rows; the other 6 are
+   already removed via single-year-country drop or listwise deletion
+   on controls — see D-24 Consequences) (D-24)
+7. Robustness — Spec 3 with winsorised inflation (1st/99th
+   percentile) (D-25)
+8. Robustness — `overall_score` as DV, pooled OLS on 2020–2021
+   subsample (D-24)
+
+Plus a separate table `tbl_h2_regional_panel.csv/.tex` containing
+spec 3 run on 3 regional splits: Sub-Saharan Africa, Latin America
+& Caribbean, South Asia + East Asia & Pacific combined.
+
+The regional panel is a separate table because row-counts,
+controls-availability, and degrees-of-freedom vary across regions;
+forcing them into the main summary schema would require NaN-padding
+that would obscure the N per row.
+
+**Rationale:** The main results table answers "does the interaction
+survive across specifications?" and the robustness rows answer
+"does it survive sample and DV perturbations?" Together they cover
+the methodological surface an examiner will interrogate: sample
+selection (row 6), control-form sensitivity (row 7), DV-choice
+non-contingency (row 8), and regional heterogeneity (separate
+table). The regional panel is descriptive rather than inferential —
+low N per region means coefficient precision will be wide, and the
+honest framing is "consistent with the headline where identifiable,
+under-powered where not", not "region X confirms the hypothesis."
+
+**Dissenting view:** A reader could argue that 8 rows in one table
+plus a separate regional table is over-engineering — the hypothesis
+test is the spec-3 coefficient, and everything else is decoration.
+The counter is that H2's level claim is identification-weak (D-29
+rationale) and its interaction claim leans heavily on six years of
+data; robustness is where the hypothesis earns its empirical
+credibility. A sparser table would lose the viva-defence payoff.
+
+**Consequences:** Phase 3.5b produces `tbl_h2_master_summary.csv/.tex`
+with the 8-row schema (rows 1–5 + 6–7–8) and
+`tbl_h2_regional_panel.csv/.tex` with a 3-row regional schema. Both
+are referenced in the §4.14 narrative.
+
+**Referenced in code:** notebook 03 §4.8 (drop "Among lowest"),
+§4.9 (overall_score DV), §4.10 (regional panel), §4.11 (master
+summary consolidation).
+

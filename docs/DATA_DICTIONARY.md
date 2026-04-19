@@ -283,11 +283,63 @@ hypothesis-ready datasets — they are analysis outputs.
 | `tbl_h4_master_summary.csv` / `.tex` | `outputs/tables/` | §3.7 (cell 85) | 24-row paired-test consolidation: ETH + Tron × $200 + $10,000 × full + post-Dencun-Apr + post-Dencun-Mar × flat=$0 + flat=$3.50 |
 | `tbl_h4_paired_tests_summary.txt` | `outputs/tables/` | §3.8 (cell 87) | Full `statsmodels` text dumps for the 24 paired tests (D-08 rule 7) |
 
-## H2 (§5) derived variables
+## H2 (§4) derived variables
 
-- `log_gdp_per_capita_usd` = `np.log(gdp_per_capita_usd)` per
-  country-year. GDP enters regressions in logs to reduce right-
-  skewness.
-- Interaction terms constructed inside the regression call:
-  `financial_account_baseline:post_2022`,
-  `financial_account_baseline:I(baseline_year==2024)`.
+All columns below are created in `notebooks/03_empirical_analysis.ipynb`
+§4.2 on the filtered `h2_analysis` frame (raw `h2` minus 8 single-year
+countries minus listwise-deletion losses per D-26). They are not
+written to disk — they live on the in-memory analysis frame only.
+
+- `log_gdp_per_capita_usd` = `np.log(gdp_per_capita_usd)`. Natural log
+  of GDP per capita in current USD. Created to reduce right-skewness
+  of the raw level (D-25). NaN where `gdp_per_capita_usd` is NaN or
+  zero — no such rows expected in the filtered `h2_analysis`. Enters
+  all five headline specs as a control.
+- `inflation_winsorized_pct` = `inflation_cpi_annual_pct` winsorised
+  symmetrically at the 1st and 99th percentiles of the `h2_analysis`
+  distribution. Used only in the §4.11 master-summary robustness row
+  (D-25); the headline specs use raw inflation to preserve the
+  hyperinflation tail.
+- `is_among_lowest` = `(rank_note == "Among lowest")`. Flags rows
+  (2020 only) where Chainalysis classified the country into the
+  lowest-adoption tier and left `rank` as NaN. The raw `h2` panel
+  contains 12 such rows; in `h2_analysis` (after the D-26 cascade) 6
+  survive — the other 6 are dropped by the single-year-country filter
+  (TCD) or by listwise deletion on World Bank controls (CPV, FJI on
+  `financial_account_baseline`; LBY on `remittances_received_pct_gdp`;
+  TJK, TKM on `inflation_cpi_annual_pct`). Used only in the §4.8
+  robustness drop (D-24); see also D-24 Consequences for the effect on
+  the §4.8 row-count.
+- `baseline_is_2024` = `(baseline_year == 2024)`. True where the
+  Findex baseline observation for that country was drawn from the
+  2024 wave (139 countries of 160). Enters spec 5 as the interaction
+  dummy `baseline × I(baseline_year == 2024)` (D-04).
+- `region_wb` = World Bank region code mapped from `country_iso3`
+  (values: `SSA`, `LAC`, `SA`, `EAP`, `MENA`, `ECA`, `NAM`). Used
+  only in the §4.10 regional panel (D-31). Constructed in Phase 3.5b
+  Task I; listed here for forward reference.
+
+**Restated panel indicators (already on the raw dataset, used
+unchanged):**
+- `post_2022` = 1 if `year >= 2023`, 0 otherwise. Structural break
+  dummy. Enters specs 1–2 as a main effect; absorbed by year FE in
+  specs 3–5 and re-expressed via the `baseline × post_2022`
+  interaction (D-27).
+- `is_forward_filled` = True for 2025 rows with forward-filled WB
+  controls. Used in spec 4 exclusion (D-04).
+
+### H2 output artifacts (outputs/ files written by §4)
+
+Files saved to disk by the H2 cells. Listed so the dictionary's
+coverage matches what's on disk. None are hypothesis-ready datasets
+— they are analysis outputs.
+
+| File | Path | Source cell | Purpose |
+|---|---|---|---|
+| `fig_h2_descriptive.png` | `outputs/figures/` | §4.1 (Phase 3.5a) | Adoption percentile distribution by year (faceted), with panel-balance annotation |
+| `tbl_h2_descriptive.csv` / `.tex` | `outputs/tables/` | §4.1 (Phase 3.5a) | Panel balance table: countries per year, pct non-missing on each control, mean/SD of DV by year |
+| `tbl_h2_master_summary.csv` / `.tex` | `outputs/tables/` | §4.11 (Phase 3.5b) | 5-spec ladder + 3 robustness rows × standard results-table schema (spec, N, beta, SE, ci_low, ci_high, p_value, r2_within, cluster_count, notes) |
+| `tbl_h2_regression_tables.txt` | `outputs/tables/` | §4.12 (Phase 3.5b) | `linearmodels` / `statsmodels` full text dumps for all 5 specs + 3 robustness specs + 3 regional specs (D-08 rule 7) |
+| `tbl_h2_regional_panel.csv` / `.tex` | `outputs/tables/` | §4.10 (Phase 3.5b) | Spec-3 estimates for SSA, LAC, and SA+EAP splits; descriptive — see D-31 |
+| `fig_h2_coefficient_plot.png` | `outputs/figures/` | §4.13 (Phase 3.5b) | Dot-and-whisker of `baseline × post_2022` coefficient with 95% CI across specs 3/4/5 and `baseline` main effect across specs 1/2; D-29 pre-registered-sign shading |
+| `fig_h2_binscatter.png` | `outputs/figures/` | §4.13 (Phase 3.5b) | Two-panel binscatter of adoption_percentile on `financial_account_baseline` (residualised against log-GDP), pre/post-2022 |
