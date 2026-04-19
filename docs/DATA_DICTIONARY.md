@@ -196,16 +196,92 @@ hypothesis-ready datasets — they are analysis outputs.
 
 ## H4 (§3) derived variables
 
+Variables computed within notebook 03 §3 for the H4 cost-comparison
+battery. None are persisted to disk except where noted via the "H4
+output artifacts" table below. Documented here so the dictionary
+mirrors the analytical surface a Phase 4 reader will encounter.
+
+**§3.1 derived (legacy cost columns used across §3):**
+
 - `legacy_cost_200` = `200 * legacy_pct_fee + legacy_flat_fee` per
-  month.
+  month. USD. Written in cells 79 (§3.4) and 81 (§3.5). Headline
+  scenario uses `legacy_flat_fee = 0` (per D-02); sensitivity uses
+  `legacy_flat_fee = 3.50` (reconstructed inline in cells 81 and 83
+  as `legacy_cost_200 + 3.50`).
 - `legacy_cost_10000` = `10000 * legacy_pct_fee + legacy_flat_fee`
-  per month.
+  per month. USD. Same scenario rule as `legacy_cost_200`.
+
+**§3.2 derived (ETH-Tron crossover flags):**
+
+- `eth_undercuts_tron_mean` — boolean, True in months where
+  `eth_mean_fee_usd < tron_mean_fee_usd`. Headline construct for
+  the §3.2 crossover-counts table per D-21. 6 True values across
+  72 months, all in 2025.
+- `eth_undercuts_tron_median` — boolean, True in months where
+  `eth_median_fee_usd < tron_median_fee_usd`. Secondary column
+  in §3.2's table. 0 True values across the window — the Tron
+  median saturates at $0 in 14 months, which makes the ETH
+  median undercut mathematically impossible there and does not
+  occur in the other 58.
+
+**§3.3 derived (break-even transfer sizes):**
+
+- `breakeven_eth_median` — USD per month,
+  `eth_median_fee_usd / legacy_pct_fee`. Transfer size at which
+  the percentage legacy fee equals the ETH median fee.
+- `breakeven_eth_mean` — USD per month, same with
+  `eth_mean_fee_usd`.
+- `breakeven_tron_median` — USD per month, same with
+  `tron_median_fee_usd`. Equals $0 in the 14 months where
+  `tron_median_fee_usd == 0`; the annual median is still
+  well-defined via positive months.
+- `breakeven_tron_mean` — USD per month, same with
+  `tron_mean_fee_usd`.
+
+**§3.4 derived (cost-savings ratios):**
+
+- `ratio_eth_med_200` — ratio (dimensionless),
+  `legacy_cost_200 / eth_median_fee_usd`. Typical interpretation:
+  "legacy is N× more expensive than ETH median at a $200 transfer."
+- `ratio_tron_med_200` — ratio, same with Tron median. Set to
+  `np.nan` in 14 months where `tron_median_fee_usd == 0`
+  (ratio is mathematically undefined there; CONTINUATION CHANGE 5).
+- `ratio_eth_med_10000`, `ratio_tron_med_10000` — same at $10,000.
+
+**§3.5/§3.6 derived (paired-test DVs):**
+
 - `diff_200_eth` = `legacy_cost_200 - eth_mean_fee_usd` per month.
+  Dependent variable for the §3.5 ETH-at-$200 paired test.
 - `diff_200_tron` = `legacy_cost_200 - tron_median_fee_usd` per
-  month.
+  month. Dependent variable for the §3.5 Tron-at-$200 paired test.
 - `diff_10000_eth`, `diff_10000_tron`: same at $10,000.
 - Sensitivity versions of all four computed with
-  `legacy_flat_fee = 3.50`.
+  `legacy_flat_fee = 3.50` (i.e., `legacy_cost_{size} + 3.50`
+  minus the on-chain fee), reconstructed inline.
+- The paired test is OLS on a constant with HAC standard errors at
+  `maxlags=4` for the full window (n=72) and `maxlags=2` for the
+  post-Dencun sub-windows (n=21 headline, n=22 robustness) per
+  D-09. The coefficient on the constant is the mean monthly
+  legacy-minus-on-chain dollar difference; its t-test is the test
+  of H0: mean = 0 per D-10.
+
+### H4 output artifacts (outputs/ files written by §3)
+
+Files saved to disk by the H4 cells. Listed here so the
+dictionary's coverage matches what's on disk. None are
+hypothesis-ready datasets — they are analysis outputs.
+
+| File | Path | Source cell | Purpose |
+|---|---|---|---|
+| `tbl_h4_cost_comparison.csv` / `.tex` | `outputs/tables/` | §3.1 (cell 73) | Descriptive cost comparison at $200 and $10,000 with ETH mean / Tron median / Legacy mean and four construct-matched ratios per D-23 |
+| `fig_h4_cost_comparison.png` | `outputs/figures/` | §3.1 (cell 73) | Log-scale bar chart of the three D-02 constructs, with an on-bar annotation naming the Tron median value and the 14-month $0-saturation count per D-23 |
+| `tbl_h4_crossover_by_year.csv` / `.tex` | `outputs/tables/` | §3.2 (cell 75) | Per-year crossover counts for ETH-mean-vs-Tron-mean (D-21 headline) and ETH-median-vs-Tron-median (secondary column) |
+| `fig_h4_eth_tron_overlay.png` | `outputs/figures/` | §3.2 (cell 75) | Four-series log-scale time series: ETH mean, Tron mean (headline bold), ETH median, Tron median (transparency overlays) with Dencun annotation per D-21 |
+| `tbl_h4_breakeven_by_year.csv` / `.tex` | `outputs/tables/` | §3.3 (cell 77) | Year-by-year median break-even transfer sizes for the four on-chain statistics (ETH median/mean, Tron median/mean) |
+| `tbl_h4_savings_ratio_by_year.csv` / `.tex` | `outputs/tables/` | §3.4 (cell 79) | Year-by-year median of the monthly legacy/on-chain cost ratio at $200 and $10,000. Columns `eth_savings_ratio_median` and `tron_savings_ratio_median` are dimensionless ratios, not dollar savings (renamed from `*_savings_median` per Phase 3.4c audit) |
+| `fig_h4_cost_ratio_timeseries.png` | `outputs/figures/` | §3.4 (cell 79) | Log-scale monthly cost-ratio (legacy / on-chain) time series at $10,000 with Dencun and parity annotations |
+| `tbl_h4_master_summary.csv` / `.tex` | `outputs/tables/` | §3.7 (cell 85) | 24-row paired-test consolidation: ETH + Tron × $200 + $10,000 × full + post-Dencun-Apr + post-Dencun-Mar × flat=$0 + flat=$3.50 |
+| `tbl_h4_paired_tests_summary.txt` | `outputs/tables/` | §3.8 (cell 87) | Full `statsmodels` text dumps for the 24 paired tests (D-08 rule 7) |
 
 ## H2 (§5) derived variables
 

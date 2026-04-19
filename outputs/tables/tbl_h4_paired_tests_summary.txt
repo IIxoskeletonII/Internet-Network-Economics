@@ -1,0 +1,671 @@
+==============================================================================
+window=full, dv=diff_200_eth, flat_fee=$0.00, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -317.19
+No. Observations:                  72   AIC:                             636.4
+Df Residuals:                      71   BIC:                             638.7
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -6.5299      4.213     -1.550      0.121     -14.787       1.728
+==============================================================================
+Omnibus:                       38.165   Durbin-Watson:                   0.638
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               77.832
+Skew:                          -1.943   Prob(JB):                     1.26e-17
+Kurtosis:                       6.293   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_10000_eth, flat_fee=$0.00, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -385.12
+No. Observations:                  72   AIC:                             772.2
+Df Residuals:                      71   BIC:                             774.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        404.7431     12.636     32.030      0.000     379.976     429.510
+==============================================================================
+Omnibus:                       12.526   Durbin-Watson:                   0.095
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               14.724
+Skew:                           1.106   Prob(JB):                     0.000635
+Kurtosis:                       2.868   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_200_tron, flat_fee=$0.00, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -101.92
+No. Observations:                  72   AIC:                             205.8
+Df Residuals:                      71   BIC:                             208.1
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          8.2586      0.250     32.983      0.000       7.768       8.749
+==============================================================================
+Omnibus:                       10.894   Durbin-Watson:                   0.071
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):               12.065
+Skew:                           0.972   Prob(JB):                      0.00240
+Kurtosis:                       2.510   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_10000_tron, flat_fee=$0.00, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -380.58
+No. Observations:                  72   AIC:                             763.2
+Df Residuals:                      71   BIC:                             765.4
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        419.5317     12.106     34.655      0.000     395.804     443.259
+==============================================================================
+Omnibus:                       13.439   Durbin-Watson:                   0.040
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               12.646
+Skew:                           0.947   Prob(JB):                      0.00179
+Kurtosis:                       2.208   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_200_eth, flat_fee=$3.50, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -317.19
+No. Observations:                  72   AIC:                             636.4
+Df Residuals:                      71   BIC:                             638.7
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -3.0299      4.213     -0.719      0.472     -11.287       5.228
+==============================================================================
+Omnibus:                       38.165   Durbin-Watson:                   0.638
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               77.832
+Skew:                          -1.943   Prob(JB):                     1.26e-17
+Kurtosis:                       6.293   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_10000_eth, flat_fee=$3.50, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -385.12
+No. Observations:                  72   AIC:                             772.2
+Df Residuals:                      71   BIC:                             774.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        408.2431     12.636     32.307      0.000     383.476     433.010
+==============================================================================
+Omnibus:                       12.526   Durbin-Watson:                   0.095
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               14.724
+Skew:                           1.106   Prob(JB):                     0.000635
+Kurtosis:                       2.868   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_200_tron, flat_fee=$3.50, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -101.92
+No. Observations:                  72   AIC:                             205.8
+Df Residuals:                      71   BIC:                             208.1
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         11.7586      0.250     46.961      0.000      11.268      12.249
+==============================================================================
+Omnibus:                       10.894   Durbin-Watson:                   0.071
+Prob(Omnibus):                  0.004   Jarque-Bera (JB):               12.065
+Skew:                           0.972   Prob(JB):                      0.00240
+Kurtosis:                       2.510   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=full, dv=diff_10000_tron, flat_fee=$3.50, hac_lags=4
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -380.58
+No. Observations:                  72   AIC:                             763.2
+Df Residuals:                      71   BIC:                             765.4
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        423.0317     12.106     34.944      0.000     399.304     446.759
+==============================================================================
+Omnibus:                       13.439   Durbin-Watson:                   0.040
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               12.646
+Skew:                           0.947   Prob(JB):                      0.00179
+Kurtosis:                       2.208   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 4 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_eth, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -79.230
+No. Observations:                  21   AIC:                             160.5
+Df Residuals:                      20   BIC:                             161.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.8609      2.769      0.311      0.756      -4.567       6.288
+==============================================================================
+Omnibus:                       32.553   Durbin-Watson:                   1.421
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               70.515
+Skew:                          -2.650   Prob(JB):                     4.87e-16
+Kurtosis:                      10.245   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_eth, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -79.230
+No. Observations:                  21   AIC:                             160.5
+Df Residuals:                      20   BIC:                             161.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        377.9674      2.769    136.492      0.000     372.540     383.395
+==============================================================================
+Omnibus:                       32.553   Durbin-Watson:                   1.421
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               70.515
+Skew:                          -2.650   Prob(JB):                     4.87e-16
+Kurtosis:                      10.245   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_tron, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 43.044
+No. Observations:                  21   AIC:                            -84.09
+Df Residuals:                      20   BIC:                            -83.04
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          7.6725      0.007   1156.446      0.000       7.659       7.685
+==============================================================================
+Omnibus:                        6.344   Durbin-Watson:                   1.656
+Prob(Omnibus):                  0.042   Jarque-Bera (JB):                4.833
+Skew:                          -1.173   Prob(JB):                       0.0892
+Kurtosis:                       3.152   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_tron, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 43.044
+No. Observations:                  21   AIC:                            -84.09
+Df Residuals:                      20   BIC:                            -83.04
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        384.7790      0.007    5.8e+04      0.000     384.766     384.792
+==============================================================================
+Omnibus:                        6.344   Durbin-Watson:                   1.656
+Prob(Omnibus):                  0.042   Jarque-Bera (JB):                4.833
+Skew:                          -1.173   Prob(JB):                       0.0892
+Kurtosis:                       3.152   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_eth, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -79.230
+No. Observations:                  21   AIC:                             160.5
+Df Residuals:                      20   BIC:                             161.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          4.3609      2.769      1.575      0.115      -1.067       9.788
+==============================================================================
+Omnibus:                       32.553   Durbin-Watson:                   1.421
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               70.515
+Skew:                          -2.650   Prob(JB):                     4.87e-16
+Kurtosis:                      10.245   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_eth, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -79.230
+No. Observations:                  21   AIC:                             160.5
+Df Residuals:                      20   BIC:                             161.5
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        381.4674      2.769    137.756      0.000     376.040     386.895
+==============================================================================
+Omnibus:                       32.553   Durbin-Watson:                   1.421
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               70.515
+Skew:                          -2.650   Prob(JB):                     4.87e-16
+Kurtosis:                      10.245   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_tron, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 43.044
+No. Observations:                  21   AIC:                            -84.09
+Df Residuals:                      20   BIC:                            -83.04
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         11.1725      0.007   1683.990      0.000      11.159      11.185
+==============================================================================
+Omnibus:                        6.344   Durbin-Watson:                   1.656
+Prob(Omnibus):                  0.042   Jarque-Bera (JB):                4.833
+Skew:                          -1.173   Prob(JB):                       0.0892
+Kurtosis:                       3.152   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_tron, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 43.044
+No. Observations:                  21   AIC:                            -84.09
+Df Residuals:                      20   BIC:                            -83.04
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        388.2790      0.007   5.85e+04      0.000     388.266     388.292
+==============================================================================
+Omnibus:                        6.344   Durbin-Watson:                   1.656
+Prob(Omnibus):                  0.042   Jarque-Bera (JB):                4.833
+Skew:                          -1.173   Prob(JB):                       0.0892
+Kurtosis:                       3.152   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_eth, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -86.755
+No. Observations:                  22   AIC:                             175.5
+Df Residuals:                      21   BIC:                             176.6
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -0.6835      3.099     -0.221      0.825      -6.757       5.390
+==============================================================================
+Omnibus:                       21.271   Durbin-Watson:                   1.202
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               25.693
+Skew:                          -2.060   Prob(JB):                     2.64e-06
+Kurtosis:                       6.325   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_eth, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -86.755
+No. Observations:                  22   AIC:                             175.5
+Df Residuals:                      21   BIC:                             176.6
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        376.4231      3.099    121.480      0.000     370.350     382.496
+==============================================================================
+Omnibus:                       21.271   Durbin-Watson:                   1.202
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               25.693
+Skew:                          -2.060   Prob(JB):                     2.64e-06
+Kurtosis:                       6.325   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_tron, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 45.321
+No. Observations:                  22   AIC:                            -88.64
+Df Residuals:                      21   BIC:                            -87.55
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          7.6714      0.006   1190.512      0.000       7.659       7.684
+==============================================================================
+Omnibus:                        5.415   Durbin-Watson:                   1.615
+Prob(Omnibus):                  0.067   Jarque-Bera (JB):                4.201
+Skew:                          -1.070   Prob(JB):                        0.122
+Kurtosis:                       2.995   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_tron, flat_fee=$0.00, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 45.321
+No. Observations:                  22   AIC:                            -88.64
+Df Residuals:                      21   BIC:                            -87.55
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        384.7780      0.006   5.97e+04      0.000     384.765     384.791
+==============================================================================
+Omnibus:                        5.415   Durbin-Watson:                   1.615
+Prob(Omnibus):                  0.067   Jarque-Bera (JB):                4.201
+Skew:                          -1.070   Prob(JB):                        0.122
+Kurtosis:                       2.995   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_eth, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -86.755
+No. Observations:                  22   AIC:                             175.5
+Df Residuals:                      21   BIC:                             176.6
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          2.8165      3.099      0.909      0.363      -3.257       8.890
+==============================================================================
+Omnibus:                       21.271   Durbin-Watson:                   1.202
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               25.693
+Skew:                          -2.060   Prob(JB):                     2.64e-06
+Kurtosis:                       6.325   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_eth, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                -86.755
+No. Observations:                  22   AIC:                             175.5
+Df Residuals:                      21   BIC:                             176.6
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        379.9231      3.099    122.610      0.000     373.850     385.996
+==============================================================================
+Omnibus:                       21.271   Durbin-Watson:                   1.202
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               25.693
+Skew:                          -2.060   Prob(JB):                     2.64e-06
+Kurtosis:                       6.325   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_tron, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 45.321
+No. Observations:                  22   AIC:                            -88.64
+Df Residuals:                      21   BIC:                            -87.55
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         11.1714      0.006   1733.673      0.000      11.159      11.184
+==============================================================================
+Omnibus:                        5.415   Durbin-Watson:                   1.615
+Prob(Omnibus):                  0.067   Jarque-Bera (JB):                4.201
+Skew:                          -1.070   Prob(JB):                        0.122
+Kurtosis:                       2.995   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction
+
+==============================================================================
+window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_tron, flat_fee=$3.50, hac_lags=2
+==============================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
+Method:                 Least Squares   F-statistic:                       nan
+Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
+Time:                        20:10:45   Log-Likelihood:                 45.321
+No. Observations:                  22   AIC:                            -88.64
+Df Residuals:                      21   BIC:                            -87.55
+Df Model:                           0                                         
+Covariance Type:                  HAC                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        388.2780      0.006   6.03e+04      0.000     388.265     388.291
+==============================================================================
+Omnibus:                        5.415   Durbin-Watson:                   1.615
+Prob(Omnibus):                  0.067   Jarque-Bera (JB):                4.201
+Skew:                          -1.070   Prob(JB):                        0.122
+Kurtosis:                       2.995   Cond. No.                         1.00
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity and autocorrelation robust (HAC) using 2 lags and without small sample correction

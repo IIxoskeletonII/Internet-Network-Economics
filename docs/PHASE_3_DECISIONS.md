@@ -1050,14 +1050,59 @@ The median-vs-median comparison rule resolves the statistic-mixing problem clean
 
 ---
 
-## D-20 — Reserved for prompt 3.4b (Dencun cutoff rule for §3.6 sub-window)
+## D-20 — H4 post-Dencun sub-window cutoff rule
 
-**Status:** Reserved 2026-04-18. To be written in prompt 3.4b when the
-post-Dencun paired test sub-window is constructed. Will document the
-Apr 2024 onwards cutoff (n=21) per D-01 precedent ("first full month
-after the event"). This placeholder exists so the decision-log ID
-sequence is dense and a Phase 4 reader does not wonder if D-20 was
-deleted.
+**Date:** 2026-04-19
+**Phase 3 section:** §3.6 (H4 post-Dencun paired tests)
+**Status:** Decided (before results are observed)
+
+**Question:** The H4 paired tests §3.5 run on the full 72-month window. A post-event
+sub-window is needed to test whether the cost advantage changed after the Dencun L1 fee
+compression (mainnet 2024-03-13). What exact monthly cutoff should define "post-Dencun"?
+
+**Background in plain language:** Dencun activated on 2024-03-13. March 2024 is a
+partially-pre-Dencun month (first 12 days ran on the old fee regime). D-01 faced the
+same partial-month problem for H3's FTX split and chose Dec 2022 as the headline with
+Jun 2022 as robustness, on the principle "first full month after the event." The same
+rule applied here means April 2024 as headline, March 2024 as robustness.
+
+**Options considered:**
+- A: Mar 2024 onwards (n=22). Includes the month the event happened. Precedent from
+  D-03's H1 treatment of the FTX date itself, but H1 is daily data and can split on
+  the event date precisely; H4 is monthly.
+- B: Apr 2024 onwards (n=21). "First full month after event" per D-01 precedent.
+- C: May 2024 onwards (n=20). Buffer month to let users adjust to new fee regime.
+  Rejected because "buffer length" is a free parameter.
+
+**Decision:** Option B — April 2024 onwards as headline (n=21). March 2024 onwards
+reported as a one-month-earlier robustness (n=22) in the §3.7 master summary.
+
+**Rationale:** Direct application of D-01's rule for monthly data. The 13-day portion
+of March 2024 that is post-Dencun is substantively contaminated by the pre-Dencun
+portion; including it in the "post" sample would bias the sub-window estimates toward
+the pre-window. Option A would force an asymmetric treatment vs D-01 for no reason.
+
+**Dissenting view:** A reader could argue that one extra month (n=22 vs n=21) materially
+improves the sub-window's statistical power given that we are already at n < 25. The
+counter is that power is not the limiting concern — under the documented post-Dencun
+ETH fee compression (Phase 2B.5, §3.2 results), the effect sizes are large relative to
+SE even at n=21. Adding a half-contaminated month to gain power is a bad trade when the
+robustness row is already reported.
+
+**Newey (1994) HAC bandwidth** at both sub-window sizes: int(4 * (21/100)^(2/9)) ≈
+int(2.83) = 2 for n=21; int(4 * (22/100)^(2/9)) ≈ int(2.86) = 2 for n=22. Both
+sub-windows use maxlags=2. The §3.7 master summary footnote states that H4 uses
+int() (floor) on the Newey formula per-regression, which differs from H3's rounded
+convention at n=72 (maxlags=4); this is a documented cross-hypothesis footnote, not an
+analytical inconsistency — H3 uses maxlags=4 because that's what its committed master
+summary uses; H4's sub-window sizes were not anticipated by H3's convention.
+
+**Consequences:** §3.6 produces two blocks of 8 paired tests: one at cutoff Apr 2024
+(n=21, headline), one at cutoff Mar 2024 (n=22, robustness). Both use maxlags=2. The
+§3.7 master summary table has three window values: "full (2020-01 to 2025-12)",
+"post-Dencun (Apr 2024 onwards, D-20)", "post-Dencun robustness (Mar 2024 onwards)".
+
+**Referenced in code:** notebook 03 §3.6, §3.7.
 
 ---
 
@@ -1094,3 +1139,127 @@ CP5's caveat that "Tron mean is unreliable" applied to its use in *inference* ag
 **Consequences:** §3.2 figure (`fig_h4_eth_tron_overlay.png`) is a 4-line overlay: ETH mean (bold), Tron mean (bold), ETH median (light), Tron median (light), all on log y-axis with Dencun annotated. §3.2 table (`tbl_h4_crossover_by_year.csv` / `.tex`) reports per-year crossover counts on mean-vs-mean as the headline column, with median-vs-median included as a secondary column and a footnote explaining the construct difference. The §3.2 markdown opens by restating the construct logic from this entry so a Phase 4 reader does not relitigate it. D-19 stays in the decision log marked as superseded; this entry references it explicitly.
 
 **Referenced in code:** notebook 03 §3.2.
+
+---
+
+## D-22 — H4 $10k headline framing: ratio vs absolute-dollar difference
+
+**Date:** 2026-04-19
+**Phase 3 section:** §3.6, §3.7 (H4 post-Dencun interpretation)
+**Status:** Decided (data observed during prompt 3.4b-RECOVERY)
+
+**Question:** The §3.4 year-by-year cost-savings analysis reports the
+legacy/on-chain ratio, which expands from ~35× (2021) to ~1058× (2025) at
+$10,000 transfers — a ~30× multiplicative growth in advantage post-Dencun.
+The §3.5/§3.6 paired tests report the mean monthly legacy-minus-on-chain
+dollar difference, which COMPRESSES from ~$405 (full window) to ~$378
+(post-Dencun) at the same $10,000 size. Both are correct; they measure
+different constructs. Which does the Phase 3 narrative — and the Phase 4
+deck — treat as the headline H4 finding?
+
+**Background in plain language:** A ratio grows when the denominator falls
+faster than the numerator. A dollar difference shrinks when both rails
+fall but the larger one (legacy) falls by more dollars. Dencun and RPW
+corridor compression happened in parallel over 2023-2025 — Ethereum L1
+fees collapsed ~20× post-Dencun, but legacy percentage fees also declined
+from 5.08% (2020) to 3.85% (2023, forward-filled through 2025). At $10k,
+the legacy-side dollar drop (~$123) outweighs the stablecoin-side dollar
+drop (~$8), so mean absolute savings compress. Meanwhile the ratio
+explodes because the stablecoin denominator approaches zero.
+
+A reader who sees only §3.4 concludes "stablecoins' advantage at $10k has
+grown ~30× post-Dencun." A reader who sees only §3.5/§3.6 concludes
+"stablecoins' advantage at $10k has compressed ~7% post-Dencun." Neither
+is complete without the other.
+
+**Options considered:**
+- A: Lead with the ratio (§3.4) as the headline; treat the paired test
+  as secondary. Pro: intuitive, large, deck-friendly. Con: hides that
+  the absolute welfare surplus per $10k transfer slightly shrank.
+- B: Lead with the paired test (§3.5/§3.6) as the headline; treat §3.4
+  as secondary. Pro: this is the formal test; dollar-difference is
+  welfare-relevant. Con: compression at 7% reads as "the advantage
+  weakened" which obscures that multiplicative advantage grew 30×.
+- C: Report BOTH as co-equal headlines, with an explicit reconciliation
+  paragraph that names the two measures and explains the mechanism.
+  Pro: methodologically honest, turns a potential confusion into a
+  research finding. Con: requires the reader to hold two numbers at
+  once; more cognitive load.
+
+**Decision:** Option C.
+
+**Rationale:** The two measures are not in conflict — they are different
+questions. The ratio answers "how many times cheaper is on-chain than
+legacy?" The dollar difference answers "how many dollars per transfer
+does the sender save?" Both are welfare-relevant for different audiences:
+a regulator or researcher interested in the competitive displacement
+threat SWIFT faces cares about the multiplicative gap; a remittance
+sender choosing a rail cares about the absolute dollars. A deck that
+presents only one is leaving half the finding on the table.
+
+The compression finding also strengthens rather than weakens the H4
+hypothesis when read carefully. H4 states that on-chain fees are
+"orders of magnitude below legacy remittance costs." The 2025
+post-Dencun state has legacy costs around $385 at $10k versus ETH mean
+fees around $7 and Tron mean fees around $0.4 — the advantage is
+1000×–5000× in pure ratio terms, the largest in the sample. The
+"compression" is a side effect of legacy fees themselves falling (a
+separate observation about correspondent-banking competition that is
+consistent with the World Bank RPW trend) and does not reflect any
+weakening of on-chain rails' relative competitive position.
+
+**Dissenting view:** A critic could argue that presenting both measures
+invites a reader to pick whichever supports their prior — the ratio for
+pro-stablecoin readers, the compression for skeptics — and that a
+disciplined paper picks one headline. The counter is that the §3.7
+takeaways explicitly state the reconciliation (T6 in the master summary
+markdown), and a reader who wants to cherry-pick will do so regardless
+of how the result is presented. Transparency about the dual measures
+pre-empts the objection "but the dollar advantage shrank" during a
+viva.
+
+**Consequences:** §3.7 master summary markdown includes six takeaways
+(T1 through T6, originally five). T1 is rewritten to cite positive and
+significant coefficients across all windows at $10k without any
+"advantage grew" language. T6 is added to name the ratio vs dollar-
+difference divergence explicitly and cross-reference §3.4 for the
+ratio picture. §3.6 markdown includes a legacy-fee decomposition
+paragraph quantifying the legacy-cost drop ($ per $10k) and the ETH-
+fee drop ($ per $10k) separately. The Phase 4 deck treats §3.4 ratio
+and §3.7 paired test as co-equal H4 findings on separate slides or in
+separate panels.
+
+**Referenced in code:** notebook 03 §3.4 (already committed), §3.6, §3.7.
+
+---
+
+## D-23 — §3.1 descriptive bar chart: construct realignment to D-02 paired-test constructs
+
+**Date:** 2026-04-19
+**Phase 3 section:** §3.1 (H4 descriptive cost comparison)
+**Status:** Decided (correction of execution error in Phase 3.4b)
+**Supersedes:** nothing. D-23 does NOT supersede D-02 or D-21; it corrects a scope-misapplication of D-21 made in Phase 3.4b.
+
+**Question:** The §3.1 bar chart was built in Phase 3.4b using Tron mean as the on-chain statistic, with a cell-74 markdown rationale citing D-21. Audit on 2026-04-19 found that D-21 is scoped explicitly to §3.2 (ETH-Tron crossover) — it governs ETH-vs-Tron comparisons where both rails are on-chain — and does not cover §3.1's legacy-vs-on-chain comparison. What statistic should §3.1 use, and what does the bar chart do about the fact that Tron median saturates at $0 in 14 of 72 months?
+
+**Background in plain language:** §3.1 is the descriptive companion to the §3.5 paired tests. A reader comparing §3.1 bars to §3.5 coefficients expects the same on-chain construct on both sides. D-02 is the live decision governing that construct choice, and it specifies ETH **mean** and Tron **median** as the paired-test constructs (because the Tron n=20/month sample has CV 1.29 and CI half-width averaging 62% of mean — CP5 caveat — so the median is the safer inferential statistic). D-21 is about a different comparison (ETH vs Tron, both on-chain rails) and rests on a construct-comparability argument (mean-vs-mean approximates the typical unstaked-sender fee on each rail) that does not transfer to the legacy-vs-on-chain question §3.1 asks.
+
+The complication is that a strict D-02 reading produces a Tron median bar of $0.0324 that is visually indistinguishable from zero on the log y-axis. A reader glancing at the bar sees essentially nothing and assumes "Tron median = 0", which mis-reads the 14-month saturation artefact as the whole sample.
+
+**Options considered:**
+
+- A: Keep Tron mean, extend D-21 to cover §3.1 retroactively. *Pro:* no re-render needed. *Con:* D-21's reasoning turns on ETH and Tron sharing the same within-month precision structure (both are on-chain rails where the mean estimates the typical unstaked-sender fee); §3.1 compares an on-chain rail to legacy correspondent-banking costs, where the construct-comparability argument doesn't apply. D-21's rationale does not transfer.
+- B: Revert to Tron median per D-02, accept that the bar shows $0 visually, and footnote the 14-month saturation artefact. *Pro:* strict D-02 compliance. *Con:* an empty bar reads "Tron fee is zero" — mechanically true for the median statistic but hides that the Tron sample contains fee-paying senders. The visual story contradicts the data.
+- C: Show Tron median as the bar and add a data-label annotation on the bar naming the $0.0324 value and the 14/72 saturation count. *Pro:* preserves D-02 construct while surfacing the artefact that Option B hides. *Con:* adds visual complexity; the reader has to parse both the bar height and the annotation text.
+- D: Show both Tron median and Tron mean as paired bars within each transfer-size group. *Pro:* maximum transparency. *Con:* six bars per size group is cluttered and the reader still has to be told which one matches the paired test.
+
+**Decision:** Option C.
+
+**Rationale:** §3.1 is a descriptive companion to the §3.5 paired tests. A reader comparing §3.1 bars to §3.5 coefficients expects the same on-chain construct on both sides. D-02 is the live decision governing that construct choice and says ETH mean, Tron median. D-21 is about a different comparison (ETH vs Tron) and does not generalise to §3.1's legacy-vs-on-chain question. The $0-bar visual problem that Option B would create is solved by Option C's explicit data-label annotation, which puts the sample-caveat in the reader's eyeline rather than in a footnote — the same principle D-21 used to keep the precision concern visible on the §3.2 overlay figure.
+
+**Dissenting view:** A reader could argue that §3.1's "Tron median $0.03" bar and §3.2's "Tron mean" line force them to track two different Tron statistics across three pages, and that the cognitive load outweighs the construct-purity gain. The counter is that §3.2's overlay already shows both Tron median and Tron mean as transparency overlays per D-21, so a reader working sequentially through §3.1 → §3.2 sees the Tron median value from §3.1 restated as the dashed line on §3.2's 4-series overlay. The continuity is visible if the reader looks, and §3.2's narrative opens by naming the construct distinction.
+
+**Consequences:** cell 73 (§3.1 code) is rewritten to use ETH mean + Tron median + Legacy mean on the bar chart and in the four ratio columns of `tbl_h4_cost_comparison.csv`. The ratios are construct-matched (mean/mean or median/median) — no median/mean hybrids. The old columns `ratio_legacy_to_eth_median` and `ratio_legacy_to_tron_mean` (median-numerator / mean-denominator, which produced a non-interpretable hybrid) are replaced by four new columns: `ratio_legacy_mean_to_eth_mean`, `ratio_legacy_mean_to_tron_median`, `ratio_legacy_median_to_eth_median`, `ratio_legacy_median_to_tron_median`. Cell 74 (§3.1 markdown) is rewritten to drop the "Per D-21" reference and cite D-23 for the reasoning. No other cells or artefacts are affected; the §3.5/§3.6 paired tests are untouched and `tbl_h4_master_summary.csv` is byte-identical before and after the change.
+
+**Referenced in code:** notebook 03 §3.1 (cell 73), §3.1 narrative (cell 74).
+
