@@ -237,6 +237,14 @@ excluded single-year countries and the forward-fill treatment.
 
 **Referenced in code:** notebook 03 §5.2-§5.5 (TBD cell IDs).
 
+**2026-04-20 clarification:** Spec 5 implemented as the triple
+interaction `baseline × post_2022 × I(baseline_year == 2024)` after a
+two-way `baseline × I(baseline_year == 2024)` formulation was found
+mechanically non-identifiable under entity FE (both factors
+time-invariant within country). The triple is identified because
+`post_2022` provides within-country time variation. Caught and
+resolved during Phase 3.5b-α execution.
+
 ---
 
 ## D-05 — Figure style conventions

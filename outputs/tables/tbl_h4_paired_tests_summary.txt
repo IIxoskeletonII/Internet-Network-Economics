@@ -6,8 +6,8 @@ window=full, dv=diff_200_eth, flat_fee=$0.00, hac_lags=4
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -317.19
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -317.19
 No. Observations:                  72   AIC:                             636.4
 Df Residuals:                      71   BIC:                             638.7
 Df Model:                           0                                         
@@ -34,8 +34,8 @@ window=full, dv=diff_10000_eth, flat_fee=$0.00, hac_lags=4
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -385.12
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -385.12
 No. Observations:                  72   AIC:                             772.2
 Df Residuals:                      71   BIC:                             774.5
 Df Model:                           0                                         
@@ -62,8 +62,8 @@ window=full, dv=diff_200_tron, flat_fee=$0.00, hac_lags=4
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -101.92
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -101.92
 No. Observations:                  72   AIC:                             205.8
 Df Residuals:                      71   BIC:                             208.1
 Df Model:                           0                                         
@@ -90,8 +90,8 @@ window=full, dv=diff_10000_tron, flat_fee=$0.00, hac_lags=4
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -380.58
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -380.58
 No. Observations:                  72   AIC:                             763.2
 Df Residuals:                      71   BIC:                             765.4
 Df Model:                           0                                         
@@ -118,8 +118,8 @@ window=full, dv=diff_200_eth, flat_fee=$3.50, hac_lags=4
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -317.19
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -317.19
 No. Observations:                  72   AIC:                             636.4
 Df Residuals:                      71   BIC:                             638.7
 Df Model:                           0                                         
@@ -146,8 +146,8 @@ window=full, dv=diff_10000_eth, flat_fee=$3.50, hac_lags=4
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -385.12
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -385.12
 No. Observations:                  72   AIC:                             772.2
 Df Residuals:                      71   BIC:                             774.5
 Df Model:                           0                                         
@@ -174,8 +174,8 @@ window=full, dv=diff_200_tron, flat_fee=$3.50, hac_lags=4
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -101.92
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -101.92
 No. Observations:                  72   AIC:                             205.8
 Df Residuals:                      71   BIC:                             208.1
 Df Model:                           0                                         
@@ -202,8 +202,8 @@ window=full, dv=diff_10000_tron, flat_fee=$3.50, hac_lags=4
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -380.58
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -380.58
 No. Observations:                  72   AIC:                             763.2
 Df Residuals:                      71   BIC:                             765.4
 Df Model:                           0                                         
@@ -230,8 +230,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_eth, flat_fee=$0.00, ha
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -79.230
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -258,8 +258,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_eth, flat_fee=$0.00, 
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -79.230
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -286,8 +286,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_tron, flat_fee=$0.00, h
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 43.044
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -314,8 +314,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_tron, flat_fee=$0.00,
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 43.044
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -342,8 +342,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_eth, flat_fee=$3.50, ha
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -79.230
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -370,8 +370,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_eth, flat_fee=$3.50, 
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -79.230
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -398,8 +398,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_tron, flat_fee=$3.50, h
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 43.044
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -426,8 +426,8 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_10000_tron, flat_fee=$3.50,
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 43.044
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -454,8 +454,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_eth, flat_fee=$0.0
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -86.755
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -482,8 +482,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_eth, flat_fee=$0
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -86.755
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -510,8 +510,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_tron, flat_fee=$0.
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 45.321
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -538,8 +538,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_tron, flat_fee=$
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 45.321
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -566,8 +566,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_eth, flat_fee=$3.5
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -86.755
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -594,8 +594,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_eth, flat_fee=$3
 Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                -86.755
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -622,8 +622,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_tron, flat_fee=$3.
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 45.321
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -650,8 +650,8 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_tron, flat_fee=$
 Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
-Date:                Sun, 19 Apr 2026   Prob (F-statistic):                nan
-Time:                        20:10:45   Log-Likelihood:                 45.321
+Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
+Time:                        02:17:44   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         

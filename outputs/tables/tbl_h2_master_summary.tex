@@ -1,0 +1,14 @@
+\begin{tabular}{rlrrrlrrrrrrrrrrrrrrl}
+\toprule
+spec_id & spec_name & n & n_countries & r2 & headline_term & headline_beta & headline_se & headline_ci_low & headline_ci_high & headline_p & post_2022_beta & post_2022_se & post_2022_p & interaction_beta & interaction_se & interaction_ci_low & interaction_ci_high & interaction_p & cluster_count & notes \\
+\midrule
+1 & Pooled OLS & 702 & 123 & 0.0298 & financial_account_baseline & 0.0027 & 0.0015 & -0.0002 & 0.0057 & 0.0660 & 0.0048 & 0.0134 & 0.7222 & NaN & NaN & NaN & NaN & NaN & 123 & D-04 spec 1; D-27 post_2022 main effect retained \\
+2 & Country FE & 702 & 123 & 0.0138 & financial_account_baseline (absorbed) & NaN & NaN & NaN & NaN & NaN & -0.0029 & 0.0126 & 0.8164 & NaN & NaN & NaN & NaN & NaN & 123 & D-04 spec 2; baseline absorbed by entity FE per D-27 \\
+3 & Two-way FE + baseline x post_2022 (HEADLINE) & 702 & 123 & 0.0180 & baseline_x_post_2022 & -0.0005 & 0.0007 & -0.0019 & 0.0008 & 0.4612 & NaN & NaN & NaN & -0.0005 & 0.0007 & -0.0019 & 0.0008 & 0.4612 & 123 & D-04 headline; D-29 sign-match: False \\
+4 & Two-way FE excl forward-filled 2025 & 592 & 123 & 0.0178 & baseline_x_post_2022 & -0.0006 & 0.0007 & -0.0020 & 0.0009 & 0.4383 & NaN & NaN & NaN & -0.0006 & 0.0007 & -0.0020 & 0.0009 & 0.4383 & 123 & D-04 spec 4; forward-fill sensitivity \\
+5 & Two-way FE + baseline x post_2022 x I(baseline_year==2024) & 702 & 123 & 0.0278 & baseline_x_post_2022_x_baseline_2024 & -0.0031 & 0.0007 & -0.0045 & -0.0016 & 0.0000 & NaN & NaN & NaN & -0.0031 & 0.0007 & -0.0045 & -0.0016 & 0.0000 & 123 & D-04 spec 5 (triple interaction); time-invariant lower-order terms absorbed by entity FE; D-29 no pre-registered sign. \\
+6 & Robustness: drop Among-lowest survivors & 696 & 123 & 0.0051 & baseline_x_post_2022 & -0.0001 & 0.0007 & -0.0015 & 0.0014 & 0.9363 & NaN & NaN & NaN & -0.0001 & 0.0007 & -0.0015 & 0.0014 & 0.9363 & 123 & D-24 robustness; dropped 6 surviving rows \\
+7 & Robustness: winsorised inflation & 702 & 123 & 0.0051 & baseline_x_post_2022 & -0.0005 & 0.0007 & -0.0018 & 0.0009 & 0.5087 & NaN & NaN & NaN & -0.0005 & 0.0007 & -0.0018 & 0.0009 & 0.5087 & 123 & D-25 robustness; inflation @ 1st/99th pct \\
+8 & Robustness: overall_score DV (2020-2021 pooled) & 238 & 120 & 0.0698 & financial_account_baseline & 0.0023 & 0.0009 & 0.0006 & 0.0041 & 0.0078 & NaN & NaN & NaN & NaN & NaN & NaN & NaN & NaN & 120 & D-24 DV-robustness; post_2022 dropped (constant on subsample) \\
+\bottomrule
+\end{tabular}

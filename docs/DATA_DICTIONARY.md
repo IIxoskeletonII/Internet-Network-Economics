@@ -315,9 +315,11 @@ written to disk — they live on the in-memory analysis frame only.
   2024 wave (139 countries of 160). Enters spec 5 as the interaction
   dummy `baseline × I(baseline_year == 2024)` (D-04).
 - `region_wb` = World Bank region code mapped from `country_iso3`
-  (values: `SSA`, `LAC`, `SA`, `EAP`, `MENA`, `ECA`, `NAM`). Used
-  only in the §4.10 regional panel (D-31). Constructed in Phase 3.5b
-  Task I; listed here for forward reference.
+  (values: `SSA`, `LAC`, `SA`, `EAP`, `MENA`, `ECA`, `NAM_REGION`).
+  Used only in the §4.11 regional panel (D-31). Constructed in §4.11
+  (Phase 3.5b-α). A collapsed `region_panel` column is also derived,
+  mapping `SA` and `EAP` to `SA_EAP` for the three-row regional
+  output table.
 
 **Restated panel indicators (already on the raw dataset, used
 unchanged):**
