@@ -5,7 +5,7 @@ Dep. Variable:                      y   R-squared:                       0.077
 Model:                            OLS   Adj. R-squared:                  0.064
 Method:                 Least Squares   F-statistic:                     1.425
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):              0.237
-Time:                        02:17:42   Log-Likelihood:                -601.00
+Time:                        19:10:23   Log-Likelihood:                -601.00
 No. Observations:                  72   AIC:                             1206.
 Df Residuals:                      70   BIC:                             1211.
 Df Model:                           1                                         
@@ -32,7 +32,7 @@ Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                    0.2440
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):              0.623
-Time:                        02:17:42   Log-Likelihood:                -601.38
+Time:                        19:10:23   Log-Likelihood:                -601.38
 No. Observations:                  72   AIC:                             1207.
 Df Residuals:                      70   BIC:                             1211.
 Df Model:                           1                                         
@@ -59,7 +59,7 @@ Dep. Variable:                      y   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                    0.4080
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):              0.525
-Time:                        02:17:42   Log-Likelihood:                -481.31
+Time:                        19:10:23   Log-Likelihood:                -481.31
 No. Observations:                  71   AIC:                             966.6
 Df Residuals:                      69   BIC:                             971.1
 Df Model:                           1                                         

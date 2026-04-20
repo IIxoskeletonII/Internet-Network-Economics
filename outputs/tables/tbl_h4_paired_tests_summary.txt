@@ -7,7 +7,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -317.19
+Time:                        19:10:26   Log-Likelihood:                -317.19
 No. Observations:                  72   AIC:                             636.4
 Df Residuals:                      71   BIC:                             638.7
 Df Model:                           0                                         
@@ -31,11 +31,11 @@ window=full, dv=diff_10000_eth, flat_fee=$0.00, hac_lags=4
 ==============================================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                      -0.000
-Model:                            OLS   Adj. R-squared:                 -0.000
+Dep. Variable:                      y   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -385.12
+Time:                        19:10:26   Log-Likelihood:                -385.12
 No. Observations:                  72   AIC:                             772.2
 Df Residuals:                      71   BIC:                             774.5
 Df Model:                           0                                         
@@ -63,7 +63,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -101.92
+Time:                        19:10:26   Log-Likelihood:                -101.92
 No. Observations:                  72   AIC:                             205.8
 Df Residuals:                      71   BIC:                             208.1
 Df Model:                           0                                         
@@ -91,7 +91,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -380.58
+Time:                        19:10:26   Log-Likelihood:                -380.58
 No. Observations:                  72   AIC:                             763.2
 Df Residuals:                      71   BIC:                             765.4
 Df Model:                           0                                         
@@ -119,7 +119,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -317.19
+Time:                        19:10:26   Log-Likelihood:                -317.19
 No. Observations:                  72   AIC:                             636.4
 Df Residuals:                      71   BIC:                             638.7
 Df Model:                           0                                         
@@ -147,7 +147,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -385.12
+Time:                        19:10:26   Log-Likelihood:                -385.12
 No. Observations:                  72   AIC:                             772.2
 Df Residuals:                      71   BIC:                             774.5
 Df Model:                           0                                         
@@ -175,7 +175,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -101.92
+Time:                        19:10:26   Log-Likelihood:                -101.92
 No. Observations:                  72   AIC:                             205.8
 Df Residuals:                      71   BIC:                             208.1
 Df Model:                           0                                         
@@ -199,11 +199,11 @@ window=full, dv=diff_10000_tron, flat_fee=$3.50, hac_lags=4
 ==============================================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.000
-Model:                            OLS   Adj. R-squared:                  0.000
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -380.58
+Time:                        19:10:26   Log-Likelihood:                -380.58
 No. Observations:                  72   AIC:                             763.2
 Df Residuals:                      71   BIC:                             765.4
 Df Model:                           0                                         
@@ -231,7 +231,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -79.230
+Time:                        19:10:26   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -259,7 +259,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -79.230
+Time:                        19:10:26   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -287,7 +287,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 43.044
+Time:                        19:10:26   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -315,7 +315,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 43.044
+Time:                        19:10:26   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -343,7 +343,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -79.230
+Time:                        19:10:26   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -371,7 +371,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -79.230
+Time:                        19:10:26   Log-Likelihood:                -79.230
 No. Observations:                  21   AIC:                             160.5
 Df Residuals:                      20   BIC:                             161.5
 Df Model:                           0                                         
@@ -395,11 +395,11 @@ window=post-Dencun (Apr 2024 onwards, D-20), dv=diff_200_tron, flat_fee=$3.50, h
 ==============================================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.000
-Model:                            OLS   Adj. R-squared:                  0.000
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 43.044
+Time:                        19:10:26   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -427,7 +427,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 43.044
+Time:                        19:10:26   Log-Likelihood:                 43.044
 No. Observations:                  21   AIC:                            -84.09
 Df Residuals:                      20   BIC:                            -83.04
 Df Model:                           0                                         
@@ -455,7 +455,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -86.755
+Time:                        19:10:26   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -483,7 +483,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -86.755
+Time:                        19:10:26   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -507,11 +507,11 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_200_tron, flat_fee=$0.
 ==============================================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.000
-Model:                            OLS   Adj. R-squared:                  0.000
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 45.321
+Time:                        19:10:26   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -535,11 +535,11 @@ window=post-Dencun robustness (Mar 2024 onwards), dv=diff_10000_tron, flat_fee=$
 ==============================================================================
                             OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.000
-Model:                            OLS   Adj. R-squared:                  0.000
+Dep. Variable:                      y   R-squared:                      -0.000
+Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 45.321
+Time:                        19:10:26   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -567,7 +567,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -86.755
+Time:                        19:10:26   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -595,7 +595,7 @@ Dep. Variable:                      y   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                  0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                -86.755
+Time:                        19:10:26   Log-Likelihood:                -86.755
 No. Observations:                  22   AIC:                             175.5
 Df Residuals:                      21   BIC:                             176.6
 Df Model:                           0                                         
@@ -623,7 +623,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 45.321
+Time:                        19:10:26   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         
@@ -651,7 +651,7 @@ Dep. Variable:                      y   R-squared:                      -0.000
 Model:                            OLS   Adj. R-squared:                 -0.000
 Method:                 Least Squares   F-statistic:                       nan
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):                nan
-Time:                        02:17:44   Log-Likelihood:                 45.321
+Time:                        19:10:26   Log-Likelihood:                 45.321
 No. Observations:                  22   AIC:                            -88.64
 Df Residuals:                      21   BIC:                            -87.55
 Df Model:                           0                                         

@@ -7,7 +7,7 @@ Dep. Variable:     adoption_percentile   R-squared:                       0.030
 Model:                             OLS   Adj. R-squared:                  0.023
 Method:                  Least Squares   F-statistic:                     1.375
 Date:                 Mon, 20 Apr 2026   Prob (F-statistic):              0.238
-Time:                         02:17:45   Log-Likelihood:                -69.567
+Time:                         19:10:28   Log-Likelihood:                -69.567
 No. Observations:                  702   AIC:                             151.1
 Df Residuals:                      696   BIC:                             178.5
 Df Model:                            5                                         
@@ -40,7 +40,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.013
 Estimator:                    PanelOLS   R-squared (Between):             -0.0704
 No. Observations:                  702   R-squared (Within):               0.0138
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.0489
-Time:                         02:17:45   Log-likelihood                    486.04
+Time:                         19:10:27   Log-likelihood                    486.04
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      2.0132
 Entities:                          123   P-value                           0.0912
@@ -79,7 +79,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.018
 Estimator:                    PanelOLS   R-squared (Between):             -0.2359
 No. Observations:                  702   R-squared (Within):              -0.0137
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.1607
-Time:                         02:17:45   Log-likelihood                    497.85
+Time:                         19:10:27   Log-likelihood                    497.85
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      2.6137
 Entities:                          123   P-value                           0.0345
@@ -118,7 +118,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.017
 Estimator:                    PanelOLS   R-squared (Between):             -0.1958
 No. Observations:                  592   R-squared (Within):              -0.0389
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.1468
-Time:                         02:17:45   Log-likelihood                    409.43
+Time:                         19:10:27   Log-likelihood                    409.43
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      2.0883
 Entities:                          123   P-value                           0.0813
@@ -157,7 +157,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.027
 Estimator:                    PanelOLS   R-squared (Between):             -0.1955
 No. Observations:                  702   R-squared (Within):              -1.4201
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.4130
-Time:                         02:17:45   Log-likelihood                    501.38
+Time:                         19:10:27   Log-likelihood                    501.38
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      2.7094
 Entities:                          123   P-value                           0.0133
@@ -198,7 +198,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.005
 Estimator:                    PanelOLS   R-squared (Between):             -0.0704
 No. Observations:                  696   R-squared (Within):               0.0074
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.0553
-Time:                         02:17:45   Log-likelihood                    525.49
+Time:                         19:10:28   Log-likelihood                    525.49
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      0.7297
 Entities:                          123   P-value                           0.5719
@@ -237,7 +237,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.005
 Estimator:                    PanelOLS   R-squared (Between):             -0.1441
 No. Observations:                  702   R-squared (Within):              -0.0122
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.0945
-Time:                         02:17:45   Log-likelihood                    493.26
+Time:                         19:10:28   Log-likelihood                    493.26
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      0.7271
 Entities:                          123   P-value                           0.5737
@@ -276,7 +276,7 @@ Dep. Variable:          overall_score   R-squared:                       0.070
 Model:                            OLS   Adj. R-squared:                  0.054
 Method:                 Least Squares   F-statistic:                     3.792
 Date:                Mon, 20 Apr 2026   Prob (F-statistic):            0.00614
-Time:                        02:17:45   Log-Likelihood:                 124.77
+Time:                        19:10:28   Log-Likelihood:                 124.77
 No. Observations:                 238   AIC:                            -239.5
 Df Residuals:                     233   BIC:                            -222.2
 Df Model:                           4                                         
@@ -308,7 +308,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.179
 Estimator:                    PanelOLS   R-squared (Between):             -0.3440
 No. Observations:                  122   R-squared (Within):               0.1224
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.2166
-Time:                         02:17:45   Log-likelihood                    80.309
+Time:                         19:10:28   Log-likelihood                    80.309
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      4.8632
 Entities:                           24   P-value                           0.0014
@@ -347,7 +347,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.036
 Estimator:                    PanelOLS   R-squared (Between):             -0.2800
 No. Observations:                  118   R-squared (Within):              -0.5017
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -0.3348
-Time:                         02:17:45   Log-likelihood                    120.48
+Time:                         19:10:28   Log-likelihood                    120.48
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      0.8337
 Entities:                           20   P-value                           0.5073
@@ -386,7 +386,7 @@ Dep. Variable:     adoption_percentile   R-squared:                        0.119
 Estimator:                    PanelOLS   R-squared (Between):             -5.8403
 No. Observations:                  112   R-squared (Within):               0.0203
 Date:                 Mon, Apr 20 2026   R-squared (Overall):             -4.0120
-Time:                         02:17:45   Log-likelihood                    86.509
+Time:                         19:10:28   Log-likelihood                    86.509
 Cov. Estimator:              Clustered                                           
                                          F-statistic:                      2.8618
 Entities:                           19   P-value                           0.0282
