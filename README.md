@@ -191,7 +191,7 @@ During Phase 2 closure, a systematic audit (`AUDIT_REPORT.md`) identified five c
 
 ## Status
 
-**Phase 2B (audit remediation) complete. Phase 3 (empirical analysis) next.**
+**Phase 3 (empirical analysis) complete. Phase 4 (synthesis & deck) next.**
 
 ## Team
 

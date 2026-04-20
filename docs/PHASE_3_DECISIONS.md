@@ -1770,3 +1770,44 @@ are referenced in the §4.14 narrative.
 §4.9 (overall_score DV), §4.10 (regional panel), §4.11 (master
 summary consolidation).
 
+---
+
+## D-32 — Tolerated drift class on notebook re-execution (2026-04-21)
+
+**Context.** Phase 3.5b-β Task E required `jupyter nbconvert --execute --inplace`
+top-to-bottom. Task G required all non-session output files to byte-match HEAD.
+These two tasks are formally in tension because `nbconvert --execute` re-runs
+every H1/H2/H3/H4 cell and regenerates every output with harmless BLAS
+non-determinism and matplotlib rasterisation variance.
+
+**Observed drift characterisation** (measured across all four hypotheses):
+
+- Numeric CSV/TEX coefficients drift in the 13th–15th decimal place
+  (~1e-15 to 1e-17 magnitude) due to BLAS non-determinism in floating-point
+  reductions (matrix inverse, clustered-SE computation).
+- PNG figures drift sub-1% in byte size due to matplotlib rasterisation
+  differences, even with `metadata={"Creation Time": None}` suppression.
+- Statsmodels `.txt` dumps already on the known-drift list due to embedded
+  timestamps (inherited from 3.5b-α).
+
+**Decision.** This class of drift is formally tolerated. Affected file classes:
+
+- `outputs/tables/*.csv` / `*.tex` — numeric precision drift.
+- `outputs/figures/*.png` — rasterisation drift.
+- `outputs/tables/*_summary.txt` / `*_regression_tables.txt` — timestamp drift.
+
+**Consequences for future prompts.**
+
+1. Byte-identity is not required on the file classes above. Value-identity
+   at reporting precision (4 significant figures on coefficients; within
+   ±1% on PNG file sizes) is the real standard.
+2. When a session re-executes the notebook but only a subset of output
+   files are in session scope, non-session files must be restored to HEAD
+   via `git checkout HEAD -- <paths>` before commit. This is a git write
+   and is executed by the user in VSCode, not by Claude Code (per
+   CLAUDE.md §9).
+3. Committing as-drifted (no restore) is not permitted — it pollutes git
+   history with false-positive changes and makes future audits harder.
+
+**Precedent.** Option 2 of the 3.5b-β fix prompt established the selective-
+restore workflow. D-32 formalises that workflow as policy.
