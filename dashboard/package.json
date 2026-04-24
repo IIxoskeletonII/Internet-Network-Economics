@@ -1,0 +1,14 @@
+{
+  "name": "stablecoin-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static React dashboard for the stablecoin research project. JSX is pre-compiled to plain JS so the deployed artifact contains no Babel runtime.",
+  "scripts": {
+    "build": "babel charts.jsx app.jsx tab_h1.jsx tab_h2.jsx tab_h3.jsx tab_h4.jsx --presets=@babel/preset-react --out-dir ."
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-react": "^7.24.7"
+  }
+}

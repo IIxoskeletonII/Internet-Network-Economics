@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- width=device-width restores native mobile scaling; it is NOT full responsiveness (layout still targets desktop). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Can stablecoins replace SWIFT? — Interactive Research Dashboard</title>
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <!-- React/ReactDOM served as pinned production builds from unpkg. SRI integrity attributes
+       intentionally omitted: the dev-build hashes do not match the .production.min.js files,
+       and pre-computed prod hashes add maintenance overhead for a pinned version. -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="data.js"></script>
+  <script src="charts.js"></script>
+  <script src="tab_h1.js"></script>
+  <script src="tab_h2.js"></script>
+  <script src="tab_h3.js"></script>
+  <script src="tab_h4.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
