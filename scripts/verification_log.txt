@@ -1,0 +1,2 @@
+verify_dashboard.py — total 160, pass 160, fail 0, skip 0
+report: C:\dev\ine\scripts\verification_report.md
