@@ -308,3 +308,116 @@ input[type="range"]::-moz-range-thumb     { width: 16px; height: 16px; backgroun
 .chip { display: inline-block; padding: 2px 8px; font-family: var(--sans); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border-soft); color: var(--text-primary); background: var(--bg-surface); }
 .chip.usdc { color: var(--series-usdc); border-color: var(--series-usdc); }
 .chip.usdt { color: var(--series-usdt); border-color: var(--series-usdt); }
+
+/* ==========================================================================
+   MOBILE OVERRIDES (Appended for QR Code / Mobile Presentation)
+   These rules only apply to screens 768px wide or smaller.
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Adjust main container padding for smaller screens */
+  .shell { 
+    padding: 16px 16px 40px; 
+  }
+
+  /* 2. Stack the Masthead (Title bar) vertically */
+  .masthead { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+    text-align: center; 
+  }
+  .masthead .left, .masthead .right { 
+    text-align: center; 
+  }
+  .masthead .mid {
+    font-size: 2.2rem; /* Scale down title */
+  }
+
+  /* 3. Sub-bar metadata layout */
+  .subbar { 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 8px; 
+    line-height: 1.4;
+  }
+
+  /* 4. Make Navigation Tabs scrollable horizontally */
+  .tabs { 
+    overflow-x: auto; 
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 5px;
+  }
+  .tab { 
+    padding: 10px 16px; 
+  }
+
+  /* 5. Stack the Hero section (H1, H2, etc.) */
+  .hero { 
+    grid-template-columns: 1fr; 
+    gap: 16px; 
+    padding: 20px 0; 
+  }
+  .hero .hnum { 
+    font-size: 64px; 
+    line-height: 1;
+  }
+
+  /* 6. Collapse all multi-column grids into a single column */
+  .grid.c3, 
+  .grid.c4, 
+  .grid.c12, 
+  .grid.c21, 
+  .kpi, 
+  .scorecard,
+  .explainer { 
+    grid-template-columns: 1fr; 
+  }
+
+  /* 7. Fix borders on stacked tiles (KPIs and Scorecards) */
+  .kpi > div, 
+  .scorecard .cell { 
+    border-right: none; 
+    border-bottom: 1px solid var(--border-soft); 
+  }
+  .kpi > div:last-child, 
+  .scorecard .cell:last-child { 
+    border-bottom: none; 
+  }
+
+  /* 8. Make large Data Tables scrollable horizontally so they don't break the screen */
+  .card { 
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+  }
+  .regtbl {
+    min-width: 600px; /* Forces table to maintain shape and scroll */
+  }
+
+  /* 9. Adjust the Answer Hero (Synthesis Tab) */
+  .answer-hero { 
+    padding: 24px 20px; 
+  }
+  .answer-hero h2 { 
+    font-size: 32px; 
+  }
+  .answer-hero .drop::first-letter {
+    font-size: 48px;
+  }
+
+  /* 10. Stack chart controls and sliders */
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .slider-wrap {
+    width: 100%;
+  }
+
+  /* 11. Adjust Footers */
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
