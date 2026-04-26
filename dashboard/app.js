@@ -135,15 +135,15 @@ function SynthesisTab() {
       fontStyle: 'italic',
       lineHeight: 1.4,
       marginTop: 10,
-      color: 'rgba(246,243,236,0.92)'
+      color: 'rgba(250,248,245,0.92)'
     }
   }, "Stablecoins are a ", /*#__PURE__*/React.createElement("em", {
     style: {
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, "complementary"), " asset layer riding on existing financial plumbing \u2014 exchanges, custodians, payment processors, developer ecosystems \u2014 which are themselves correlated with banking depth."), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: '1px solid rgba(246,243,236,0.2)',
+      borderTop: '1px solid rgba(250,248,245,0.2)',
       marginTop: 18,
       paddingTop: 14
     }
@@ -153,14 +153,14 @@ function SynthesisTab() {
       fontSize: 10,
       letterSpacing: '0.1em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginBottom: 6
     }
   }, "Policy read"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 15,
-      color: 'rgba(246,243,236,0.8)',
+      color: 'rgba(250,248,245,0.8)',
       lineHeight: 1.45
     }
   }, "Regulatory focus should shift from where theory predicted adoption (low-income, unbanked) to where it actually lives (middle-income, dollar-demanding, macro-unstable).")))), /*#__PURE__*/React.createElement("div", {

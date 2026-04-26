@@ -356,18 +356,18 @@ function H4CostBars({
     key: 'eth',
     label: 'ETH mean',
     value: H4_COST.eth.mean,
-    color: '#3178b3'
+    color: '#1F3A5F'
   }, {
     key: 'tron',
     label: 'Tron median',
     value: Math.max(yMin, H4_COST.tron.median),
-    color: '#d97f2e',
+    color: '#B8860B',
     annotate: 'median = $0.0324\n(14 of 72 mo. at $0)'
   }, {
     key: 'legacy',
     label: 'Legacy mean',
     value: g.legacy,
-    color: '#3c7d58'
+    color: '#3D3935'
   }];
   return /*#__PURE__*/React.createElement("svg", {
     className: "chart",
@@ -505,7 +505,7 @@ function H4CostBars({
     y: -8,
     width: 14,
     height: 10,
-    fill: "#3178b3"
+    fill: "#1F3A5F"
   }), /*#__PURE__*/React.createElement("text", {
     x: 22,
     y: 1,
@@ -521,7 +521,7 @@ function H4CostBars({
     y: -8,
     width: 14,
     height: 10,
-    fill: "#d97f2e"
+    fill: "#B8860B"
   }), /*#__PURE__*/React.createElement("text", {
     x: 22,
     y: 1,
@@ -537,7 +537,7 @@ function H4CostBars({
     y: -8,
     width: 14,
     height: 10,
-    fill: "#3c7d58"
+    fill: "#3D3935"
   }), /*#__PURE__*/React.createElement("text", {
     x: 22,
     y: 1,
@@ -615,18 +615,18 @@ function H4FeeTimeseries({
     }
   }, "EIP-4844 (Dencun) \xB7 Apr 2024"), /*#__PURE__*/React.createElement("path", {
     d: legacyPath,
-    stroke: "#3c7d58",
+    stroke: "#3D3935",
     strokeWidth: 1.6,
     fill: "none",
     strokeDasharray: "6 4"
   }), /*#__PURE__*/React.createElement("path", {
     d: ethPath,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 1.8,
     fill: "none"
   }), /*#__PURE__*/React.createElement("path", {
     d: tronPath,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 1.8,
     fill: "none"
   }), /*#__PURE__*/React.createElement("line", {
@@ -678,7 +678,7 @@ function H4FeeTimeseries({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 1.8
   }), /*#__PURE__*/React.createElement("text", {
     x: 30,
@@ -695,7 +695,7 @@ function H4FeeTimeseries({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 1.8
   }), /*#__PURE__*/React.createElement("text", {
     x: 30,
@@ -712,7 +712,7 @@ function H4FeeTimeseries({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#3c7d58",
+    stroke: "#3D3935",
     strokeWidth: 1.6,
     strokeDasharray: "6 4"
   }), /*#__PURE__*/React.createElement("text", {
@@ -787,15 +787,15 @@ function H4LiveSlider() {
   const series = [{
     label: 'ETH · USDC',
     value: ethMean,
-    color: '#3178b3'
+    color: '#1F3A5F'
   }, {
     label: 'Tron · USDT',
     value: tronMedian,
-    color: '#d97f2e'
+    color: '#B8860B'
   }, {
     label: 'SWIFT legacy',
     value: legacy,
-    color: '#3c7d58'
+    color: '#3D3935'
   }];
   const barW = 130,
     gap = 70;
@@ -847,7 +847,7 @@ function H4LiveSlider() {
     style: {
       padding: '18px 20px',
       borderRight: '1px solid var(--line)',
-      background: '#e7f0f8'
+      background: '#ECEEF3'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -855,7 +855,7 @@ function H4LiveSlider() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: '#3178b3'
+      color: '#1F3A5F'
     }
   }, "ETH \xB7 USDC"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -863,7 +863,7 @@ function H4LiveSlider() {
       fontSize: 42,
       lineHeight: 1,
       marginTop: 8,
-      color: '#3178b3',
+      color: '#1F3A5F',
       letterSpacing: '-0.02em'
     }
   }, fmt$(ethMean, 2)), /*#__PURE__*/React.createElement("div", {
@@ -887,7 +887,7 @@ function H4LiveSlider() {
     style: {
       padding: '18px 20px',
       borderRight: '1px solid var(--line)',
-      background: '#fbeede'
+      background: '#F5EFE0'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -895,7 +895,7 @@ function H4LiveSlider() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: '#d97f2e'
+      color: '#B8860B'
     }
   }, "Tron \xB7 USDT"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -903,7 +903,7 @@ function H4LiveSlider() {
       fontSize: 42,
       lineHeight: 1,
       marginTop: 8,
-      color: '#d97f2e',
+      color: '#B8860B',
       letterSpacing: '-0.02em'
     }
   }, fmt$(tronMedian, 4)), /*#__PURE__*/React.createElement("div", {
@@ -927,7 +927,7 @@ function H4LiveSlider() {
     style: {
       padding: '18px 20px',
       borderRight: '1px solid var(--line)',
-      background: '#e8f2ec'
+      background: '#ECEAE7'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -935,7 +935,7 @@ function H4LiveSlider() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: '#3c7d58'
+      color: '#3D3935'
     }
   }, "SWIFT legacy (RPW)"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -943,7 +943,7 @@ function H4LiveSlider() {
       fontSize: 42,
       lineHeight: 1,
       marginTop: 8,
-      color: '#3c7d58',
+      color: '#3D3935',
       letterSpacing: '-0.02em'
     }
   }, fmt$(legacy, 2)), /*#__PURE__*/React.createElement("div", {
@@ -975,7 +975,7 @@ function H4LiveSlider() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.6)'
+      color: 'rgba(250,248,245,0.6)'
     }
   }, "Savings ratio"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -986,7 +986,7 @@ function H4LiveSlider() {
     }
   }, "Tron ", /*#__PURE__*/React.createElement("span", {
     style: {
-      color: '#8cc7b0',
+      color: '#5A7A5A',
       fontVariantNumeric: 'tabular-nums'
     }
   }, fmt(tronAdv, 0), "\xD7")), /*#__PURE__*/React.createElement("div", {
@@ -997,14 +997,14 @@ function H4LiveSlider() {
     }
   }, "ETH ", /*#__PURE__*/React.createElement("span", {
     style: {
-      color: ethAdvWins ? '#8cc7b0' : '#e89a4d',
+      color: ethAdvWins ? '#5A7A5A' : '#8B3A3A',
       fontVariantNumeric: 'tabular-nums'
     }
   }, ethAdv.toFixed(2), "\xD7")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--mono)',
       fontSize: 9.5,
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginTop: 10,
       textTransform: 'uppercase',
       letterSpacing: '0.06em'
@@ -1420,7 +1420,7 @@ function H4Tab() {
       fontSize: 15,
       lineHeight: 1.5,
       marginTop: 8,
-      color: 'rgba(246,243,236,0.85)'
+      color: 'rgba(250,248,245,0.85)'
     }
   }, "A $420 legacy cost becomes $0.03 on Tron. The platform layer commoditises transfer; the surplus does ", /*#__PURE__*/React.createElement("em", null, "not"), " stay with the operator."), [{
     lab: 'Users',
@@ -1441,7 +1441,7 @@ function H4Tab() {
     key: i,
     style: {
       padding: '10px 0',
-      borderBottom: i < 2 ? '1px dotted rgba(246,243,236,0.2)' : 'none'
+      borderBottom: i < 2 ? '1px dotted rgba(250,248,245,0.2)' : 'none'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1460,32 +1460,32 @@ function H4Tab() {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 18,
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, r.val)), /*#__PURE__*/React.createElement("div", {
     style: {
       height: 8,
-      background: 'rgba(246,243,236,0.12)'
+      background: 'rgba(250,248,245,0.12)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       height: '100%',
       width: r.w + '%',
-      background: '#e7c468'
+      background: '#B8860B'
     }
   })), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 13,
       fontStyle: 'italic',
-      color: 'rgba(246,243,236,0.7)',
+      color: 'rgba(250,248,245,0.7)',
       marginTop: 4,
       lineHeight: 1.4
     }
   }, r.note))), /*#__PURE__*/React.createElement("div", {
     className: "footnote",
     style: {
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginTop: 14,
       fontFamily: 'var(--serif)',
       fontStyle: 'italic',

@@ -86,7 +86,7 @@ function H1Tab() {
       out.push({ beta: exSpec.beta, alpha: exSpec.alpha_ln, color, width: 1.5, dash: '6 4', opacity: 0.85 });
     }
     // Metcalfe reference (β=2, dotted grey) anchored at full-window centroid
-    out.push({ beta: 2, alpha: METCALFE_ALPHA[asset], color: 'rgba(10,14,26,0.45)', width: 1.2, dash: '2 4' });
+    out.push({ beta: 2, alpha: METCALFE_ALPHA[asset], color: 'rgba(26,26,26,0.45)', width: 1.2, dash: '2 4' });
     return out;
   }, [asset, window_, spec, color]);
 
@@ -237,7 +237,7 @@ function H1Tab() {
               </span>
             )}
             <span>
-              <span style={{display:'inline-block', width:16, height:0, borderTop:'2px dotted rgba(10,14,26,0.55)', verticalAlign:'middle', marginRight:6}} />
+              <span style={{display:'inline-block', width:16, height:0, borderTop:'2px dotted rgba(26,26,26,0.55)', verticalAlign:'middle', marginRight:6}} />
               Metcalfe reference: β = 2
             </span>
           </div>
@@ -376,8 +376,9 @@ function H1Tab() {
             const pre = H1_SPECS[a].pre, post = H1_SPECS[a].post, chow = H1_SPECS[a].chow;
             const col = a === 'USDC' ? COLORS.usdc : COLORS.usdt;
             // darker tone for "post"
-            const colDark = a === 'USDC' ? '#14294d' : '#123a2d';
-            const colLight = a === 'USDC' ? '#6f89b3' : '#6b9282';
+            // Dark = full palette (post-FTX); light = same hue at 0.55α (pre-FTX regime).
+            const colDark = a === 'USDC' ? '#1F3A5F' : '#B8860B';
+            const colLight = a === 'USDC' ? 'rgba(31,58,95,0.55)' : 'rgba(184,134,11,0.55)';
             const xd = a === 'USDC' ? [7, 16] : [10, 15.5];
             const yd = a === 'USDC' ? [7.5, 17.5] : [10.5, 15.5];
             return (
@@ -552,39 +553,39 @@ function H1Tab() {
         </div>
 
         <div className="card dark">
-          <div className="ctitle">Course linkage — <em style={{fontFamily:'var(--serif)', fontStyle:'italic', color:'#fff'}}>who captures the value?</em></div>
-          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(246,243,236,0.88)'}}>
-            The scaling exponent β tells us <em>where</em> network value accrues. Under β ≈ 2 (Metcalfe), each new user raises the value of the network for every other user — a classic winner-takes-all dynamic the operator can internalise. Under β ≈ 1, the marginal user just adds a unit of throughput; there is no quadratic externality to capture. Value instead leaks out to the <em style={{color:'#e7c468'}}>complementors</em> — validators earning per-transaction gas, issuers earning yield on reserve float.
+          <div className="ctitle">Course linkage — <em style={{fontFamily:'var(--serif)', fontStyle:'italic', color:'var(--bg-base)'}}>who captures the value?</em></div>
+          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(250,248,245,0.88)'}}>
+            The scaling exponent β tells us <em>where</em> network value accrues. Under β ≈ 2 (Metcalfe), each new user raises the value of the network for every other user — a classic winner-takes-all dynamic the operator can internalise. Under β ≈ 1, the marginal user just adds a unit of throughput; there is no quadratic externality to capture. Value instead leaks out to the <em style={{color:'#B8860B'}}>complementors</em> — validators earning per-transaction gas, issuers earning yield on reserve float.
           </p>
 
-          <div style={{borderTop:'1px solid rgba(246,243,236,0.2)', marginTop:18, paddingTop:14}}>
-            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(246,243,236,0.55)', marginBottom:10}}>Which analogue fits stablecoins?</div>
+          <div style={{borderTop:'1px solid rgba(250,248,245,0.2)', marginTop:18, paddingTop:14}}>
+            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'rgba(250,248,245,0.55)', marginBottom:10}}>Which analogue fits stablecoins?</div>
 
             <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:12}}>
-              <div style={{border:'1px solid rgba(231,196,104,0.55)', padding:'12px 14px', background:'rgba(231,196,104,0.06)'}}>
+              <div style={{border:'1px solid rgba(184,134,11,0.55)', padding:'12px 14px', background:'rgba(184,134,11,0.06)'}}>
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:6}}>
-                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.12em',textTransform:'uppercase',color:'#e7c468'}}>β ≈ 1 · linear</span>
-                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.08em',textTransform:'uppercase',color:'#e7c468'}}>✓ fits</span>
+                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.12em',textTransform:'uppercase',color:'#B8860B'}}>β ≈ 1 · linear</span>
+                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.08em',textTransform:'uppercase',color:'#B8860B'}}>✓ fits</span>
                 </div>
-                <div style={{fontFamily:'var(--serif)', fontSize:17, color:'#fff', marginBottom:6}}>Payment rails</div>
-                <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.45, color:'rgba(246,243,236,0.78)'}}>
+                <div style={{fontFamily:'var(--serif)', fontSize:17, color:'var(--bg-base)', marginBottom:6}}>Payment rails</div>
+                <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.45, color:'rgba(250,248,245,0.78)'}}>
                   Visa, SWIFT, ACH. Value per user is roughly constant — each transaction is worth about the same regardless of how many other people use the network. Operators earn thin per-transaction margins; issuers and acquirers share the rest.
                 </div>
               </div>
 
-              <div style={{border:'1px solid rgba(246,243,236,0.22)', padding:'12px 14px', opacity:0.72}}>
+              <div style={{border:'1px solid rgba(250,248,245,0.22)', padding:'12px 14px', opacity:0.72}}>
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'baseline', marginBottom:6}}>
-                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(246,243,236,0.5)'}}>β ≈ 2 · quadratic</span>
-                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.08em',textTransform:'uppercase',color:'#c96a5a'}}>✗ rejected</span>
+                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.12em',textTransform:'uppercase',color:'rgba(250,248,245,0.5)'}}>β ≈ 2 · quadratic</span>
+                  <span style={{fontFamily:'var(--mono)',fontSize:9.5,letterSpacing:'0.08em',textTransform:'uppercase',color:'#8B3A3A'}}>✗ rejected</span>
                 </div>
-                <div style={{fontFamily:'var(--serif)', fontSize:17, color:'rgba(246,243,236,0.85)', marginBottom:6, textDecoration:'line-through', textDecorationColor:'rgba(201,106,90,0.6)'}}>Social networks</div>
-                <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.45, color:'rgba(246,243,236,0.62)'}}>
+                <div style={{fontFamily:'var(--serif)', fontSize:17, color:'rgba(250,248,245,0.85)', marginBottom:6, textDecoration:'line-through', textDecorationColor:'rgba(201,106,90,0.6)'}}>Social networks</div>
+                <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.45, color:'rgba(250,248,245,0.62)'}}>
                   Facebook, WeChat, Twitter. Value scales with <em>pairs</em> of users because communication is peer-to-peer, so each new user increases utility for all existing users. Operators own the graph and capture nearly all the surplus — a model our data decisively rules out for stablecoins.
                 </div>
               </div>
             </div>
 
-            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, marginTop:14, color:'rgba(246,243,236,0.75)', fontStyle:'italic'}}>
+            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, marginTop:14, color:'rgba(250,248,245,0.75)', fontStyle:'italic'}}>
               Implication for the course: stablecoins are infrastructure, not platforms. The interesting appropriability questions sit <em>one layer up</em> — at the issuer, the L1 validator set, and the exchange on-ramp — not at the "stablecoin network operator," which is not really a party that exists.
             </div>
           </div>

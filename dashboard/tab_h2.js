@@ -198,7 +198,7 @@ function H2CoefPlot({
     y: mT,
     width: sx(0),
     height: h,
-    fill: "#2f6a4e",
+    fill: "#B8860B",
     opacity: 0.08
   }), /*#__PURE__*/React.createElement("g", {
     transform: `translate(${mL},${mT})`
@@ -235,7 +235,7 @@ function H2CoefPlot({
   }), specs.map((s, i) => {
     const y = rowH * i + rowH / 2;
     // Color code: spec 5 (cohort diff) uses main blue; robustness 6/7 use orange; others blue
-    const col = s.type === 'robust' ? '#d97f2e' : '#3178b3';
+    const col = s.type === 'robust' ? '#B8860B' : '#1F3A5F';
     if (s.absorbed) {
       // Grey marker at zero with explanatory caption to the right
       return /*#__PURE__*/React.createElement("g", {
@@ -630,7 +630,7 @@ function H2Binscatter() {
       gridTemplateColumns: '1fr 1fr',
       gap: 14
     }
-  }, renderPanel(preBins, 0.0020, 0.0006, 356, '#3178b3', 'Pre-2022 (2020–2022)', 'pre'), renderPanel(postBins, 0.0010, 0.0007, 346, '#d97f2e', 'Post-2022 (2023–2025)', 'post'));
+  }, renderPanel(preBins, 0.0020, 0.0006, 356, '#1F3A5F', 'Pre-2022 (2020–2022)', 'pre'), renderPanel(postBins, 0.0010, 0.0007, 346, '#B8860B', 'Post-2022 (2023–2025)', 'post'));
 }
 
 // ----- Descriptive histogram (compact, mirrors fig_h2_descriptive.png) -----
@@ -672,7 +672,7 @@ function H2YearMeans() {
       y: sy(d.mean),
       width: bw,
       height: h - sy(d.mean),
-      fill: "#3178b3",
+      fill: "#1F3A5F",
       opacity: 0.85
     }), /*#__PURE__*/React.createElement("line", {
       x1: cx,
@@ -1192,11 +1192,11 @@ function H2Tab() {
       fontSize: 15.5,
       lineHeight: 1.5,
       marginTop: 10,
-      color: 'rgba(246,243,236,0.88)'
+      color: 'rgba(250,248,245,0.88)'
     }
   }, "Cross-border crypto flows concentrate not in the unbanked world but in ", /*#__PURE__*/React.createElement("em", {
     style: {
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, "middle-income economies"), " with active retail investment cultures, capital-control pressures, or USD-access frictions."), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -1204,11 +1204,11 @@ function H2Tab() {
       fontSize: 15.5,
       lineHeight: 1.5,
       marginTop: 10,
-      color: 'rgba(246,243,236,0.88)'
+      color: 'rgba(250,248,245,0.88)'
     }
   }, "The binding constraint is macro instability and demand for dollar exposure \u2014 not absence of basic banking. This aligns with Graf von Luckner, Reinhart & Rogoff (2023) and Aquilina, Frost & Schrimpf (2024)."), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: '1px solid rgba(246,243,236,0.2)',
+      borderTop: '1px solid rgba(250,248,245,0.2)',
       marginTop: 16,
       paddingTop: 14
     }
@@ -1218,7 +1218,7 @@ function H2Tab() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginBottom: 6
     }
   }, "Honest framing"), /*#__PURE__*/React.createElement("div", {
@@ -1227,19 +1227,19 @@ function H2Tab() {
       fontSize: 17,
       fontStyle: 'italic',
       lineHeight: 1.35,
-      color: '#fff'
+      color: 'var(--bg-base)'
     }
   }, "\"We cannot identify leapfrogging in this panel\" \u2014 not \"leapfrogging does not exist.\""), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 13.5,
       lineHeight: 1.5,
-      color: 'rgba(246,243,236,0.72)',
+      color: 'rgba(250,248,245,0.72)',
       marginTop: 10
     }
   }, "The null is partly a consequence of identification: within-country variation in a time-invariant baseline is mechanically absorbed by the country fixed effect, leaving little signal for the interaction term to pick up.")), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: '1px solid rgba(246,243,236,0.2)',
+      borderTop: '1px solid rgba(250,248,245,0.2)',
       marginTop: 16,
       paddingTop: 14
     }
@@ -1249,7 +1249,7 @@ function H2Tab() {
       fontSize: 10,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginBottom: 6
     }
   }, "Policy implication"), /*#__PURE__*/React.createElement("div", {
@@ -1257,7 +1257,7 @@ function H2Tab() {
       fontFamily: 'var(--serif)',
       fontSize: 13.5,
       lineHeight: 1.5,
-      color: 'rgba(246,243,236,0.85)'
+      color: 'rgba(250,248,245,0.85)'
     }
   }, "Expecting stablecoins to close financial-inclusion gaps in low-income countries is empirically unsupported. The regulatory conversation should refocus on where adoption actually occurs \u2014 middle-income, dollar-demanding economies.")))));
 }

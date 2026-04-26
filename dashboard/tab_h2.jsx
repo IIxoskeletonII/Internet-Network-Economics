@@ -60,7 +60,7 @@ function H2CoefPlot({ specs, width = 960, height = 440 }) {
       <rect
         x={mL} y={mT}
         width={sx(0)} height={h}
-        fill="#2f6a4e" opacity={0.08}
+        fill="#B8860B" opacity={0.08}
       />
       <g transform={`translate(${mL},${mT})`}>
         {/* vertical gridlines at every tick */}
@@ -83,7 +83,7 @@ function H2CoefPlot({ specs, width = 960, height = 440 }) {
         {specs.map((s, i) => {
           const y = rowH * i + rowH / 2;
           // Color code: spec 5 (cohort diff) uses main blue; robustness 6/7 use orange; others blue
-          const col = s.type === 'robust' ? '#d97f2e' : '#3178b3';
+          const col = s.type === 'robust' ? '#B8860B' : '#1F3A5F';
           if (s.absorbed) {
             // Grey marker at zero with explanatory caption to the right
             return (
@@ -250,8 +250,8 @@ function H2Binscatter() {
 
   return (
     <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:14}}>
-      {renderPanel(preBins,  0.0020, 0.0006, 356, '#3178b3', 'Pre-2022 (2020–2022)',  'pre')}
-      {renderPanel(postBins, 0.0010, 0.0007, 346, '#d97f2e', 'Post-2022 (2023–2025)', 'post')}
+      {renderPanel(preBins,  0.0020, 0.0006, 356, '#1F3A5F', 'Pre-2022 (2020–2022)',  'pre')}
+      {renderPanel(postBins, 0.0010, 0.0007, 346, '#B8860B', 'Post-2022 (2023–2025)', 'post')}
     </div>
   );
 }
@@ -279,7 +279,7 @@ function H2YearMeans() {
           return (
             <g key={i}>
               <rect x={cx - bw/2} y={sy(d.mean)} width={bw} height={h - sy(d.mean)}
-                    fill="#3178b3" opacity={0.85} />
+                    fill="#1F3A5F" opacity={0.85} />
               {/* CI whisker */}
               <line x1={cx} x2={cx} y1={sy(d.mean - ciHW)} y2={sy(d.mean + ciHW)} stroke={COLORS.ink} strokeWidth={1} />
               <line x1={cx-4} x2={cx+4} y1={sy(d.mean - ciHW)} y2={sy(d.mean - ciHW)} stroke={COLORS.ink} />
@@ -616,25 +616,25 @@ function H2Tab() {
 
         <div className="card dark">
           <div className="ctitle">Who is adopting, really — course linkage</div>
-          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(246,243,236,0.88)'}}>
-            Cross-border crypto flows concentrate not in the unbanked world but in <em style={{color:'#e7c468'}}>middle-income economies</em> with active retail investment cultures, capital-control pressures, or USD-access frictions.
+          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(250,248,245,0.88)'}}>
+            Cross-border crypto flows concentrate not in the unbanked world but in <em style={{color:'#B8860B'}}>middle-income economies</em> with active retail investment cultures, capital-control pressures, or USD-access frictions.
           </p>
-          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(246,243,236,0.88)'}}>
+          <p style={{fontFamily:'var(--serif)', fontSize:15.5, lineHeight:1.5, marginTop:10, color:'rgba(250,248,245,0.88)'}}>
             The binding constraint is macro instability and demand for dollar exposure — not absence of basic banking. This aligns with Graf von Luckner, Reinhart &amp; Rogoff (2023) and Aquilina, Frost &amp; Schrimpf (2024).
           </p>
-          <div style={{borderTop:'1px solid rgba(246,243,236,0.2)', marginTop:16, paddingTop:14}}>
-            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(246,243,236,0.55)', marginBottom:6}}>Honest framing</div>
-            <div style={{fontFamily:'var(--serif)', fontSize:17, fontStyle:'italic', lineHeight:1.35, color:'#fff'}}>
+          <div style={{borderTop:'1px solid rgba(250,248,245,0.2)', marginTop:16, paddingTop:14}}>
+            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(250,248,245,0.55)', marginBottom:6}}>Honest framing</div>
+            <div style={{fontFamily:'var(--serif)', fontSize:17, fontStyle:'italic', lineHeight:1.35, color:'var(--bg-base)'}}>
               "We cannot identify leapfrogging in this panel" — not "leapfrogging does not exist."
             </div>
-            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, color:'rgba(246,243,236,0.72)', marginTop:10}}>
+            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, color:'rgba(250,248,245,0.72)', marginTop:10}}>
               The null is partly a consequence of identification: within-country variation in a time-invariant baseline is mechanically absorbed by the country fixed effect, leaving little signal for the interaction term to pick up.
             </div>
           </div>
 
-          <div style={{borderTop:'1px solid rgba(246,243,236,0.2)', marginTop:16, paddingTop:14}}>
-            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(246,243,236,0.55)', marginBottom:6}}>Policy implication</div>
-            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, color:'rgba(246,243,236,0.85)'}}>
+          <div style={{borderTop:'1px solid rgba(250,248,245,0.2)', marginTop:16, paddingTop:14}}>
+            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(250,248,245,0.55)', marginBottom:6}}>Policy implication</div>
+            <div style={{fontFamily:'var(--serif)', fontSize:13.5, lineHeight:1.5, color:'rgba(250,248,245,0.85)'}}>
               Expecting stablecoins to close financial-inclusion gaps in low-income countries is empirically unsupported. The regulatory conversation should refocus on where adoption actually occurs — middle-income, dollar-demanding economies.
             </div>
           </div>

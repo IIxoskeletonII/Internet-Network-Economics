@@ -1,11 +1,14 @@
 // Chart primitives & helpers
 const { useState, useEffect, useMemo, useRef } = React;
 
+// Palette aliases bound to spec --root tokens. Semantic roles preserved:
+// `accent` = negative/rejected findings (brick), `green` = positive/accepted findings (sage),
+// `blue` = USDC navy, `ochre` = USDT family. Statistical conditionals reuse these aliases.
 const COLORS = {
-  ink: '#0a0e1a', paper: '#f6f3ec', paper2: '#ebe6d9',
-  accent: '#c9463a', green: '#1f5e4a', ochre: '#b07d2a', blue: '#2a4a7f',
-  muted: 'rgba(10,14,26,0.56)', line: 'rgba(10,14,26,0.14)',
-  usdc: '#2a4a7f', usdt: '#1f5e4a',
+  ink: '#1A1A1A', paper: '#FAF8F5', paper2: '#F2EFEA',
+  accent: '#8B3A3A', green: '#5A7A5A', ochre: '#B8860B', blue: '#1F3A5F',
+  muted: 'rgba(26,26,26,0.56)', line: 'rgba(26,26,26,0.14)',
+  usdc: '#1F3A5F', usdt: '#B8860B', legacy: '#3D3935',
 };
 
 function fmt(n, d=2) {

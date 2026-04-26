@@ -273,6 +273,9 @@ function H3DualPanel({
     opacity: 0.55
   })), H3_MARKERS.map((e, i) => {
     const ex = sx(new Date(e.date).getTime());
+    // Stagger labels: even indices (Terra, BUSD) → upper band; odd (FTX, SVB) → lower.
+    // Resolves the tight Nov-2022 / Feb-2023 / Mar-2023 cluster collision.
+    const yLabel = i % 2 === 0 ? 12 : 30;
     return /*#__PURE__*/React.createElement("g", {
       key: 'em' + i
     }, /*#__PURE__*/React.createElement("line", {
@@ -284,9 +287,17 @@ function H3DualPanel({
       strokeWidth: 0.8,
       strokeDasharray: "4 3",
       opacity: 0.65
+    }), /*#__PURE__*/React.createElement("line", {
+      x1: ex,
+      x2: ex + 3,
+      y1: yLabel - 3,
+      y2: yLabel - 3,
+      stroke: COLORS.muted,
+      strokeWidth: 0.8,
+      opacity: 0.65
     }), /*#__PURE__*/React.createElement("text", {
       x: ex + 3,
-      y: 12,
+      y: yLabel,
       style: {
         fontFamily: 'JetBrains Mono',
         fontSize: 9.5,
@@ -296,7 +307,7 @@ function H3DualPanel({
     }, e.label));
   }), /*#__PURE__*/React.createElement("path", {
     d: hhiPath,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 1.9,
     fill: "none"
   }), (() => {
@@ -382,7 +393,7 @@ function H3DualPanel({
     x2: 26,
     y1: 10,
     y2: 10,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 2
   }), /*#__PURE__*/React.createElement("text", {
     x: 32,
@@ -418,7 +429,7 @@ function H3DualPanel({
     });
   }), /*#__PURE__*/React.createElement("path", {
     d: sharePath,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 1.9,
     fill: "none"
   }), /*#__PURE__*/React.createElement("line", {
@@ -468,7 +479,7 @@ function H3DualPanel({
     x2: 26,
     y1: 10,
     y2: 10,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 2
   }), /*#__PURE__*/React.createElement("text", {
     x: 32,
@@ -603,7 +614,7 @@ function H3TrendOverlay({
     }
   }, "Dec 2022 break"), /*#__PURE__*/React.createElement("path", {
     d: hhiPath,
-    stroke: "#b8bcc2",
+    stroke: "rgba(26,26,26,0.30)",
     strokeWidth: 1.6,
     fill: "none"
   }), fullLine && /*#__PURE__*/React.createElement("line", {
@@ -611,21 +622,21 @@ function H3TrendOverlay({
     y1: fullLine.y0,
     x2: fullLine.x1,
     y2: fullLine.y1,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 2.2
   }), postDec22Line && /*#__PURE__*/React.createElement("line", {
     x1: postDec22Line.x0,
     y1: postDec22Line.y0,
     x2: postDec22Line.x1,
     y2: postDec22Line.y1,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 2.2
   }), postJun22Line && /*#__PURE__*/React.createElement("line", {
     x1: postJun22Line.x0,
     y1: postJun22Line.y0,
     x2: postJun22Line.x1,
     y2: postJun22Line.y1,
-    stroke: "#3c7d58",
+    stroke: "#5A7A5A",
     strokeWidth: 2.0,
     strokeDasharray: "7 5"
   }), /*#__PURE__*/React.createElement("g", {
@@ -645,7 +656,7 @@ function H3TrendOverlay({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#b8bcc2",
+    stroke: "rgba(26,26,26,0.30)",
     strokeWidth: 1.6
   }), /*#__PURE__*/React.createElement("text", {
     x: 30,
@@ -662,7 +673,7 @@ function H3TrendOverlay({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#3178b3",
+    stroke: "#1F3A5F",
     strokeWidth: 2.2
   }), /*#__PURE__*/React.createElement("text", {
     x: 30,
@@ -679,7 +690,7 @@ function H3TrendOverlay({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#d97f2e",
+    stroke: "#B8860B",
     strokeWidth: 2.2
   }), /*#__PURE__*/React.createElement("text", {
     x: 30,
@@ -696,7 +707,7 @@ function H3TrendOverlay({
     x2: 22,
     y1: 0,
     y2: 0,
-    stroke: "#3c7d58",
+    stroke: "#5A7A5A",
     strokeWidth: 2.0,
     strokeDasharray: "7 5"
   }), /*#__PURE__*/React.createElement("text", {
@@ -1101,7 +1112,7 @@ function H3Tab() {
       fontFamily: 'var(--serif)',
       fontStyle: 'italic',
       fontSize: 14,
-      color: 'rgba(246,243,236,0.72)',
+      color: 'rgba(250,248,245,0.72)',
       marginTop: 6,
       marginBottom: 12,
       lineHeight: 1.45
@@ -1110,7 +1121,7 @@ function H3Tab() {
     key: i,
     style: {
       padding: '10px 0',
-      borderBottom: i === H3_EVENTS.length - 1 ? 'none' : '1px dotted rgba(246,243,236,0.2)'
+      borderBottom: i === H3_EVENTS.length - 1 ? 'none' : '1px dotted rgba(250,248,245,0.2)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1123,20 +1134,20 @@ function H3Tab() {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 14.5,
-      color: '#fff'
+      color: 'var(--bg-base)'
     }
   }, e.event), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'JetBrains Mono',
       fontSize: 10.5,
-      color: e.delta > 0 ? '#e89a4d' : '#8cc7b0',
+      color: e.delta > 0 ? '#8B3A3A' : '#5A7A5A',
       whiteSpace: 'nowrap'
     }
   }, "\u0394HHI ", e.delta >= 0 ? '+' : '', Math.round(e.delta))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'JetBrains Mono',
       fontSize: 10,
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginTop: 3,
       letterSpacing: '0.04em'
     }
@@ -1144,7 +1155,7 @@ function H3Tab() {
     style: {
       fontFamily: 'JetBrains Mono',
       fontSize: 10,
-      color: 'rgba(246,243,236,0.62)',
+      color: 'rgba(250,248,245,0.62)',
       marginTop: 4,
       lineHeight: 1.5
     }
@@ -1153,7 +1164,7 @@ function H3Tab() {
       fontFamily: 'var(--serif)',
       fontStyle: 'italic',
       fontSize: 12,
-      color: 'rgba(246,243,236,0.72)',
+      color: 'rgba(250,248,245,0.72)',
       marginTop: 4,
       lineHeight: 1.4
     }

@@ -63,12 +63,12 @@ function SynthesisTab() {
         </div>
         <div className="card dark">
           <div className="ctitle">The honest reframing</div>
-          <p style={{fontFamily:'var(--serif)', fontSize:18, fontStyle:'italic', lineHeight:1.4, marginTop:10, color:'rgba(246,243,236,0.92)'}}>
-            Stablecoins are a <em style={{color:'#e7c468'}}>complementary</em> asset layer riding on existing financial plumbing — exchanges, custodians, payment processors, developer ecosystems — which are themselves correlated with banking depth.
+          <p style={{fontFamily:'var(--serif)', fontSize:18, fontStyle:'italic', lineHeight:1.4, marginTop:10, color:'rgba(250,248,245,0.92)'}}>
+            Stablecoins are a <em style={{color:'#B8860B'}}>complementary</em> asset layer riding on existing financial plumbing — exchanges, custodians, payment processors, developer ecosystems — which are themselves correlated with banking depth.
           </p>
-          <div style={{borderTop:'1px solid rgba(246,243,236,0.2)', marginTop:18, paddingTop:14}}>
-            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.1em', textTransform:'uppercase', color:'rgba(246,243,236,0.55)', marginBottom:6}}>Policy read</div>
-            <p style={{fontFamily:'var(--serif)', fontSize:15, color:'rgba(246,243,236,0.8)', lineHeight:1.45}}>
+          <div style={{borderTop:'1px solid rgba(250,248,245,0.2)', marginTop:18, paddingTop:14}}>
+            <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.1em', textTransform:'uppercase', color:'rgba(250,248,245,0.55)', marginBottom:6}}>Policy read</div>
+            <p style={{fontFamily:'var(--serif)', fontSize:15, color:'rgba(250,248,245,0.8)', lineHeight:1.45}}>
               Regulatory focus should shift from where theory predicted adoption (low-income, unbanked) to where it actually lives (middle-income, dollar-demanding, macro-unstable).
             </p>
           </div>

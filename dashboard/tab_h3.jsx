@@ -91,17 +91,21 @@ function H3DualPanel({ d }) {
         {/* event markers */}
         {H3_MARKERS.map((e, i) => {
           const ex = sx(new Date(e.date).getTime());
+          // Stagger labels: even indices (Terra, BUSD) → upper band; odd (FTX, SVB) → lower.
+          // Resolves the tight Nov-2022 / Feb-2023 / Mar-2023 cluster collision.
+          const yLabel = i % 2 === 0 ? 12 : 30;
           return (
             <g key={'em'+i}>
               <line x1={ex} x2={ex} y1={0} y2={topH} stroke={COLORS.muted} strokeWidth={0.8} strokeDasharray="4 3" opacity={0.65} />
-              <text x={ex + 3} y={12} style={{fontFamily:'JetBrains Mono', fontSize:9.5, fill:COLORS.muted, letterSpacing:'0.02em'}}>
+              <line x1={ex} x2={ex + 3} y1={yLabel - 3} y2={yLabel - 3} stroke={COLORS.muted} strokeWidth={0.8} opacity={0.65} />
+              <text x={ex + 3} y={yLabel} style={{fontFamily:'JetBrains Mono', fontSize:9.5, fill:COLORS.muted, letterSpacing:'0.02em'}}>
                 {e.label}
               </text>
             </g>
           );
         })}
         {/* HHI path */}
-        <path d={hhiPath} stroke="#3178b3" strokeWidth={1.9} fill="none" />
+        <path d={hhiPath} stroke="#1F3A5F" strokeWidth={1.9} fill="none" />
         {/* annotations */}
         {(() => {
           // find trough and peak post-2022
@@ -141,7 +145,7 @@ function H3DualPanel({ d }) {
         {/* Legend */}
         <g transform={`translate(${w - 220},6)`}>
           <rect x={0} y={0} width={220} height={20} fill={COLORS.paper} stroke={COLORS.line} strokeWidth={0.6} />
-          <line x1={8} x2={26} y1={10} y2={10} stroke="#3178b3" strokeWidth={2} />
+          <line x1={8} x2={26} y1={10} y2={10} stroke="#1F3A5F" strokeWidth={2} />
           <text x={32} y={13.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>HHI (all stablecoins)</text>
         </g>
       </g>
@@ -155,7 +159,7 @@ function H3DualPanel({ d }) {
           const ex = sx(new Date(e.date).getTime());
           return <line key={'em2'+i} x1={ex} x2={ex} y1={0} y2={botH} stroke={COLORS.muted} strokeWidth={0.8} strokeDasharray="4 3" opacity={0.65} />;
         })}
-        <path d={sharePath} stroke="#d97f2e" strokeWidth={1.9} fill="none" />
+        <path d={sharePath} stroke="#B8860B" strokeWidth={1.9} fill="none" />
         {/* Y-axis */}
         <line x1={0} x2={0} y1={0} y2={botH} stroke={COLORS.ink} strokeWidth={0.8} />
         {shareTicks.map((t, i) => (
@@ -169,7 +173,7 @@ function H3DualPanel({ d }) {
         </text>
         <g transform={`translate(${w - 240},6)`}>
           <rect x={0} y={0} width={240} height={20} fill={COLORS.paper} stroke={COLORS.line} strokeWidth={0.6} />
-          <line x1={8} x2={26} y1={10} y2={10} stroke="#d97f2e" strokeWidth={2} />
+          <line x1={8} x2={26} y1={10} y2={10} stroke="#B8860B" strokeWidth={2} />
           <text x={32} y={13.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>Top stablecoin share (USDT)</text>
         </g>
       </g>
@@ -244,39 +248,39 @@ function H3TrendOverlay({ d }) {
         <text x={breakX + 6} y={16} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.muted}}>Dec 2022 break</text>
 
         {/* Grey HHI series behind lines */}
-        <path d={hhiPath} stroke="#b8bcc2" strokeWidth={1.6} fill="none" />
+        <path d={hhiPath} stroke="rgba(26,26,26,0.30)" strokeWidth={1.6} fill="none" />
 
         {/* Full-window fit (blue solid) */}
         {fullLine && <line x1={fullLine.x0} y1={fullLine.y0} x2={fullLine.x1} y2={fullLine.y1}
-                            stroke="#3178b3" strokeWidth={2.2} />}
+                            stroke="#1F3A5F" strokeWidth={2.2} />}
         {/* Post-Dec-2022 fit (orange solid) */}
         {postDec22Line && <line x1={postDec22Line.x0} y1={postDec22Line.y0} x2={postDec22Line.x1} y2={postDec22Line.y1}
-                                 stroke="#d97f2e" strokeWidth={2.2} />}
+                                 stroke="#B8860B" strokeWidth={2.2} />}
         {/* Post-Jun-2022 fit (green dashed) */}
         {postJun22Line && <line x1={postJun22Line.x0} y1={postJun22Line.y0} x2={postJun22Line.x1} y2={postJun22Line.y1}
-                                 stroke="#3c7d58" strokeWidth={2.0} strokeDasharray="7 5" />}
+                                 stroke="#5A7A5A" strokeWidth={2.0} strokeDasharray="7 5" />}
 
         {/* legend */}
         <g transform={`translate(${w - 520},6)`}>
           <rect x={0} y={0} width={520} height={74} fill={COLORS.paper} stroke={COLORS.line} strokeWidth={0.6} />
           <g transform="translate(12,18)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#b8bcc2" strokeWidth={1.6} />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="rgba(26,26,26,0.30)" strokeWidth={1.6} />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>HHI (all stablecoins)</text>
           </g>
           <g transform="translate(12,35)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#3178b3" strokeWidth={2.2} />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#1F3A5F" strokeWidth={2.2} />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>
               Full window (n=72): β = −14.22/mo, p = 0.233
             </text>
           </g>
           <g transform="translate(12,52)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#d97f2e" strokeWidth={2.2} />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#B8860B" strokeWidth={2.2} />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>
               Post-Dec-2022 (n=36): β = −7.09/mo, p = 0.632
             </text>
           </g>
           <g transform="translate(12,69)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#3c7d58" strokeWidth={2.0} strokeDasharray="7 5" />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#5A7A5A" strokeWidth={2.0} strokeDasharray="7 5" />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>
               Post-Jun-2022 (n=42): β = +20.41/mo, p = 0.191
             </text>
@@ -510,25 +514,25 @@ function H3Tab() {
 
         <div className="card dark">
           <div className="ctitle">Structural events ledger</div>
-          <div style={{fontFamily:'var(--serif)', fontStyle:'italic', fontSize:14, color:'rgba(246,243,236,0.72)', marginTop:6, marginBottom:12, lineHeight:1.45}}>
+          <div style={{fontFamily:'var(--serif)', fontStyle:'italic', fontSize:14, color:'rgba(250,248,245,0.72)', marginTop:6, marginBottom:12, lineHeight:1.45}}>
             Re-concentration through 2023 was trust-shock-driven, not organic network reinforcement.
           </div>
           {H3_EVENTS.map((e, i) => (
-            <div key={i} style={{padding:'10px 0', borderBottom: i === H3_EVENTS.length-1 ? 'none' : '1px dotted rgba(246,243,236,0.2)'}}>
+            <div key={i} style={{padding:'10px 0', borderBottom: i === H3_EVENTS.length-1 ? 'none' : '1px dotted rgba(250,248,245,0.2)'}}>
               <div style={{display:'flex', justifyContent:'space-between', gap:8, alignItems:'baseline'}}>
-                <div style={{fontFamily:'var(--serif)', fontSize:14.5, color:'#fff'}}>{e.event}</div>
+                <div style={{fontFamily:'var(--serif)', fontSize:14.5, color:'var(--bg-base)'}}>{e.event}</div>
                 <div style={{fontFamily:'JetBrains Mono', fontSize:10.5,
-                             color: e.delta > 0 ? '#e89a4d' : '#8cc7b0', whiteSpace:'nowrap'}}>
+                             color: e.delta > 0 ? '#8B3A3A' : '#5A7A5A', whiteSpace:'nowrap'}}>
                   ΔHHI {e.delta >= 0 ? '+' : ''}{Math.round(e.delta)}
                 </div>
               </div>
-              <div style={{fontFamily:'JetBrains Mono', fontSize:10, color:'rgba(246,243,236,0.55)', marginTop:3, letterSpacing:'0.04em'}}>
+              <div style={{fontFamily:'JetBrains Mono', fontSize:10, color:'rgba(250,248,245,0.55)', marginTop:3, letterSpacing:'0.04em'}}>
                 {e.start} → {e.end} · {e.topStart} → {e.topEnd}
               </div>
-              <div style={{fontFamily:'JetBrains Mono', fontSize:10, color:'rgba(246,243,236,0.62)', marginTop:4, lineHeight:1.5}}>
+              <div style={{fontFamily:'JetBrains Mono', fontSize:10, color:'rgba(250,248,245,0.62)', marginTop:4, lineHeight:1.5}}>
                 {e.movers}
               </div>
-              <div style={{fontFamily:'var(--serif)', fontStyle:'italic', fontSize:12, color:'rgba(246,243,236,0.72)', marginTop:4, lineHeight:1.4}}>
+              <div style={{fontFamily:'var(--serif)', fontStyle:'italic', fontSize:12, color:'rgba(250,248,245,0.72)', marginTop:4, lineHeight:1.4}}>
                 {e.mechanism}
               </div>
             </div>

@@ -134,9 +134,9 @@ function H4CostBars({ size200 = true, size10k = true }) {
   const gap = 8;
 
   const series = (g) => [
-    { key:'eth',    label:'ETH mean',     value: H4_COST.eth.mean,                 color:'#3178b3' },
-    { key:'tron',   label:'Tron median',  value: Math.max(yMin, H4_COST.tron.median), color:'#d97f2e', annotate:'median = $0.0324\n(14 of 72 mo. at $0)' },
-    { key:'legacy', label:'Legacy mean',  value: g.legacy,                          color:'#3c7d58' },
+    { key:'eth',    label:'ETH mean',     value: H4_COST.eth.mean,                 color:'#1F3A5F' },
+    { key:'tron',   label:'Tron median',  value: Math.max(yMin, H4_COST.tron.median), color:'#B8860B', annotate:'median = $0.0324\n(14 of 72 mo. at $0)' },
+    { key:'legacy', label:'Legacy mean',  value: g.legacy,                          color:'#3D3935' },
   ];
 
   return (
@@ -214,15 +214,15 @@ function H4CostBars({ size200 = true, size10k = true }) {
       <g transform={`translate(${mL + 12},${mT + 8})`}>
         <rect x={0} y={0} width={210} height={62} fill={COLORS.paper} stroke={COLORS.line} strokeWidth={0.6} />
         <g transform="translate(10,16)">
-          <rect x={0} y={-8} width={14} height={10} fill="#3178b3" />
+          <rect x={0} y={-8} width={14} height={10} fill="#1F3A5F" />
           <text x={22} y={1} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>ETH mean ($14.92)</text>
         </g>
         <g transform="translate(10,34)">
-          <rect x={0} y={-8} width={14} height={10} fill="#d97f2e" />
+          <rect x={0} y={-8} width={14} height={10} fill="#B8860B" />
           <text x={22} y={1} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>Tron median ($0.03)</text>
         </g>
         <g transform="translate(10,52)">
-          <rect x={0} y={-8} width={14} height={10} fill="#3c7d58" />
+          <rect x={0} y={-8} width={14} height={10} fill="#3D3935" />
           <text x={22} y={1} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>Legacy mean ($8.39 / $419.67)</text>
         </g>
       </g>
@@ -269,9 +269,9 @@ function H4FeeTimeseries({ d, sizeForLegacy = 200 }) {
           EIP-4844 (Dencun) · Apr 2024
         </text>
 
-        <path d={legacyPath} stroke="#3c7d58" strokeWidth={1.6} fill="none" strokeDasharray="6 4" />
-        <path d={ethPath}    stroke="#3178b3" strokeWidth={1.8} fill="none" />
-        <path d={tronPath}   stroke="#d97f2e" strokeWidth={1.8} fill="none" />
+        <path d={legacyPath} stroke="#3D3935" strokeWidth={1.6} fill="none" strokeDasharray="6 4" />
+        <path d={ethPath}    stroke="#1F3A5F" strokeWidth={1.8} fill="none" />
+        <path d={tronPath}   stroke="#B8860B" strokeWidth={1.8} fill="none" />
 
         {/* Y axis */}
         <line x1={0} x2={0} y1={0} y2={h} stroke={COLORS.ink} strokeWidth={0.8} />
@@ -292,15 +292,15 @@ function H4FeeTimeseries({ d, sizeForLegacy = 200 }) {
         <g transform={`translate(${w - 320},6)`}>
           <rect x={0} y={0} width={320} height={62} fill={COLORS.paper} stroke={COLORS.line} strokeWidth={0.6} />
           <g transform="translate(10,18)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#3178b3" strokeWidth={1.8} />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#1F3A5F" strokeWidth={1.8} />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>ETH monthly mean fee</text>
           </g>
           <g transform="translate(10,35)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#d97f2e" strokeWidth={1.8} />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#B8860B" strokeWidth={1.8} />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>Tron monthly mean fee</text>
           </g>
           <g transform="translate(10,52)">
-            <line x1={0} x2={22} y1={0} y2={0} stroke="#3c7d58" strokeWidth={1.6} strokeDasharray="6 4" />
+            <line x1={0} x2={22} y1={0} y2={0} stroke="#3D3935" strokeWidth={1.6} strokeDasharray="6 4" />
             <text x={30} y={3.5} style={{fontFamily:'JetBrains Mono', fontSize:10.5, fill:COLORS.ink}}>Legacy implied @ ${sizeForLegacy.toLocaleString()}</text>
           </g>
         </g>
@@ -353,9 +353,9 @@ function H4LiveSlider() {
   const yTicks = [0.01, 0.1, 1, 10, 100, 1000];
 
   const series = [
-    { label:'ETH · USDC',       value: ethMean,     color:'#3178b3' },
-    { label:'Tron · USDT',      value: tronMedian,  color:'#d97f2e' },
-    { label:'SWIFT legacy',     value: legacy,      color:'#3c7d58' },
+    { label:'ETH · USDC',       value: ethMean,     color:'#1F3A5F' },
+    { label:'Tron · USDT',      value: tronMedian,  color:'#B8860B' },
+    { label:'SWIFT legacy',     value: legacy,      color:'#3D3935' },
   ];
   const barW = 130, gap = 70;
   const groupX = (w - (series.length * barW + (series.length-1) * gap)) / 2;
@@ -381,9 +381,9 @@ function H4LiveSlider() {
       </div>
 
       <div className="grid c4" style={{gridTemplateColumns:'repeat(4, 1fr)', gap:0, border:'1.5px solid var(--ink)'}}>
-        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#e7f0f8'}}>
-          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#3178b3'}}>ETH · USDC</div>
-          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#3178b3', letterSpacing:'-0.02em'}}>
+        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#ECEEF3'}}>
+          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#1F3A5F'}}>ETH · USDC</div>
+          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#1F3A5F', letterSpacing:'-0.02em'}}>
             {fmt$(ethMean, 2)}
           </div>
           <div style={{fontFamily:'var(--mono)', fontSize:10, color:COLORS.muted, marginTop:8, letterSpacing:'0.04em'}}>
@@ -393,9 +393,9 @@ function H4LiveSlider() {
             72-mo mean. Independent of size.
           </div>
         </div>
-        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#fbeede'}}>
-          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#d97f2e'}}>Tron · USDT</div>
-          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#d97f2e', letterSpacing:'-0.02em'}}>
+        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#F5EFE0'}}>
+          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#B8860B'}}>Tron · USDT</div>
+          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#B8860B', letterSpacing:'-0.02em'}}>
             {fmt$(tronMedian, 4)}
           </div>
           <div style={{fontFamily:'var(--mono)', fontSize:10, color:COLORS.muted, marginTop:8, letterSpacing:'0.04em'}}>
@@ -405,9 +405,9 @@ function H4LiveSlider() {
             Median; 14 / 72 months were $0.
           </div>
         </div>
-        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#e8f2ec'}}>
-          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#3c7d58'}}>SWIFT legacy (RPW)</div>
-          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#3c7d58', letterSpacing:'-0.02em'}}>
+        <div style={{padding:'18px 20px', borderRight:'1px solid var(--line)', background:'#ECEAE7'}}>
+          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#3D3935'}}>SWIFT legacy (RPW)</div>
+          <div style={{fontFamily:'var(--serif)', fontSize:42, lineHeight:1, marginTop:8, color:'#3D3935', letterSpacing:'-0.02em'}}>
             {fmt$(legacy, 2)}
           </div>
           <div style={{fontFamily:'var(--mono)', fontSize:10, color:COLORS.muted, marginTop:8, letterSpacing:'0.04em'}}>
@@ -418,16 +418,16 @@ function H4LiveSlider() {
           </div>
         </div>
         <div style={{padding:'18px 20px', background:'var(--ink)', color:'var(--paper)'}}>
-          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(246,243,236,0.6)'}}>Savings ratio</div>
+          <div style={{fontFamily:'var(--mono)', fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'rgba(250,248,245,0.6)'}}>Savings ratio</div>
           <div style={{fontFamily:'var(--serif)', fontSize:24, marginTop:10, lineHeight:1.25}}>
-            Tron <span style={{color:'#8cc7b0', fontVariantNumeric:'tabular-nums'}}>{fmt(tronAdv, 0)}×</span>
+            Tron <span style={{color:'#5A7A5A', fontVariantNumeric:'tabular-nums'}}>{fmt(tronAdv, 0)}×</span>
           </div>
           <div style={{fontFamily:'var(--serif)', fontSize:24, lineHeight:1.25}}>
-            ETH <span style={{color: ethAdvWins ? '#8cc7b0' : '#e89a4d', fontVariantNumeric:'tabular-nums'}}>
+            ETH <span style={{color: ethAdvWins ? '#5A7A5A' : '#8B3A3A', fontVariantNumeric:'tabular-nums'}}>
               {ethAdv.toFixed(2)}×
             </span>
           </div>
-          <div style={{fontFamily:'var(--mono)', fontSize:9.5, color:'rgba(246,243,236,0.55)', marginTop:10, textTransform:'uppercase', letterSpacing:'0.06em'}}>
+          <div style={{fontFamily:'var(--mono)', fontSize:9.5, color:'rgba(250,248,245,0.55)', marginTop:10, textTransform:'uppercase', letterSpacing:'0.06em'}}>
             vs legacy @ ${size.toLocaleString()} {ethAdvWins ? '· ETH cheaper' : '· ETH dearer'}
           </div>
         </div>
@@ -686,7 +686,7 @@ function H4Tab() {
 
         <div className="card dark">
           <div className="ctitle">Appropriability — who captures the surplus?</div>
-          <p style={{fontFamily:'var(--serif)', fontSize:15, lineHeight:1.5, marginTop:8, color:'rgba(246,243,236,0.85)'}}>
+          <p style={{fontFamily:'var(--serif)', fontSize:15, lineHeight:1.5, marginTop:8, color:'rgba(250,248,245,0.85)'}}>
             A $420 legacy cost becomes $0.03 on Tron. The platform layer commoditises transfer; the surplus does <em>not</em> stay with the operator.
           </p>
           {[
@@ -694,20 +694,20 @@ function H4Tab() {
             { lab:'Validators', val:'~ 4%',      w:6,  note:'ETH gas + MEV scale with demand. Tron bandwidth model ≈ 0.' },
             { lab:'Issuers',    val:'~ 0% fees', w:1,  note:'Tether/Circle earn on reserve yield. Tether 2024 ≈ $13B from float.' },
           ].map((r, i) => (
-            <div key={i} style={{padding:'10px 0', borderBottom:i<2?'1px dotted rgba(246,243,236,0.2)':'none'}}>
+            <div key={i} style={{padding:'10px 0', borderBottom:i<2?'1px dotted rgba(250,248,245,0.2)':'none'}}>
               <div style={{display:'flex', justifyContent:'space-between', marginBottom:4}}>
                 <span style={{fontFamily:'var(--mono)', fontSize:11, letterSpacing:'0.08em', textTransform:'uppercase'}}>{r.lab}</span>
-                <span style={{fontFamily:'var(--serif)', fontSize:18, color:'#e7c468'}}>{r.val}</span>
+                <span style={{fontFamily:'var(--serif)', fontSize:18, color:'#B8860B'}}>{r.val}</span>
               </div>
-              <div style={{height:8, background:'rgba(246,243,236,0.12)'}}>
-                <div style={{height:'100%', width: r.w + '%', background:'#e7c468'}} />
+              <div style={{height:8, background:'rgba(250,248,245,0.12)'}}>
+                <div style={{height:'100%', width: r.w + '%', background:'#B8860B'}} />
               </div>
-              <div style={{fontFamily:'var(--serif)', fontSize:13, fontStyle:'italic', color:'rgba(246,243,236,0.7)', marginTop:4, lineHeight:1.4}}>
+              <div style={{fontFamily:'var(--serif)', fontSize:13, fontStyle:'italic', color:'rgba(250,248,245,0.7)', marginTop:4, lineHeight:1.4}}>
                 {r.note}
               </div>
             </div>
           ))}
-          <div className="footnote" style={{color:'rgba(246,243,236,0.55)', marginTop:14, fontFamily:'var(--serif)', fontStyle:'italic', lineHeight:1.5}}>
+          <div className="footnote" style={{color:'rgba(250,248,245,0.55)', marginTop:14, fontFamily:'var(--serif)', fontStyle:'italic', lineHeight:1.5}}>
             Inverts the normal platform pattern. In most platforms the operator extracts the surplus; here the protocol layer commoditises and operators monetise off-protocol (reserve yield, exchange fees).
           </div>
         </div>

@@ -195,7 +195,7 @@ function H1Tab() {
     out.push({
       beta: 2,
       alpha: METCALFE_ALPHA[asset],
-      color: 'rgba(10,14,26,0.45)',
+      color: 'rgba(26,26,26,0.45)',
       width: 1.2,
       dash: '2 4'
     });
@@ -418,7 +418,7 @@ function H1Tab() {
       display: 'inline-block',
       width: 16,
       height: 0,
-      borderTop: '2px dotted rgba(10,14,26,0.55)',
+      borderTop: '2px dotted rgba(26,26,26,0.55)',
       verticalAlign: 'middle',
       marginRight: 6
     }
@@ -656,8 +656,9 @@ function H1Tab() {
       chow = H1_SPECS[a].chow;
     const col = a === 'USDC' ? COLORS.usdc : COLORS.usdt;
     // darker tone for "post"
-    const colDark = a === 'USDC' ? '#14294d' : '#123a2d';
-    const colLight = a === 'USDC' ? '#6f89b3' : '#6b9282';
+    // Dark = full palette (post-FTX); light = same hue at 0.55α (pre-FTX regime).
+    const colDark = a === 'USDC' ? '#1F3A5F' : '#B8860B';
+    const colLight = a === 'USDC' ? 'rgba(31,58,95,0.55)' : 'rgba(184,134,11,0.55)';
     const xd = a === 'USDC' ? [7, 16] : [10, 15.5];
     const yd = a === 'USDC' ? [7.5, 17.5] : [10.5, 15.5];
     return /*#__PURE__*/React.createElement("div", {
@@ -1053,7 +1054,7 @@ function H1Tab() {
     style: {
       fontFamily: 'var(--serif)',
       fontStyle: 'italic',
-      color: '#fff'
+      color: 'var(--bg-base)'
     }
   }, "who captures the value?")), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -1061,15 +1062,15 @@ function H1Tab() {
       fontSize: 15.5,
       lineHeight: 1.5,
       marginTop: 10,
-      color: 'rgba(246,243,236,0.88)'
+      color: 'rgba(250,248,245,0.88)'
     }
   }, "The scaling exponent \u03B2 tells us ", /*#__PURE__*/React.createElement("em", null, "where"), " network value accrues. Under \u03B2 \u2248 2 (Metcalfe), each new user raises the value of the network for every other user \u2014 a classic winner-takes-all dynamic the operator can internalise. Under \u03B2 \u2248 1, the marginal user just adds a unit of throughput; there is no quadratic externality to capture. Value instead leaks out to the ", /*#__PURE__*/React.createElement("em", {
     style: {
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, "complementors"), " \u2014 validators earning per-transaction gas, issuers earning yield on reserve float."), /*#__PURE__*/React.createElement("div", {
     style: {
-      borderTop: '1px solid rgba(246,243,236,0.2)',
+      borderTop: '1px solid rgba(250,248,245,0.2)',
       marginTop: 18,
       paddingTop: 14
     }
@@ -1079,7 +1080,7 @@ function H1Tab() {
       fontSize: 10,
       letterSpacing: '0.14em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.55)',
+      color: 'rgba(250,248,245,0.55)',
       marginBottom: 10
     }
   }, "Which analogue fits stablecoins?"), /*#__PURE__*/React.createElement("div", {
@@ -1090,9 +1091,9 @@ function H1Tab() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      border: '1px solid rgba(231,196,104,0.55)',
+      border: '1px solid rgba(184,134,11,0.55)',
       padding: '12px 14px',
-      background: 'rgba(231,196,104,0.06)'
+      background: 'rgba(184,134,11,0.06)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1107,7 +1108,7 @@ function H1Tab() {
       fontSize: 9.5,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, "\u03B2 \u2248 1 \xB7 linear"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1115,13 +1116,13 @@ function H1Tab() {
       fontSize: 9.5,
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
-      color: '#e7c468'
+      color: '#B8860B'
     }
   }, "\u2713 fits")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 17,
-      color: '#fff',
+      color: 'var(--bg-base)',
       marginBottom: 6
     }
   }, "Payment rails"), /*#__PURE__*/React.createElement("div", {
@@ -1129,11 +1130,11 @@ function H1Tab() {
       fontFamily: 'var(--serif)',
       fontSize: 13.5,
       lineHeight: 1.45,
-      color: 'rgba(246,243,236,0.78)'
+      color: 'rgba(250,248,245,0.78)'
     }
   }, "Visa, SWIFT, ACH. Value per user is roughly constant \u2014 each transaction is worth about the same regardless of how many other people use the network. Operators earn thin per-transaction margins; issuers and acquirers share the rest.")), /*#__PURE__*/React.createElement("div", {
     style: {
-      border: '1px solid rgba(246,243,236,0.22)',
+      border: '1px solid rgba(250,248,245,0.22)',
       padding: '12px 14px',
       opacity: 0.72
     }
@@ -1150,7 +1151,7 @@ function H1Tab() {
       fontSize: 9.5,
       letterSpacing: '0.12em',
       textTransform: 'uppercase',
-      color: 'rgba(246,243,236,0.5)'
+      color: 'rgba(250,248,245,0.5)'
     }
   }, "\u03B2 \u2248 2 \xB7 quadratic"), /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1158,13 +1159,13 @@ function H1Tab() {
       fontSize: 9.5,
       letterSpacing: '0.08em',
       textTransform: 'uppercase',
-      color: '#c96a5a'
+      color: '#8B3A3A'
     }
   }, "\u2717 rejected")), /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: 'var(--serif)',
       fontSize: 17,
-      color: 'rgba(246,243,236,0.85)',
+      color: 'rgba(250,248,245,0.85)',
       marginBottom: 6,
       textDecoration: 'line-through',
       textDecorationColor: 'rgba(201,106,90,0.6)'
@@ -1174,7 +1175,7 @@ function H1Tab() {
       fontFamily: 'var(--serif)',
       fontSize: 13.5,
       lineHeight: 1.45,
-      color: 'rgba(246,243,236,0.62)'
+      color: 'rgba(250,248,245,0.62)'
     }
   }, "Facebook, WeChat, Twitter. Value scales with ", /*#__PURE__*/React.createElement("em", null, "pairs"), " of users because communication is peer-to-peer, so each new user increases utility for all existing users. Operators own the graph and capture nearly all the surplus \u2014 a model our data decisively rules out for stablecoins."))), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1182,7 +1183,7 @@ function H1Tab() {
       fontSize: 13.5,
       lineHeight: 1.5,
       marginTop: 14,
-      color: 'rgba(246,243,236,0.75)',
+      color: 'rgba(250,248,245,0.75)',
       fontStyle: 'italic'
     }
   }, "Implication for the course: stablecoins are infrastructure, not platforms. The interesting appropriability questions sit ", /*#__PURE__*/React.createElement("em", null, "one layer up"), " \u2014 at the issuer, the L1 validator set, and the exchange on-ramp \u2014 not at the \"stablecoin network operator,\" which is not really a party that exists.")))));
