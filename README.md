@@ -3,8 +3,11 @@
 [![Course](https://img.shields.io/badge/LUISS-Internet%20%26%20Network%20Economics-1F3864?style=flat-square)](https://www.luiss.it/)
 [![Python](https://img.shields.io/badge/Python-3.13-2C5282?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![Data](https://img.shields.io/badge/panels-4%20hypothesis--ready-4A6FA5?style=flat-square)](#master-datasets)
+[![Live site](https://img.shields.io/badge/live-internet--network--economics.vercel.app-1E7A48?style=flat-square&logo=vercel&logoColor=white)](https://internet-network-economics.vercel.app/)
 
 Empirical analysis of stablecoins as a substitute for legacy cross-border payment rails (SWIFT / correspondent banking), using 2020–2025 data across network effects, adoption diffusion, market concentration, and transaction cost dimensions.
+
+**Read the project at [internet-network-economics.vercel.app](https://internet-network-economics.vercel.app/)** — the findings, figures and regression tables presented as a single narrative.
 
 ## Research Question
 
